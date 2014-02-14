@@ -13,6 +13,14 @@ module.exports = function(grunt) {
         }
       }
     },
+    watch: {
+      sass: {
+        files: [
+          'assets/stylesheets/source/**/*.scss'
+        ],
+        tasks: ['sass']
+      },
+    },
   })
 
   // Load tasks
