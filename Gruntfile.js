@@ -16,9 +16,9 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: [
-          'assets/stylesheets/source/**/*.scss'
+          "assets/stylesheets/source/**/*.scss"
         ],
-        tasks: ['sass'],
+        tasks: ["sass"],
         options: {
           livereload: true,
         },
@@ -28,5 +28,5 @@ module.exports = function(grunt) {
 
   // Load tasks
   grunt.loadNpmTasks("grunt-contrib-sass");
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks("grunt-contrib-watch");
 };
