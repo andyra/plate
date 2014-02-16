@@ -26,7 +26,6 @@ module.exports = function(grunt) {
     },
   })
 
-  // Load tasks
-  grunt.loadNpmTasks("grunt-contrib-sass");
-  grunt.loadNpmTasks("grunt-contrib-watch");
+  // Load all Grunt tasks automatically
+  require('load-grunt-tasks')(grunt);
 };
