@@ -6,6 +6,6 @@
     "grunt-contrib-sass": "~0.7.2",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-styleguide": "~0.2.15",
-    "load-grunt-config": "0.7.1"
+    "load-grunt-tasks": "0.3.0"
   }
 }
