@@ -9,12 +9,14 @@
   <meta name="generator" content="kss-node" />
   <meta name="viewport" content="width=device-width">
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Cousine:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oxygen+Mono|Oxygen' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="template/assets/stylesheets/docs.min.css">
   <title>Proto Living Styleguide</title>
 </head>
 <body class="docs">
-    <header class="banner">
-    <a href="brand">kss-node Styleguide</a>
+  <header class="docs-header">
+    <a href="brand">Proto</a>
     <ul class="nav nav-pills nav-primary">
       <li><a href="#">Overview</a></li>
       <li><a href="#">Global</a></li>
@@ -22,8 +24,8 @@
       <li><a href="#">Components</a></li>
     </ul>
   </header>
-  <div class="content" role="main">
-    <aside>
+  <div class="docs-content" role="main">
+    <aside class="docs-sidebar">
       <ul class="nav nav-secondary">
         <li><a href="index.html">Overview</a></li>
         {{#eachRoot}}
@@ -31,7 +33,7 @@
         {{/eachRoot}}
       </ul>
     </aside>
-    <main class="main">
+    <main class="docs-main">
       {{#if overview}}
         {{html overview}}
       {{else}}
@@ -86,7 +88,7 @@
       {{/if}}
     </main>
   </div>
-  <footer>
+  <footer class="docs-footer">
     <small>Proto Style Guide</small>
   </footer>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>

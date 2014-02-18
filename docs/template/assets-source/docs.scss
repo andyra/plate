@@ -1,0 +1,53 @@
+// Import the actual proto styleguide
+@import "../../../assets/stylesheets/source/styles";
+
+// Styles for the docs
+// ----------------------------------------------------------------------------
+
+$sidebar-width:   15em;
+
+.docs {
+  font-family: "Cousine";
+  padding: $gutter;
+}
+
+// Header
+// ----------------------------------------------------------------------------
+
+.docs-header {
+  .brand {
+    float: left;
+  }
+
+  .nav-primary {
+    float: right;
+  }
+}
+
+// Content
+// ----------------------------------------------------------------------------
+
+.docs-content {
+  position: relative;
+}
+
+.docs-sidebar {
+  background: $gray-lighter;
+  position: absolute;
+  width: $sidebar-width;
+  top: 0;
+  left: 0;
+}
+
+.docs-main {
+  padding-left: $gutter;
+  margin-left: $sidebar-width;
+}
+
+// Footer
+// ----------------------------------------------------------------------------
+
+.docs-footer {
+  color: $gray;
+  text-align: center;
+}
