@@ -18,6 +18,7 @@ module.exports = (grunt) ->
           name: "Proto Style Guide"
           template:
             src: "docs/template"
+            include: ["docs/template/stuff"]
         files:
           "docs":             "assets/stylesheets/source/*.scss"
           "docs/global":      "assets/stylesheets/source/global/*.scss"
