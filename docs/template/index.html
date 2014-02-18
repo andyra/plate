@@ -9,115 +9,86 @@
   <meta name="generator" content="kss-node" />
   <meta name="viewport" content="width=device-width">
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="assets/stylesheets/docs.min.css">
+  <link rel="stylesheet" href="template/assets/stylesheets/docs.min.css">
   <title>Proto Living Styleguide</title>
 </head>
-<body>
-  <nav class="test-high-level-nav">
-    <a href="#">Overview</a>
-    <a href="#">Global</a>
-    <a href="#">Base</a>
-    <a href="#">Components</a>
-  </nav>
-  <header class="banner">
-    <h1>kss-node Styleguide</h1>
-    <ul class="nav nav-main">
-      <li><a href="index.html">Overview</a></li>
-      {{#eachRoot}}
-        <li><a href="section-{{reference}}.html">{{header}}</a></li>
-      {{/eachRoot}}
+<body class="docs">
+    <header class="banner">
+    <a href="brand">kss-node Styleguide</a>
+    <ul class="nav nav-pills nav-primary">
+      <li><a href="#">Overview</a></li>
+      <li><a href="#">Global</a></li>
+      <li><a href="#">Base</a></li>
+      <li><a href="#">Components</a></li>
     </ul>
   </header>
-  <main class="content" role="main">
-    {{#if overview}}
-      {{html overview}}
-    {{else}}
+  <div class="content" role="main">
+    <aside>
+      <ul class="nav nav-secondary">
+        <li><a href="index.html">Overview</a></li>
+        {{#eachRoot}}
+          <li><a href="section-{{reference}}.html">{{header}}</a></li>
+        {{/eachRoot}}
+      </ul>
+    </aside>
+    <main class="main">
+      {{#if overview}}
+        {{html overview}}
+      {{else}}
 
-      {{!
-        Find each section, in order.
-        If there's no markup or modifiers supplied, use a Markdown-only
-        layout instead.
+        {{!
+          Find each section, in order.
+          If there's no markup or modifiers supplied, use a Markdown-only
+          layout instead.
 
-        The "root" element comes first in this loop, and can be detected using
-        the "#whenDepth 1" block as seen below.
-      }}
-      {{#eachSection rootNumber}}
-        {{#whenDepth 1}}
-          <h1>{{ header }}</h1>
-        {{else}}
-          <section class="depth-{{ refDepth }}">
-            <h{{ refDepth }}>{{ header }}</h{{ refDepth }}>
-        {{/whenDepth}}
-        {{#ifAny markup modifiers}}
-          <div class="description">{{html description}}</div>
-          <div class="mods">
-            <div class="mod-group">
-              <p class="mod-desc">Default styling</p>
-              <p class="mod-name"></p>
-            </div>
-            <div class="mod-example">
-              {{modifierMarkup}}
-            </div>
-            {{#eachModifier}}
+          The "root" element comes first in this loop, and can be detected using
+          the "#whenDepth 1" block as seen below.
+        }}
+        {{#eachSection rootNumber}}
+          {{#whenDepth 1}}
+            <h1>{{ header }}</h1>
+          {{else}}
+            <section class="depth-{{ refDepth }}">
+              <h{{ refDepth }}>{{ header }}</h{{ refDepth }}>
+          {{/whenDepth}}
+          {{#ifAny markup modifiers}}
+            <div class="description">{{html description}}</div>
+            <div class="mods">
               <div class="mod-group">
-                <p class="mod-desc">{{html description}}</p>
-                <p class="mod-name">{{name}}</p>
+                <p class="mod-desc">Default styling</p>
+                <p class="mod-name"></p>
               </div>
               <div class="mod-example">
                 {{modifierMarkup}}
               </div>
-            {{/eachModifier}}
-          </div>
-          <div class="markup">
-            <pre>{{markup}}</pre>
-          </div>
-        {{else}}
-          {{#if description}}
-            {{html description}}
-          {{/if}}
-        {{/ifAny}}
-        {{#whenDepth 1}} {{else}}
-          </section>
-        {{/whenDepth}}
-      {{/eachSection}}
-    {{/if}}
-  </main>
-  <footer>The End</footer>
-
-  <!-- SCRIPTS -->
-  <script src="public/kss.js"></script>
-  <script src="public/prettify.js"></script>
+              {{#eachModifier}}
+                <div class="mod-group">
+                  <p class="mod-desc">{{html description}}</p>
+                  <p class="mod-name">{{name}}</p>
+                </div>
+                <div class="mod-example">
+                  {{modifierMarkup}}
+                </div>
+              {{/eachModifier}}
+            </div>
+            <div class="markup">
+              <pre>{{markup}}</pre>
+            </div>
+          {{else}}
+            {{#if description}}
+              {{html description}}
+            {{/if}}
+          {{/ifAny}}
+          {{#whenDepth 1}} {{else}}
+            </section>
+          {{/whenDepth}}
+        {{/eachSection}}
+      {{/if}}
+    </main>
+  </div>
+  <footer>
+    <small>Proto Style Guide</small>
+  </footer>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      var sidebarAdjust = function() {
-        // Match footer/body height
-        var height = Math.max($(window).height(), $('#kss-main').height());
-
-        if ($(window).width() <= 768) {
-          $('#kss-main, #kss-nav').height('auto');
-        } else {
-          $('#kss-main, #kss-nav').height(height);
-        }
-      };
-
-      $(window).resize(sidebarAdjust);
-      $(window).scroll(sidebarAdjust);
-      sidebarAdjust();
-
-      // Ensure code blocks are highlighted properly...
-      $('pre>code').addClass('prettyprint');
-      prettyPrint();
-
-    });
-  </script>
-
-  {{! This won't be included in the demo page }}
-  {{#if argv.xdemo}}
-    <script type="text/javascript">
-    var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-12249588-4']); _gaq.push(['_trackPageview']);
-    (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
-    </script>
-  {{/if}}
 </body>
 </html>

@@ -1,0 +1,19 @@
+// ============================================================================
+// Color variables
+// ============================================================================
+
+// Color variables declared in hsl() to allow for easy adjusting w/o an image
+// editor like Photoshop or Illustrator
+// @source: http://css-tricks.com/yay-for-hsla/
+
+$gray-darker:           hsl(0, 0%, 12%) !default;
+$gray-dark:             hsl(0, 0%, 20%) !default;
+$gray:                  hsl(0, 0%, 32%) !default;
+$gray-light:            hsl(0, 0%, 60%) !default;
+$gray-lighter:          hsl(0, 0%, 95%) !default;
+
+$brand-primary:         hsl(204, 67%, 48%) !default;
+$brand-info:            hsl(179, 46%, 59%) !default;
+$brand-success:         hsl(156, 53%, 42%) !default;
+$brand-warning:         hsl( 34, 82%, 56%) !default;
+$brand-danger:          hsl(  4, 66%, 53%) !default;

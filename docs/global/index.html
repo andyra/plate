@@ -8,63 +8,38 @@
   <meta name="description" content="">
   <meta name="generator" content="kss-node" />
   <meta name="viewport" content="width=device-width">
-  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="public/kss.css">
-  <link rel="stylesheet" href="public/style.css">
-  <title>KSS: Living Styleguide</title>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="template/assets/stylesheets/docs.min.css">
+  <title>Proto Living Styleguide</title>
 </head>
-<body>
-  <nav class="test-high-level-nav">
-    <a href="#">Overview</a>
-    <a href="#">Global</a>
-    <a href="#">Base</a>
-    <a href="#">Components</a>
-  </nav>
-  <header class="banner">
-    <h1>kss-node Styleguide</h1>
-    <ul class="nav nav-main">
-      <li><a href="index.html">Overview</a></li>
-      
+<body class="docs">
+    <header class="banner">
+    <a href="brand">kss-node Styleguide</a>
+    <ul class="nav nav-pills nav-primary">
+      <li><a href="#">Overview</a></li>
+      <li><a href="#">Global</a></li>
+      <li><a href="#">Base</a></li>
+      <li><a href="#">Components</a></li>
     </ul>
   </header>
-  <main class="content" role="main">
-    
-      <h1>Proto Style Guide</h1>
+  <div class="content" role="main">
+    <aside>
+      <ul class="nav nav-secondary">
+        <li><a href="index.html">Overview</a></li>
+        
+      </ul>
+    </aside>
+    <main class="main">
+      
+        <h1>Proto Style Guide</h1>
 <p>Global</p>
 
-    
-  </main>
-  <footer>The End</footer>
-
-  <!-- SCRIPTS -->
-  <script src="public/kss.js"></script>
-  <script src="public/prettify.js"></script>
+      
+    </main>
+  </div>
+  <footer>
+    <small>Proto Style Guide</small>
+  </footer>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      var sidebarAdjust = function() {
-        // Match footer/body height
-        var height = Math.max($(window).height(), $('#kss-main').height());
-
-        if ($(window).width() <= 768) {
-          $('#kss-main, #kss-nav').height('auto');
-        } else {
-          $('#kss-main, #kss-nav').height(height);
-        }
-      };
-
-      $(window).resize(sidebarAdjust);
-      $(window).scroll(sidebarAdjust);
-      sidebarAdjust();
-
-      // Ensure code blocks are highlighted properly...
-      $('pre>code').addClass('prettyprint');
-      prettyPrint();
-
-    });
-  </script>
-
-  
-  
 </body>
 </html>
