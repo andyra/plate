@@ -1,6 +1,10 @@
 {
   "name": "Proto",
   "version": "0.0.1",
+  "repository": {
+    "type" : "git",
+    "url" : "http://github.com/andyra/proto.git"
+  },
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-sass": "~0.7.2",

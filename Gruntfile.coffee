@@ -5,36 +5,40 @@ module.exports = (grunt) ->
     sass:
       dist:
         files:
-          "assets/stylesheets/styles.min.css": "assets/stylesheets/source/styles.scss"
-          "docs/template/public/docs.min.css": "docs/template/assets/docs.scss"
+          'assets/stylesheets/styles.min.css': 'assets/stylesheets/source/styles.scss'
+          'docs/template/public/docs.min.css': 'docs/template/assets/docs.scss'
         options:
-          style: "compressed"
+          style: 'compressed'
           sourceMap: false
     styleguide:
       kss:
         options:
           framework:
-            name: "kss"
-          name: "Proto Style Guide"
+            name: 'kss'
+          name: 'Proto Style Guide'
           template:
-            src: "docs/template"
-            include: ["docs/template/stuff"]
+            src: 'docs/template'
+            include: ['docs/template/stuff']
         files:
-          "docs":             "assets/stylesheets/source/*.scss"
-          "docs/global":      "assets/stylesheets/source/global/*.scss"
-          "docs/base":        "assets/stylesheets/source/base/*.scss"
-          "docs/components":  "assets/stylesheets/source/components/*.scss"
+          'docs':             'assets/stylesheets/source/*.scss'
+          'docs/global':      'assets/stylesheets/source/global/*.scss'
+          'docs/base':        'assets/stylesheets/source/base/*.scss'
+          'docs/components':  'assets/stylesheets/source/components/*.scss'
     watch:
       sass:
         files: [
-          "assets/stylesheets/source/**/*.scss"
-          "docs/template/assets/*.scss"
+          'assets/stylesheets/source/**/*.scss'
+          'docs/template/assets/*.scss'
         ]
-        tasks: ["sass"]
+        tasks: ['sass']
         options:
           livereload: true
 
 
   # Load all Grunt tasks automatically
-  require("load-grunt-tasks") grunt
+  require('load-grunt-tasks') grunt
+
+  # Register tasks
+  grunt.registerTask 'default', ['sass'];
+
   return
