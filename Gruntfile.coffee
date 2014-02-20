@@ -2,6 +2,11 @@ module.exports = (grunt) ->
 
   # Project configuration
   grunt.initConfig
+    notify:
+      sass:
+        options:
+          title: "Task Complete"
+          message: "SASS finished compiling!"
     sass:
       dist:
         files:
