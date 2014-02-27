@@ -1,8 +1,12 @@
-// ============================================================================
-// Component variables
-// ============================================================================
 
-// Defaults and variables to be used across any component that so wishes
+// Title:         Component variables
+// Author:        Andy Smith
+// Source:        http://github/com/andyra/proto
+// License:       MIT License
+// Last Edited:   26 Feb 2014
+// Version:       0.1
+
+// Generic style values that can be reused across components
 
 // Border radius
 $border-radius-base:         4px !default;
@@ -12,15 +16,13 @@ $border-radius-small:        3px !default;
 // Padding
 $padding-base-vertical:      6px !default;
 $padding-base-horizontal:   12px !default;
-
 $padding-large-vertical:    10px !default;
 $padding-large-horizontal:  16px !default;
-
 $padding-small-vertical:     5px !default;
 $padding-small-horizontal:  10px !default;
-
 $padding-xs-vertical:        1px !default;
 $padding-xs-horizontal:      5px !default;
 
+// Active element colors
 $component-active-color:    #fff !default;
 $component-active-bg:       $brand-primary !default;

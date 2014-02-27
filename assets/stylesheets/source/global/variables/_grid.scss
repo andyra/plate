@@ -1,8 +1,12 @@
-// ============================================================================
-// Grid variables
-// ============================================================================
 
-// Variables for b=Bourbon Neat grids
+// Title:         Grid variables
+// Author:        Andy Smith
+// Source:        http://github/com/andyra/proto
+// License:       MIT License
+// Last Edited:   26 Feb 2014
+// Version:       0.1
+
+// Variables for Bourbon Neat grids
 // @source: http://neat.bourbon.io/docs/#variables
 
 $border-box-sizing:     true !default;
@@ -12,6 +16,8 @@ $grid-columns:          12 !default;
 $gutter:                golden-ratio(1em, 1) !default;
 $max-width:             em(1088) !default;
 
+// Visual grid
+// Set $visual-grid to true to make sure your site is lining up as expected
 $visual-grid:           false !default;
 $visual-grid-color:     #eee !default;
 $visual-grid-index:     back !default;

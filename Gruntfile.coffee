@@ -25,7 +25,6 @@ module.exports = (grunt) ->
         options:
           livereload: true
 
-
   # Load all Grunt tasks automatically
   require('load-grunt-tasks') grunt
 

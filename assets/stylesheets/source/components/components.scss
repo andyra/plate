@@ -1,9 +1,20 @@
-// ============================================================================
-// Components
-// ============================================================================
+
+// Title:         Components
+// Author:        Andy Smith
+// Source:        http://github/com/andyra/proto
+// License:       MIT License
+// Last Edited:   26 Feb 2014
+// Version:       0.1
 
 // A component is a discrete, reuseable pattern that can be used throughout a
 // project without breaking. In general, avoid element selectors and IDs in
 // favor of classes.
+
+// This file is only used to import other stylesheets. To add new styles, create
+// a new `.scss` file and import it below. All imported files should begin with
+// an underscore.
+
+// Imports
+// ----------------------------------------------------------------------------
 
 // @import "component-name";
