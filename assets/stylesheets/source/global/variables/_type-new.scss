@@ -1,0 +1,35 @@
+
+// Font families
+$font-family-sans:        $helvetica !default;
+$font-family-serif:       $georgia !default;
+$font-family-monospace:   $monospace !default;
+
+// Custom fonts
+// To create custom fonts, uncomment the font-face mixin below and fill with the
+// information specific to your font. Use this font in the font stacks above to
+// allow fallbacks in the event the font files don't load in old/weird browsers.
+// Add as many custom fonts here as you see fit.
+// ex: $font-family-sans: "Droid Sans", $helvetica;
+
+// @include font-face($font-family, $file-path, $weight: normal, $style: normal)
+
+// Sizes
+$type-scale-unit-value:   rem;
+
+// Weights
+$font-weight-thin:        100 !default;
+$font-weight-light:       300 !default;
+$font-weight-normal:      400 !default;
+$font-weight-medium:      500 !default;
+$font-weight-bold:        700 !default;
+$font-weight-black:       900 !default;
+
+// Colors
+$text-color:              $gray-dark !default;
+$heading-color:           $gray-dark !default;
+
+// Type Base
+// ----------------------------------------------------------------------------
+
+$font-family-base:        $font-family-sans !default;
+$font-size-base:          'something here';
