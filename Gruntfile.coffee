@@ -15,20 +15,6 @@ module.exports = (grunt) ->
         options:
           style: 'compressed'
           sourceMap: false
-    styleguide:
-      kss:
-        options:
-          framework:
-            name: 'kss'
-          name: 'Proto Style Guide'
-          template:
-            src: 'docs/template'
-            include: ['docs/template/stuff']
-        files:
-          'docs':             'assets/stylesheets/source/*.scss'
-          'docs/global':      'assets/stylesheets/source/global/*.scss'
-          'docs/base':        'assets/stylesheets/source/base/*.scss'
-          'docs/components':  'assets/stylesheets/source/components/*.scss'
     watch:
       sass:
         files: [

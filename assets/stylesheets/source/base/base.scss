@@ -1,12 +1,23 @@
-// ============================================================================
-// Base styles
-// ============================================================================
+
+// Title:         Base
+// Author:        Andy Smith
+// Source:        http://github/com/andyra/proto
+// License:       MIT License
+// Last Edited:   26 Feb 2014
+// Version:       0.1
 
 // Base styles are almost exclusively single element selectors but could include
 // attribute selectors, pseudo-class selectors, child selectors or sibling
 // selectors. They define the default styling for how that element should look
 // in all occurrences on the page.
 // @source: http://smacss.com/book/type-base
+
+// This file is only used to import other stylesheets. To add new styles, create
+// a new `.scss` file and import it below. All imported files should begin with
+// an underscore.
+
+// Imports
+// ----------------------------------------------------------------------------
 
 // Reset
 @import "normalize";

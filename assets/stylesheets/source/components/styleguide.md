@@ -1,4 +1,0 @@
-Proto Style Guide
-=================
-
-Components
