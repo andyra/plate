@@ -13,8 +13,99 @@ $font-family-monospace:   $monospace !default;
 
 // @include font-face($font-family, $file-path, $weight: normal, $style: normal)
 
+// @todo: Include an average range of appropriate line heights here
+
 // Sizes
-$type-scale-unit-value:   rem;
+$font-unit:               rem !default;     // px, em, or rem
+$font-size:               62.5 !default;    // percentage value (16 * 62.5% = 10px)
+
+// Bootstrap sets this as 14px. Really, it's just what size of font
+// you want the default to be. So 16px might be good.
+// We need the base font size to be unitless, though, so we can make it either
+// px, ems, or rems.
+//
+
+// $font-size-base, in the mixin, needs to be either 16 or 1.6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$font-size-base:          16 * (62.5 / 100) !default; // converts our percentage to a pixel value (16 * 62.5% = 10px)
+$type-scale:              1.618 !default;   // factor to increase each size by
+
+// Line heights
+$line-height-unit:        percent !default; // px, em, rem, or percent
+$line-height-base:        1.65 !default;
+$line-height-value:       $font-size-base * $line-height-base;
 
 // Weights
 $font-weight-thin:        100 !default;
