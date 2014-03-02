@@ -11,7 +11,6 @@ module.exports = (grunt) ->
       dist:
         files:
           'assets/stylesheets/styles.min.css': 'assets/stylesheets/source/styles.scss'
-          'docs/template/public/docs.min.css': 'docs/template/assets/docs.scss'
         options:
           style: 'compressed'
           sourceMap: false
@@ -19,7 +18,6 @@ module.exports = (grunt) ->
       sass:
         files: [
           'assets/stylesheets/source/**/*.scss'
-          'docs/template/assets/*.scss'
         ]
         tasks: ['sass']
         options:

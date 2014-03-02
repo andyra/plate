@@ -1,4 +1,6 @@
 
+// @todo: Include an average range of appropriate line heights here
+
 // Font families
 $font-family-sans:        $helvetica !default;
 $font-family-serif:       $georgia !default;
@@ -13,100 +15,6 @@ $font-family-monospace:   $monospace !default;
 
 // @include font-face($font-family, $file-path, $weight: normal, $style: normal)
 
-// @todo: Include an average range of appropriate line heights here
-
-// Sizes
-$font-unit:               rem !default;     // px, em, or rem
-$font-size:               62.5 !default;    // percentage value (16 * 62.5% = 10px)
-
-// Bootstrap sets this as 14px. Really, it's just what size of font
-// you want the default to be. So 16px might be good.
-// We need the base font size to be unitless, though, so we can make it either
-// px, ems, or rems.
-//
-
-// $font-size-base, in the mixin, needs to be either 16 or 1.6
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$font-size-base:          16 * (62.5 / 100) !default; // converts our percentage to a pixel value (16 * 62.5% = 10px)
-$type-scale:              1.618 !default;   // factor to increase each size by
-
-// Line heights
-$line-height-unit:        percent !default; // px, em, rem, or percent
-$line-height-base:        1.65 !default;
-$line-height-value:       $font-size-base * $line-height-base;
-
 // Weights
 $font-weight-thin:        100 !default;
 $font-weight-light:       300 !default;
@@ -120,7 +28,107 @@ $text-color:              $gray-dark !default;
 $heading-color:           $gray-dark !default;
 
 // Type Base
-// ----------------------------------------------------------------------------
-
 $font-family-base:        $font-family-sans !default;
-$font-size-base:          'something here';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$type-unit:                 rem !default;     // px, em, rem
+
+
+
+
+// Returns a font size value as either px, em, or rem based on $font-unit
+// If the font root size is a value other than 10px, say 24px, write font-size(12, 24)
+// ex: font-size(12) => 12px
+// ex: font-size(12) => 1.2em
+// ex: font-size(12) => 1.2rem
+@function font-unit($size, $base: 10) {
+  @if ($font-unit == 'px') {
+    @return $size#{px};
+  } @else {
+    @return ($size / $base)#{$font-unit};
+  }
+}
+
+// Provide a px fallback if 'rem' is used as the $font-unit
+@mixin font-size($size) {
+  @if $font-unit == rem {
+    font-size: $size#{px};
+  }
+  font-size: font-unit($size);
+}
+
+// Provide a px fallback if 'rem' is used as the $font-unit
+@mixin font-size($size) {
+  @if $font-unit == rem {
+    font-size: $size#{px};
+  }
+  font-size: font-unit($size);
+}
+
+// Sizes
+$font-unit:               rem !default;     // Valid: px, em, or rem
+$font-size-base:          16 !default;      // Normal font size for body text
+$type-scale:              1.618 !default;   // Factor to increase each size by
+$line-height-base:        1.5 !default;     // Unitless. Based on the font size of the element (16 * 1.5 = 24)
+$line-height-computed:    font-unit($font-size-base * $line-height-base) !default;
+
+// Set line height in pixels if $font-unit == 'px'
+@if $font-unit == px {
+  $line-height-computed: ($font-size-base * $line-height-base)#{px};
+}
+
+// $font-size-xxxl: round(modular-scale())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

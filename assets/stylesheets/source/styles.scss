@@ -24,3 +24,15 @@
 @import "global/global";
 @import "base/base";
 @import "components/components";
+
+body {
+  @include outer-container;
+}
+
+.paragraph {
+  line-height: $line-height-base;
+  margin: 0;
+  margin-bottom: $line-height-computed;
+
+  @include font-size(24);
+}
