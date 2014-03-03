@@ -7,30 +7,22 @@
 //  888          888     888   888   888 . 888   888
 // o888o        d888b    `Y8bod8P'   "888" `Y8bod8P'
 
-// Title:         Styles
+// Title:         Styles for IE8 and below...
 // Author:        Andy Smith
 // Source:        http://github/com/andyra/proto
 // License:       MIT License
-// Last Edited:   26 Feb 2014
+// Last Edited:   2 March 2014
 // Version:       0.1
 
 // This file is only used to import other stylesheets. To add new styles, create
 // a new `.scss` file and import it below. All imported files should begin with
 // an underscore.
 
+$type-unit: px;
+
 // Imports
 // ----------------------------------------------------------------------------
-
-// @temp styles for testing
 
 @import "global/global";
 @import "base/base";
 @import "components/components";
-
-body {
-  @include outer-container;
-}
-
-article {
-  @include span-columns(6);
-}

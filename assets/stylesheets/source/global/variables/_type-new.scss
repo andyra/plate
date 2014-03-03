@@ -2,47 +2,128 @@
 // Browser support
 // ----------------------------------------------------------------------------
 
-// If legacy == false
-// 1. Use functions
-//    - Valid $type-unit: px, em, rem
-//    - Single css file (styles.css)
+// @source: http://davidwalsh.name/rem-px-browser-function-sass
+// @source: http://csswizardry.com/2011/12/measuring-and-sizing-uis-2011-style/
 
-// If legacy == true
+// So I guess the thing to remember is that ems allow stuff to scale wrt the font
+// size. So if you zoom in, the margins, padding, etc will stay in proportion.
+// This is especially useful for stuff like indenting and margins on lists
+
 // 1. Use functions
-//    - Valid $type-unit: px, em
-//    - Two css files (styles.css, styles.ie.css)
+//    - Two css files (styles.css, styles.ie.css). If you don't create a
+//      separate css file, the main one can be modern only or use px/em
+//    - If you ever want to remove support for IE8, you can just remove one file
+//      and that's it.
 // 2. Use mixins
-//    - Valid $type-unit: px, em, rem
 //    - Single css file (styles.css)
+//    - More unorganized, maybe.
+
+/*
+
+code {
+  @include rem(font-size, $font-size-sm);
+  @include rem(padding, 2px, 4px);
+  background-color: $code-bg;
+  border-radius: $border-radius-base;
+  color: $code-color;
+  white-space: nowrap;
+}
+
+$font-size-sm: unit(16);
+
+code {
+  background-color: $code-bg;
+  border-radius: $border-radius-base;
+  color: $code-color;
+  font-size: $font-size-sm;
+  padding: u(2px, 4px);
+  white-space: nowrap;
+}
+
+*/
+
+// Font sizing
+// ----------------------------------------------------------------------------
+
+// $font-size-base is the default size most of your text elements will fall into,
+// like paragraphs, lists, etc. Set to at least 16px for most situations.
+// @source: http://ia.net/blog/100e2r
+
+// Font sizes are our basis for modular measurement
+// The first ingredient is the base font size
+// The ratio is the second ingredient
+// Double stranded modular scale...you combine them and make a single scale from
+// that? Weird. How?
+// Text size, width, and line height work from the same modular scale to create
+// a nice text block.
+// @source: http://alistapart.com/article/more-meaningful-typography
+// @source: http://modularscale.com
+
+$type-unit:                 rem !default; // rem, px, em
+$font-size-base:            18; // Unitless pixel value
+$font-size-root:            ($font-size-base / 16 * 100)#{"%"}; // Used to set the base HTML font size %
+
+$font-size-xxxl:            60 !default;
+$font-size-xxl:             42 !default;
+$font-size-xl:              32 !default;
+$font-size-lg:              21 !default;
+$font-size-md:              $font-size-base !default;
+$font-size-sm:              14 !default;
+$font-size-xs:              12 !default;
+
+
+
+
+// Line height
+// ----------------------------------------------------------------------------
+
+// @todo: Body line height should change based on how wide the content is.
+// @source: http://www.pearsonified.com/typography/
+
+// Some general rules for leading:
+// - with continuous copy, use large leading;
+// - with light text on dark background, use large leading;
+// - with long line lengths, use large leading;
+// - with large x-height, use large leading;
+// - with short burst of information, use small leading.
+// @source: http://coding.smashingmagazine.com/2011/03/14/technical-web-typography-guidelines-and-techniques/#tt-rhythm
+
+// A note on line lengths: shoot for 45-75 characters per line.
+// @source: http://www.inkwell.ie/typography/bringhurst.html
+// For a longer measure (larger screens), use slightly greater leading.
+// For a shorter measure (smaller screens), use slightly smaller leading.
+
+$line-height-base:          $golden-ratio !default;     // Unitless. Based on the font size of the element (16 * 1.5 = 24)
+$line-height-computed:      type-unit($font-size-base * $line-height-base) !default;
+
+// Set line height in pixels if $type-unit == 'px'
+@if $type-unit == px {
+  $line-height-computed: ($font-size-base * $line-height-base)#{px};
+}
+
 
 // Font families
 // ----------------------------------------------------------------------------
 
-// @todo: Include an average range of appropriate line heights here
-// @todo: should we split p things by "base" and "heading?"
-//        base font, color, line-height
-//        heading font, color, line-height
-
-$font-family-sans:        $helvetica !default;
-$font-family-serif:       $georgia !default;
-$font-family-monospace:   $monospace !default;
+$font-family-sans:        "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:       Georgia, Cambria, "Times New Roman", Times, serif !default;
+$font-family-monospace:   "Bitstream Vera Sans Mono", Consolas, Courier, monospace !default;
 
 $font-family-base:        $font-family-sans !default;
 $font-family-heading:     $font-family-base !default;
 
 // Custom fonts
+//
 // To create custom fonts, uncomment the font-face mixin below and fill with the
-// information specific to your font. Use this font in the font stacks above to
-// allow fallbacks in the event the font files don't load in old/weird browsers.
+// information specific to your font. Use the font family name in the font stacks
+// above to allow fallbacks in the event the font files don't load in old browsers.
 // Add as many custom fonts here as you see fit.
-// ex: $font-family-sans: "Droid Sans", $helvetica;
 
 // @include font-face($font-family, $file-path, $weight: normal, $style: normal)
 
 // Weights
 // ----------------------------------------------------------------------------
 
-// Weights
 $font-weight-thin:        100 !default;
 $font-weight-light:       300 !default;
 $font-weight-normal:      400 !default;
@@ -55,71 +136,3 @@ $font-weight-black:       900 !default;
 
 $text-color:              $gray-dark !default;
 $heading-color:           $gray-dark !default;
-
-// Type sizing
-// ----------------------------------------------------------------------------
-
-$type-unit:                 rem !default;           // rem, px, em
-$type-ratio:                $golden-ratio !default; // Will we actually use this?
-$font-size-base:            16;                     // Unitless value.
-
-$font-size-xxxl:            60 !default;
-$font-size-xxl:             42 !default;
-$font-size-xl:              32 !default;
-$font-size-lg:              21 !default;
-$font-size-md:              $font-size-base !default;
-$font-size-sm:              14 !default;
-$font-size-xs:              12 !default;
-
-// Single unit
-// Good for px, em, and rem w/o fallback.
-.lead {
-  font-size: $font-size-sm;
-}
-
-// Double unit
-// Good for everything
-.lead {
-  @include font-size($font-size-sm);
-}
-
-// Unit conversion
-// @source: http://davidwalsh.name/rem-px-browser-function-sass
-
-// If you don't use units anywhere in your styles, you can change all of them
-// at the flip of a switch ($type-unit: px, em, rem)
-
-// For a single value, you can use a function, but you'll need
-// two separate css files (styles.css, styles-ie.css)
-$font-size-sm: u(20);
-
-.lead {
-  font-size: $font-size-sm;
-  margin: u(20 0 0 20); // without units, uses default unit value (px, em, or rem)
-}
-
-// If you want a single file, you'll have to double up on rules to support ie
-// and use mixins instead of functions
-
-$font-size-sm: u(20); // if legacy != true => 2rem
-                      // if legacy == true => 20px
-
-.lead {
-  @include font-size($font-size-sm);
-  // @include u(margin, 20 0 0 20);
-}
-
-
-// Line height
-// ----------------------------------------------------------------------------
-
-// Body line height should change based on how wide the content is.
-// @source: http://www.pearsonified.com/typography/
-
-$line-height-base:          $golden-ratio !default;     // Unitless. Based on the font size of the element (16 * 1.5 = 24)
-$line-height-computed:      type-unit($font-size-base * $line-height-base) !default;
-
-// Set line height in pixels if $type-unit == 'px'
-@if $type-unit == px {
-  $line-height-computed: ($font-size-base * $line-height-base)#{px};
-}
