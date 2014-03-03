@@ -1,0 +1,18 @@
+// Font size
+// Provide a px fallback if 'rem' is used as the $type-unit
+// .details {
+//   @include font-size(14);
+// }
+//
+// If you're using px or ems, you don't need to use this mixin.
+// .details {
+//   font-size: 14px;
+//   font-size: 1.4em;
+//   font-size: em(14, 20);
+// }
+@mixin font-size($size, $base: 10) {
+  @if $type-unit == rem {
+    font-size: $size#{px};
+  }
+  font-size: type-unit($size);
+}

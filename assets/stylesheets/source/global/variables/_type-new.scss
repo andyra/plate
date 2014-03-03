@@ -1,10 +1,34 @@
 
-// @todo: Include an average range of appropriate line heights here
+// Browser support
+// ----------------------------------------------------------------------------
+
+// If legacy == false
+// 1. Use functions
+//    - Valid $type-unit: px, em, rem
+//    - Single css file (styles.css)
+
+// If legacy == true
+// 1. Use functions
+//    - Valid $type-unit: px, em
+//    - Two css files (styles.css, styles.ie.css)
+// 2. Use mixins
+//    - Valid $type-unit: px, em, rem
+//    - Single css file (styles.css)
 
 // Font families
+// ----------------------------------------------------------------------------
+
+// @todo: Include an average range of appropriate line heights here
+// @todo: should we split p things by "base" and "heading?"
+//        base font, color, line-height
+//        heading font, color, line-height
+
 $font-family-sans:        $helvetica !default;
 $font-family-serif:       $georgia !default;
 $font-family-monospace:   $monospace !default;
+
+$font-family-base:        $font-family-sans !default;
+$font-family-heading:     $font-family-base !default;
 
 // Custom fonts
 // To create custom fonts, uncomment the font-face mixin below and fill with the
@@ -16,6 +40,9 @@ $font-family-monospace:   $monospace !default;
 // @include font-face($font-family, $file-path, $weight: normal, $style: normal)
 
 // Weights
+// ----------------------------------------------------------------------------
+
+// Weights
 $font-weight-thin:        100 !default;
 $font-weight-light:       300 !default;
 $font-weight-normal:      400 !default;
@@ -24,111 +51,75 @@ $font-weight-bold:        700 !default;
 $font-weight-black:       900 !default;
 
 // Colors
+// ----------------------------------------------------------------------------
+
 $text-color:              $gray-dark !default;
 $heading-color:           $gray-dark !default;
 
-// Type Base
-$font-family-base:        $font-family-sans !default;
+// Type sizing
+// ----------------------------------------------------------------------------
 
+$type-unit:                 rem !default;           // rem, px, em
+$type-ratio:                $golden-ratio !default; // Will we actually use this?
+$font-size-base:            16;                     // Unitless value.
 
+$font-size-xxxl:            60 !default;
+$font-size-xxl:             42 !default;
+$font-size-xl:              32 !default;
+$font-size-lg:              21 !default;
+$font-size-md:              $font-size-base !default;
+$font-size-sm:              14 !default;
+$font-size-xs:              12 !default;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$type-unit:                 rem !default;     // px, em, rem
-
-
-
-
-// Returns a font size value as either px, em, or rem based on $font-unit
-// If the font root size is a value other than 10px, say 24px, write font-size(12, 24)
-// ex: font-size(12) => 12px
-// ex: font-size(12) => 1.2em
-// ex: font-size(12) => 1.2rem
-@function font-unit($size, $base: 10) {
-  @if ($font-unit == 'px') {
-    @return $size#{px};
-  } @else {
-    @return ($size / $base)#{$font-unit};
-  }
+// Single unit
+// Good for px, em, and rem w/o fallback.
+.lead {
+  font-size: $font-size-sm;
 }
 
-// Provide a px fallback if 'rem' is used as the $font-unit
-@mixin font-size($size) {
-  @if $font-unit == rem {
-    font-size: $size#{px};
-  }
-  font-size: font-unit($size);
+// Double unit
+// Good for everything
+.lead {
+  @include font-size($font-size-sm);
 }
 
-// Provide a px fallback if 'rem' is used as the $font-unit
-@mixin font-size($size) {
-  @if $font-unit == rem {
-    font-size: $size#{px};
-  }
-  font-size: font-unit($size);
+// Unit conversion
+// @source: http://davidwalsh.name/rem-px-browser-function-sass
+
+// If you don't use units anywhere in your styles, you can change all of them
+// at the flip of a switch ($type-unit: px, em, rem)
+
+// For a single value, you can use a function, but you'll need
+// two separate css files (styles.css, styles-ie.css)
+$font-size-sm: u(20);
+
+.lead {
+  font-size: $font-size-sm;
+  margin: u(20 0 0 20); // without units, uses default unit value (px, em, or rem)
 }
 
-// Sizes
-$font-unit:               rem !default;     // Valid: px, em, or rem
-$font-size-base:          16 !default;      // Normal font size for body text
-$type-scale:              1.618 !default;   // Factor to increase each size by
-$line-height-base:        1.5 !default;     // Unitless. Based on the font size of the element (16 * 1.5 = 24)
-$line-height-computed:    font-unit($font-size-base * $line-height-base) !default;
+// If you want a single file, you'll have to double up on rules to support ie
+// and use mixins instead of functions
 
-// Set line height in pixels if $font-unit == 'px'
-@if $font-unit == px {
+$font-size-sm: u(20); // if legacy != true => 2rem
+                      // if legacy == true => 20px
+
+.lead {
+  @include font-size($font-size-sm);
+  // @include u(margin, 20 0 0 20);
+}
+
+
+// Line height
+// ----------------------------------------------------------------------------
+
+// Body line height should change based on how wide the content is.
+// @source: http://www.pearsonified.com/typography/
+
+$line-height-base:          $golden-ratio !default;     // Unitless. Based on the font size of the element (16 * 1.5 = 24)
+$line-height-computed:      type-unit($font-size-base * $line-height-base) !default;
+
+// Set line height in pixels if $type-unit == 'px'
+@if $type-unit == px {
   $line-height-computed: ($font-size-base * $line-height-base)#{px};
 }
-
-// $font-size-xxxl: round(modular-scale())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
