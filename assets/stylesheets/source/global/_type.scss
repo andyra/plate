@@ -30,22 +30,37 @@ $font-family-heading:     $font-family-base !default;
 // Type scale
 // ----------------------------------------------------------------------------
 
-// The default size for body text (paragraphs, lists, etc.). Set $font-size-base
-// to at least 16 in most situations.
+// A note on measurement units:
+// • Use percentages for structural elements (sidebars, headers, footers, etc.).
+// • Use rems or ems for type.
+// • Use ems for type-related properties (like margins, padding) so they scale
+//   with the type size.
+// • Use unitless values for line-height.
+// @source: http://csswizardry.com/2011/12/measuring-and-sizing-uis-2011-style/
+// @source: http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/
+
+// $font-size-base is the default size for body text (paragraphs, lists, etc.).
+// Set to at least 16 in most situations.
 // @source: http://ia.net/blog/100e2r
+// @todo: for some reason, the rem mixin isn't returning pixel values
+// when the font-size-base is in rems. Has something to do with the
+// variables (-xxl, etc.) below.
 
-$type-unit:                 em !default; // rem, px, em
-$font-size-base:            18; // Unitless pixel value
-$font-size-root:            ($font-size-base / 16 * 100)#{"em"}; // Used to set the base HTML font size %
-$type-scale:                $golden-ratio;
+$type-unit:                 "rem";
+$font-size-base:            18; // A unitless pixel value. THis is what 1rem or 1 em will equal
+$font-size-root:            ($font-size-base / 16 * 100)#{"%"}; // Used to set the base HTML font size %
+$type-ratio:                $perfect-fourth;
 
-$font-size-xxxl:            60 !default;
-$font-size-xxl:             42 !default;
-$font-size-xl:              32 !default;
-$font-size-lg:              modular-scale(1) !default;
-$font-size-md:              $font-size-base !default;
-$font-size-sm:              14 !default;
-$font-size-xs:              12 !default;
+// These should just be numbers without units. 18 or 1.8
+// We can use these unitless values to
+
+$font-size-xxxl:            type-scale(4) !default;
+$font-size-xxl:             type-scale(3) !default;
+$font-size-xl:              type-scale(2) !default;
+$font-size-lg:              type-scale(1) !default;
+$font-size-md:              $font-size-base  !default;
+$font-size-sm:              type-scale(-1)  !default;
+$font-size-xs:              type-scale(-2)  !default;
 
 // Line height
 // ----------------------------------------------------------------------------
@@ -132,22 +147,14 @@ $heading-color:           $gray-dark !default;
 
 // If using px, em
 code {
-  background-color: $code-bg;
-  border-radius: $border-radius-base;
-  color: $code-color;
   font-size: $font-size-sm;
-  padding: u(2px, 4px);
-  white-space: nowrap;
+  padding: rem(2px, 4px);
 }
 
 // If using rem
 code {
-  @include font-size($font-size-sm, 21);
+  @include font-size($font-size-sm);
   @include padding(2px 4px);
-  background-color: $code-bg;
-  border-radius: $border-radius-base;
-  color: $code-color;
-  white-space: nowrap;
 }
 
 */

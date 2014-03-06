@@ -4,58 +4,57 @@
 // Author:     Andy Smith
 // Source:     http://github/com/andyra/proto
 
-// Create rem values with pixel fallbacks ltIE9
-// @source: http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
-// Provide a px fallback if $type-unit is set to 'rem'
-// If $type-unit is 'px' or 'em', you don't need to use this mixin.
+// Provide a px fallback for browsers ltIE9 if $type-unit is set to 'rem'
+// @source: http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
 
-// .media {
-//   @include font-size(16);
-// }
-//
-// .media {
-//   font-size: 16px;
-//   font-size: 1rem;
-// }
-//
+@mixin rem($property, $values) {
+  // Create empty variables
+  $legacy: ();
+  $modern: ();
 
+  @each $value in $values {
+    @if $value == 0 or type-of($value) != "number" {
+      $legacy: append($legacy, $value);
+      $modern: append($modern, $value);
+    }
 
-@mixin rem($property, $values...) {
-  $max: length($values);
-  $pxValues: '';
-  $remValues: '';
+    @else {
+      $unit: unit($value);      // just the unit
+      $num: strip-unit($value); // just the number
 
-  @for $i from 1 through $max {
-    $value: strip-unit(nth($values, $i));
-    $pxValues: #{$pxValues + $value*16}px;
+      // Add pixels as-is to legacy array and convert to rems for modern array
+      @if $unit == "px" {
+        $legacy: append($legacy, $value);
+        $modern: append($modern, ($num / $font-size-base + rem));
+      }
 
-    @if $i < $max {
-      $pxValues: #{$pxValues + " "};
+      // Add ems as–is to both arrays
+      @if $unit == "em" {
+        $legacy: append($legacy, $value);
+        $modern: append($modern, $value);
+      }
+
+      // Convert rems to px for legacy array and add as-is to modern array
+      @if $unit == "rem" {
+        $legacy: append($legacy,  ($num * $font-size-base + px));
+        $modern: append($modern, $value);
+      }
     }
   }
 
-  @for $i from 1 through $max {
-    $value: strip-unit(nth($values, $i));
-    $remValues: #{$remValues + $value}rem;
-
-    @if $i < $max {
-      $remValues: #{$remValues + " "};
-    }
+  // If unit($font-size-base) is legacy compatible (px, em), just use the legacy
+  // array. If using rems, but both arrays as a fallback for older browsers.
+  @if unit($font-size-base) != "rem" {
+    #{$property}: $legacy;
+  } @else { // put out px and rems
+    #{$property}: $legacy;
+    #{$property}: $modern;
   }
-
-  #{$property}: $pxValues;
-  #{$property}: $remValues;
 }
 
-// Create some aliases to make our SASS more readable
-@mixin font-size($values...) {
-  @include rem(font-size, $values...);
-}
+// Aliases for more readable SASS
+// ----------------------------------------------------------------------------
 
-@mixin margin($values...) {
-  @include rem(margin, $values...);
-}
-
-@mixin padding($values...) {
-  @include rem(padding, $values...);
+@mixin font-size($values) {
+  @include rem(font-size, $values);
 }

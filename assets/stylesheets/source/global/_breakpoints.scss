@@ -7,6 +7,8 @@
 // Default screen size breakpoints to use with media queries. Variables shouldn't
 // be created for one-off adjustments (ex: `@include media(min-width 456px)`)
 
+// @todo: screen sizes in ems or what?
+
 $screen-xs:                   480px !default;
 $screen-sm:                   768px !default;
 $screen-md:                   960px !default;

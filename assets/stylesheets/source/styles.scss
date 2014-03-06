@@ -32,3 +32,19 @@ body {
 article {
   @include span-columns(6);
 }
+
+p {
+  font-size: 1em; // 18px
+}
+
+h1 {
+  @include rem(font-size, $font-size-xxxl);
+  // @include rem(padding, $font-size-xxxl 1em 1rem 2em);
+}
+
+// h1 { @include font-size($font-size-xxxl); }
+// h2 { @include font-size($font-size-xxl); }
+// h3 { @include font-size($font-size-xl); }
+// h4 { @include font-size($font-size-lg); }
+// h5 { @include font-size($font-size-md); }
+// h6 { @include font-size($font-size-sm); }

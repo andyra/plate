@@ -7,8 +7,9 @@
 // Variables for Bourbon Neat grids
 // @source: http://neat.bourbon.io/docs/#variables
 
+// @todo: width in percents, ems, px, or what?
 // The size of the outer container
-$max-width:                  font-size(1088);
+$max-width:                  80%;
 
 // Column count
 $grid-columns:               12;

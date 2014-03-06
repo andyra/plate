@@ -30,7 +30,7 @@
 // modularscale.com
 
 @function golden-ratio($value, $increment) {
-  @return modular-scale($value, $increment, 1.618)
+  @return modular-scale($value, $increment, 1.618);
 }
 
 //  div {
