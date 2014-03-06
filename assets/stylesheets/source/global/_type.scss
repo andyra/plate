@@ -30,18 +30,9 @@ $font-family-heading:     $font-family-base !default;
 // Type scale
 // ----------------------------------------------------------------------------
 
-// A note on measurement units:
-// • Use percentages for structural elements (sidebars, headers, footers, etc.).
-// • Use rems or ems for type.
-// • Use ems for type-related properties (like margins, padding) so they scale
-//   with the type size.
-// • Use unitless values for line-height.
-// @source: http://csswizardry.com/2011/12/measuring-and-sizing-uis-2011-style/
-// @source: http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/
+// $font-size-base: the default size for body text (paragraphs, lists, etc.). as a unitless pixel value (e.g. 18, not 18px).
 
-// $font-size-base is the default size for body text (paragraphs, lists, etc.).
-// Set to at least 16 in most situations.
-// @source: http://ia.net/blog/100e2r
+
 // @todo: for some reason, the rem mixin isn't returning pixel values
 // when the font-size-base is in rems. Has something to do with the
 // variables (-xxl, etc.) below.
@@ -162,10 +153,6 @@ code {
 // Font sizing
 // ----------------------------------------------------------------------------
 
-
-
-// A word on accessibility
-// @source: http://negativitysandwiches.com/accessibility-and-building-a-web-for-everyone-because-sometimes-its-not-all-about-us/
 
 // Font sizes are our basis for modular measurement
 // The first ingredient is the base font size. The ratio is the second ingredient. Text size, width, and line height work from the same modular scale to create a nice text block.
