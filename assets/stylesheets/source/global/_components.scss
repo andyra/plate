@@ -1,5 +1,5 @@
 
-// Title:      Component variables
+// Title:      Component style variables
 // Version:    0.0.1
 // Author:     Andy Smith
 // Source:     http://github/com/andyra/proto
@@ -8,7 +8,8 @@
 // variable applies only to a specific component, it should be placed at the top
 // of the component's .scss file.
 
-// @todo: these should be in REMs if possible, or PX
+// @todo: the units here should be in rem or px instad of ems to allow for
+// consistent spacing across components.
 
 // Border radius
 $border-radius-base:         4px !default;

@@ -1,11 +1,9 @@
 
-// Title:         Print
-// Author:        Paul Irish
-// Source:        https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
-// License:       MIT License
-// Last Edited:   26 Feb 2014
-// Version:       4.3.0
-
+// Title:      Print
+// Version:    4.3.0
+// Author:     Paul Irish
+// Source:     https://github.com/h5bp/html5-boilerplate/blob/master/css/main.css
+// License:    MIT License
 
 @media print {
   * {
@@ -71,37 +69,12 @@
     background: #fff !important;
   }
 
-  // Bootstrap components
-  .navbar {
-    display: none;
-  }
+  table {
+    border-collapse: collapse !important;
 
-  .table {
     td,
     th {
       background-color: #fff !important;
-    }
-  }
-
-  .btn,
-  .dropup > .btn {
-    > .caret {
-      border-top-color: #000 !important;
-    }
-  }
-
-  .label {
-    border: 1px solid #000;
-  }
-
-  .table {
-    border-collapse: collapse !important;
-  }
-
-  .table-bordered {
-    th,
-    td {
-      border: 1px solid #ddd !important;
     }
   }
 }

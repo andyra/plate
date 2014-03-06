@@ -1,22 +1,23 @@
 
-// Title:         Global
-// Author:        Andy Smith
-// Source:        http://github/com/andyra/proto
-// License:       MIT License
-// Last Edited:   26 Feb 2014
-// Version:       0.1
+// Title:      Global settings
+// Version:    0.0.1
+// Author:     Andy Smith
+// Source:     http://github/com/andyra/proto
 
 // Import global variables and mixins here. Anything that lives on this level
-// should be generic. If you have component-specific mixins or variables, they
-// should exist at the component level.
+// should be generic and applicable scross the entire project. Component-
+// specific mixins or variables should live at the component level.
 
-// This file is only used to import other stylesheets. To add new styles, create
-// a new `.scss` file and import it below. All imported files should begin with
-// an underscore.
-
-// Imports
-// ----------------------------------------------------------------------------
-
+// Functions and mixins
 @import "functions/functions";
 @import "mixins/mixins";
-@import "variables/variables";
+
+// Variables
+@import "breakpoints";
+@import "colors";
+@import "components";
+@import "debug";
+@import "grid";
+@import "ratios";
+@import "scaffolding";
+@import "type";

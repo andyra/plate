@@ -5,7 +5,6 @@
 // Source:     http://github/com/andyra/proto
 
 // @todo: lists: http://j.eremy.net/align-lists-flush-left/
-// @todo: primary font, secondary font
 
 // Font families
 // ----------------------------------------------------------------------------
@@ -31,6 +30,22 @@ $font-family-heading:     $font-family-base !default;
 // Type scale
 // ----------------------------------------------------------------------------
 
+// The default size for body text (paragraphs, lists, etc.). Set $font-size-base
+// to at least 16 in most situations.
+// @source: http://ia.net/blog/100e2r
+
+$type-unit:                 em !default; // rem, px, em
+$font-size-base:            18; // Unitless pixel value
+$font-size-root:            ($font-size-base / 16 * 100)#{"em"}; // Used to set the base HTML font size %
+$type-scale:                $golden-ratio;
+
+$font-size-xxxl:            60 !default;
+$font-size-xxl:             42 !default;
+$font-size-xl:              32 !default;
+$font-size-lg:              modular-scale(1) !default;
+$font-size-md:              $font-size-base !default;
+$font-size-sm:              14 !default;
+$font-size-xs:              12 !default;
 
 // Line height
 // ----------------------------------------------------------------------------
@@ -115,17 +130,7 @@ $heading-color:           $gray-dark !default;
 
 /*
 
-code {
-  @include rem(font-size, $font-size-sm);
-  @include rem(padding, 2px, 4px);
-  background-color: $code-bg;
-  border-radius: $border-radius-base;
-  color: $code-color;
-  white-space: nowrap;
-}
-
-$font-size-sm: unit(16);
-
+// If using px, em
 code {
   background-color: $code-bg;
   border-radius: $border-radius-base;
@@ -135,42 +140,30 @@ code {
   white-space: nowrap;
 }
 
+// If using rem
+code {
+  @include font-size($font-size-sm, 21);
+  @include padding(2px 4px);
+  background-color: $code-bg;
+  border-radius: $border-radius-base;
+  color: $code-color;
+  white-space: nowrap;
+}
+
 */
 
 // Font sizing
 // ----------------------------------------------------------------------------
 
-// The default size for body text (paragraphs, lists, etc.). Set $font-size-base to at least 16 in most situations.
-// @source: http://ia.net/blog/100e2r
+
 
 // A word on accessibility
 // @source: http://negativitysandwiches.com/accessibility-and-building-a-web-for-everyone-because-sometimes-its-not-all-about-us/
-
-$type-unit:                 rem !default; // rem, px, em
-$font-size-base:            18; // Unitless pixel value
-$font-size-root:            ($font-size-base / 16 * 100)#{"em"}; // Used to set the base HTML font size %
-$type-scale:                $golden-ratio;
-
-
-
-
 
 // Font sizes are our basis for modular measurement
 // The first ingredient is the base font size. The ratio is the second ingredient. Text size, width, and line height work from the same modular scale to create a nice text block.
 // @source: http://alistapart.com/article/more-meaningful-typography
 // @source: http://modularscale.com
-
-
-
-
-
-$font-size-xxxl:            60 !default;
-$font-size-xxl:             42 !default;
-$font-size-xl:              32 !default;
-$font-size-lg:              21 !default;
-$font-size-md:              $font-size-base !default;
-$font-size-sm:              14 !default;
-$font-size-xs:              12 !default;
 
 
 
@@ -196,11 +189,6 @@ $font-size-xs:              12 !default;
 
 $line-height-base:          $golden-ratio !default;     // Unitless. Based on the font size of the element (16 * 1.5 = 24)
 $line-height-computed:      type-unit($font-size-base * $line-height-base) !default;
-
-// Set line height in pixels if $type-unit == 'px'
-@if $type-unit == px {
-  $line-height-computed: ($font-size-base * $line-height-base)#{px};
-}
 
 
 

@@ -1,0 +1,61 @@
+
+// Title:      Mixin: rem with px fallback
+// Version:    0.0.1
+// Author:     Andy Smith
+// Source:     http://github/com/andyra/proto
+
+// Create rem values with pixel fallbacks ltIE9
+// @source: http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+// Provide a px fallback if $type-unit is set to 'rem'
+// If $type-unit is 'px' or 'em', you don't need to use this mixin.
+
+// .media {
+//   @include font-size(16);
+// }
+//
+// .media {
+//   font-size: 16px;
+//   font-size: 1rem;
+// }
+//
+
+
+@mixin rem($property, $values...) {
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value*16}px;
+
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+    }
+  }
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}
+
+// Create some aliases to make our SASS more readable
+@mixin font-size($values...) {
+  @include rem(font-size, $values...);
+}
+
+@mixin margin($values...) {
+  @include rem(margin, $values...);
+}
+
+@mixin padding($values...) {
+  @include rem(padding, $values...);
+}

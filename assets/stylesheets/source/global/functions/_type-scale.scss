@@ -1,0 +1,6 @@
+
+// Increment font sizes up and down the modular scale based on $font-size-base
+// and $type-scale
+@function type-scale($increment) {
+  @return modular-scale($font-size-base, $increment, $type-scale);
+}
