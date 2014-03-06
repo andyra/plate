@@ -6,6 +6,10 @@
 // Last Edited:   26 Feb 2014
 // Version:       0.1
 
+// Variables placed here should be usable throughout the entire project. If a
+// variable's scope is intented for a specific component, it should be placed at
+// the top of the component's .scss file.
+
 // This file is only used to import other stylesheets. To add new styles, create
 // a new `.scss` file and import it below. All imported files should begin with
 // an underscore.
@@ -13,13 +17,16 @@
 // Imports
 // ----------------------------------------------------------------------------
 
-// Base
-@import "ratios";
+// Settings
+@import "breakpoints";
 @import "colors";
+@import "debug";
+@import "grid";
+@import "ratios";
+
+// Base
 @import "scaffolding";
 @import "type-new";
-@import "grid";
-@import "breakpoints";
 
 // Components
 @import "components";

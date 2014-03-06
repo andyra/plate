@@ -1,13 +1,108 @@
 
+// Title:      Type settings
+// Version:    0.0.1
+// Author:     Andy Smith
+// Source:     http://github/com/andyra/proto
+
+// @todo: lists: http://j.eremy.net/align-lists-flush-left/
+// @todo: primary font, secondary font
+
+// Font families
+// ----------------------------------------------------------------------------
+
+$font-family-sans:        $helvetica !default;
+$font-family-serif:       $georgia !default;
+$font-family-monospace:   $monospace !default;
+
+$font-family-base:        $font-family-sans !default;
+$font-family-heading:     $font-family-base !default;
+
+// Custom fonts
+//
+// To create custom fonts, uncomment the `font-face` mixin below and fill with
+// the information specific to your font. You can then add your custom font
+// family name in front of the font stacks above to allow for fallbacks in the
+// event the font files don't load in old browsers. Add as many custom fonts
+// here as you see fit.
+// @source: http://bourbon.io/docs/#font-face
+
+// @include font-face($font-family, $file-path, $weight: normal, $style: normal)
+
+// Type scale
+// ----------------------------------------------------------------------------
+
+
+// Line height
+// ----------------------------------------------------------------------------
+
+
+// Weights
+// ----------------------------------------------------------------------------
+
+$font-weight-thin:        100 !default;
+$font-weight-light:       300 !default;
+$font-weight-normal:      400 !default;
+$font-weight-medium:      500 !default;
+$font-weight-bold:        700 !default;
+$font-weight-black:       900 !default;
+
+// Colors
+// ----------------------------------------------------------------------------
+
+$text-color:              $gray-dark !default;
+$heading-color:           $gray-dark !default;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Browser support
 // ----------------------------------------------------------------------------
 
-// @source: http://davidwalsh.name/rem-px-browser-function-sass
-// @source: http://csswizardry.com/2011/12/measuring-and-sizing-uis-2011-style/
+// @source: http://davidwalsh.name/rem-px-browser-function-sass source:
+// @http://csswizardry.com/2011/12/measuring-and-sizing-uis-2011-style/
 
 // So I guess the thing to remember is that ems allow stuff to scale wrt the font
 // size. So if you zoom in, the margins, padding, etc will stay in proportion.
 // This is especially useful for stuff like indenting and margins on lists
+
+// OK, so in media queries, for instance, all we have to do is set the HTML font
+// size and everything will adjust. That's pretty awesome.
+
+// PX and REM can be used for consistent padding and margins. EM and percent will
+// have inconsistent margins, based on the parent. That's actually why em / %
+// is good for layout; you want those to change based on the browser width
+// @source: http://j.eremy.net/confused-about-rem-and-em/
+// @tool: http://pxtoem.com/
 
 // 1. Use functions
 //    - Two css files (styles.css, styles.ie.css). If you don't create a
@@ -45,23 +140,29 @@ code {
 // Font sizing
 // ----------------------------------------------------------------------------
 
-// $font-size-base is the default size most of your text elements will fall into,
-// like paragraphs, lists, etc. Set to at least 16px for most situations.
+// The default size for body text (paragraphs, lists, etc.). Set $font-size-base to at least 16 in most situations.
 // @source: http://ia.net/blog/100e2r
 
-// Font sizes are our basis for modular measurement
-// The first ingredient is the base font size
-// The ratio is the second ingredient
-// Double stranded modular scale...you combine them and make a single scale from
-// that? Weird. How?
-// Text size, width, and line height work from the same modular scale to create
-// a nice text block.
-// @source: http://alistapart.com/article/more-meaningful-typography
-// @source: http://modularscale.com
+// A word on accessibility
+// @source: http://negativitysandwiches.com/accessibility-and-building-a-web-for-everyone-because-sometimes-its-not-all-about-us/
 
 $type-unit:                 rem !default; // rem, px, em
 $font-size-base:            18; // Unitless pixel value
-$font-size-root:            ($font-size-base / 16 * 100)#{"%"}; // Used to set the base HTML font size %
+$font-size-root:            ($font-size-base / 16 * 100)#{"em"}; // Used to set the base HTML font size %
+$type-scale:                $golden-ratio;
+
+
+
+
+
+// Font sizes are our basis for modular measurement
+// The first ingredient is the base font size. The ratio is the second ingredient. Text size, width, and line height work from the same modular scale to create a nice text block.
+// @source: http://alistapart.com/article/more-meaningful-typography
+// @source: http://modularscale.com
+
+
+
+
 
 $font-size-xxxl:            60 !default;
 $font-size-xxl:             42 !default;
@@ -102,37 +203,4 @@ $line-height-computed:      type-unit($font-size-base * $line-height-base) !defa
 }
 
 
-// Font families
-// ----------------------------------------------------------------------------
 
-$font-family-sans:        "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:       Georgia, Cambria, "Times New Roman", Times, serif !default;
-$font-family-monospace:   "Bitstream Vera Sans Mono", Consolas, Courier, monospace !default;
-
-$font-family-base:        $font-family-sans !default;
-$font-family-heading:     $font-family-base !default;
-
-// Custom fonts
-//
-// To create custom fonts, uncomment the font-face mixin below and fill with the
-// information specific to your font. Use the font family name in the font stacks
-// above to allow fallbacks in the event the font files don't load in old browsers.
-// Add as many custom fonts here as you see fit.
-
-// @include font-face($font-family, $file-path, $weight: normal, $style: normal)
-
-// Weights
-// ----------------------------------------------------------------------------
-
-$font-weight-thin:        100 !default;
-$font-weight-light:       300 !default;
-$font-weight-normal:      400 !default;
-$font-weight-medium:      500 !default;
-$font-weight-bold:        700 !default;
-$font-weight-black:       900 !default;
-
-// Colors
-// ----------------------------------------------------------------------------
-
-$text-color:              $gray-dark !default;
-$heading-color:           $gray-dark !default;
