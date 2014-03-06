@@ -2,9 +2,14 @@
 // Increment font sizes up and down the modular scale based on $font-size-base
 // and $type-ratio
 @function type-scale($increment) {
+  // This just returns the default base font size with the correct type unit
+  @if $increment == 0 {
+    @return u($font-size-base);
+  }
+
   @if $type-unit == "px" {
-    @return unquote(u(round(modular-scale($font-size-base, $increment, $type-ratio))));
+    @return u(round(modular-scale($font-size-base, $increment, $type-ratio)));
   } @else {
-    @return unquote(u(modular-scale($font-size-base, $increment, $type-ratio)));
+    @return u(modular-scale($font-size-base, $increment, $type-ratio));
   }
 }

@@ -46,8 +46,8 @@ $font-family-heading:     $font-family-base !default;
 // when the font-size-base is in rems. Has something to do with the
 // variables (-xxl, etc.) below.
 
-$type-unit:                 "rem";
-$font-size-base:            18; // A unitless pixel value. THis is what 1rem or 1 em will equal
+$type-unit:                 rem;
+$font-size-base:            18; // A unitless pixel value. This is what 1rem or 1 em will equal
 $font-size-root:            ($font-size-base / 16 * 100)#{"%"}; // Used to set the base HTML font size %
 $type-ratio:                $perfect-fourth;
 
@@ -58,9 +58,9 @@ $font-size-xxxl:            type-scale(4) !default;
 $font-size-xxl:             type-scale(3) !default;
 $font-size-xl:              type-scale(2) !default;
 $font-size-lg:              type-scale(1) !default;
-$font-size-md:              $font-size-base  !default;
-$font-size-sm:              type-scale(-1)  !default;
-$font-size-xs:              type-scale(-2)  !default;
+$font-size-md:              type-scale(0) !default;
+$font-size-sm:              type-scale(-1) !default;
+$font-size-xs:              type-scale(-2) !default;
 
 // Line height
 // ----------------------------------------------------------------------------

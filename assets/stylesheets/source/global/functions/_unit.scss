@@ -2,17 +2,19 @@
 // Converts a pixel value into rem/em value. If $type-unit is set to `px`,
 // this function will simply return the value unmodified.
 
-// ex: $type-unit: px;
-// outline: (18) => 18px
-
-// ex: $type-unit: em;
-// outline: (18) => 1em
-// outline: (18, 21) => 0.857em
+// ex: u(18) => 18px            $type-unit == px
+// ex: u(18) => 1em             $type-unit == em
+// ex: u(18, 21) => 0.857em     $type-unit == em (based on a parent's font size)
+// ex: u(18) => 1rem            $type-unit: rem
 
 @function u($pxval, $base: $font-size-base) {
-  @if $type-unit == "px" {
-    @return $pxval + $type-unit;
-  } @else {
-    @return ($pxval / $base) * 1 + $type-unit;
+  @if $type-unit == px {
+    @return $pxval * 1px;
+  }
+  @if $type-unit == em {
+    @return $pxval / $font-size-base * 1em;
+  }
+  @if $type-unit == rem {
+    @return $pxval / $font-size-base * 1rem;
   }
 }

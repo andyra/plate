@@ -8,11 +8,12 @@
 // @source: http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
 
 @mixin rem($property, $values) {
-  // Create empty variables
   $legacy: ();
   $modern: ();
 
   @each $value in $values {
+
+    // Add 0 and strings (e.g. "auto") to the list without processing
     @if $value == 0 or type-of($value) != "number" {
       $legacy: append($legacy, $value);
       $modern: append($modern, $value);
@@ -25,7 +26,7 @@
       // Add pixels as-is to legacy array and convert to rems for modern array
       @if $unit == "px" {
         $legacy: append($legacy, $value);
-        $modern: append($modern, ($num / $font-size-base + rem));
+        $modern: append($modern, ($num / $font-size-base) + rem);
       }
 
       // Add ems as–is to both arrays
@@ -36,17 +37,19 @@
 
       // Convert rems to px for legacy array and add as-is to modern array
       @if $unit == "rem" {
-        $legacy: append($legacy,  ($num * $font-size-base + px));
+        $legacy: append($legacy,  (round($num * $font-size-base)) + px);
         $modern: append($modern, $value);
       }
     }
   }
 
-  // If unit($font-size-base) is legacy compatible (px, em), just use the legacy
-  // array. If using rems, but both arrays as a fallback for older browsers.
-  @if unit($font-size-base) != "rem" {
+  // If $type-unit is legacy compatible (px, em), only insert the legacy array.
+  @if $type-unit != rem {
     #{$property}: $legacy;
-  } @else { // put out px and rems
+  }
+
+  // If using rems, but both arrays as a fallback for older browsers.
+  @else {
     #{$property}: $legacy;
     #{$property}: $modern;
   }
