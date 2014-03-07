@@ -1,4 +1,13 @@
+
+// Title:      Box Sizing
+// Version:    3.1.8
+// Author:     Bourbon
+// Source:     http://bourbon.io
+
+// @source: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+// @browser-support: http://caniuse.com/#feat=box-sizing
+
 @mixin box-sizing ($box) {
-//  content-box | border-box | inherit
+  //  content-box | border-box | inherit
   @include prefixer(box-sizing, $box, webkit moz spec);
 }

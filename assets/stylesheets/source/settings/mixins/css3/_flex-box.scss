@@ -1,4 +1,12 @@
+
+// Title:      Flex Box
+// Version:    3.1.8
+// Author:     Bourbon
+// Source:     http://bourbon.io
+
 // CSS3 Flexible Box Model and property defaults
+// @source: https://developer.mozilla.org/en-US/docs/Web/CSS/flex-box
+// @browser-support: http://caniuse.com/#feat=flex-box
 
 // Custom shorthand notation for flexbox
 @mixin box($orient: inline-axis, $pack: start, $align: stretch) {

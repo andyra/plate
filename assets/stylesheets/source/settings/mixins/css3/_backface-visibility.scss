@@ -1,6 +1,14 @@
-//************************************************************************//
-// Backface-visibility mixin
-//************************************************************************//
+
+// Title:      Backface-visibility mixin
+// Version:    3.1.8
+// Author:     Bourbon
+// Source:     http://bourbon.io
+
+// The CSS backface-visibility property determines whether or not the back face
+// of the element is visible when facing the user.
+// @source: https://developer.mozilla.org/en-US/docs/Web/CSS/backface-visibility
+// @browser-support: n/a
+
 @mixin backface-visibility($visibility) {
   @include prefixer(backface-visibility, $visibility, webkit spec);
 }

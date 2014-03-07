@@ -1,3 +1,12 @@
+
+// Title:      Border Image
+// Version:    3.1.8
+// Author:     Bourbon
+// Source:     http://bourbon.io
+
+// @source: http://css-tricks.com/understanding-border-image/
+// @browser-support: http://caniuse.com/#search=border-image
+
 @mixin border-image($images) {
   -webkit-border-image: _border-add-prefix($images, webkit);
      -moz-border-image: _border-add-prefix($images, moz);

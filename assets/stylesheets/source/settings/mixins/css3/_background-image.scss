@@ -1,7 +1,20 @@
-//************************************************************************//
-// Background-image property for adding multiple background images with
-// gradients, or for stringing multiple gradients together.
-//************************************************************************//
+
+// Title:      Background image
+// Version:    3.1.8
+// Author:     Bourbon
+// Source:     http://bourbon.io
+
+// Add multiple background images with gradients or for string multiple
+// gradients together.
+// @source: https://developer.mozilla.org/en-US/docs/Web/CSS/background-image
+// @browser-support: http://caniuse.com/#feat=background-img-opts
+
+// Examples:
+//   @include background-image(linear-gradient(top, orange, red));
+//   @include background-image(radial-gradient(50% 50%, cover circle, orange, red));
+//   @include background-image(url("/images/a.png"), linear-gradient(orange, red));
+//   @include background-image(url("image.png"), linear-gradient(orange, red), url("image.png"));
+//   @include background-image(linear-gradient(hsla(0, 100%, 100%, 0.25) 0%, hsla(0, 100%, 100%, 0.08) 50%, transparent 50%), linear-gradient(orange, red));
 
 @mixin background-image($images...) {
   background-image: _add-prefix($images, webkit);
@@ -39,10 +52,3 @@
   }
   @return $images-prefixed;
 }
-
-//Examples:
-  //@include background-image(linear-gradient(top, orange, red));
-  //@include background-image(radial-gradient(50% 50%, cover circle, orange, red));
-  //@include background-image(url("/images/a.png"), linear-gradient(orange, red));
-  //@include background-image(url("image.png"), linear-gradient(orange, red), url("image.png"));
-  //@include background-image(linear-gradient(hsla(0, 100%, 100%, 0.25) 0%, hsla(0, 100%, 100%, 0.08) 50%, transparent 50%), linear-gradient(orange, red));

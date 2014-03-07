@@ -1,11 +1,12 @@
 
-// Title:      Mixin: rem with px fallback
+// Title:      REM with px fallback
 // Version:    0.0.1
 // Author:     Andy Smith
 // Source:     http://github/com/andyra/proto
 
 // Provide a px fallback for browsers ltIE9 if $type-unit is set to 'rem'
 // @source: http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+// @browser-support: http://caniuse.com/#feat=rem
 
 @mixin rem($property, $values) {
   $legacy: ();

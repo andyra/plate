@@ -1,3 +1,12 @@
+
+// Title:      Transform
+// Version:    3.1.8
+// Author:     Bourbon
+// Source:     http://bourbon.io
+
+// @source: https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+// @browser-support: http://caniuse.com/#feat=transform
+
 @mixin transform($property: none) {
 //  none | <transform-function>
   @include prefixer(transform, $property, webkit moz ms o spec);

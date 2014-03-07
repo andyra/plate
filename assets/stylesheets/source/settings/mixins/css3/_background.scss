@@ -1,7 +1,12 @@
-//************************************************************************//
-// Background property for adding multiple backgrounds using shorthand
-// notation.
-//************************************************************************//
+
+// Title:      Background
+// Version:    3.1.8
+// Author:     Bourbon
+// Source:     http://bourbon.io
+
+// Add multiple backgrounds using shorthand notation.
+// @source: http://css-tricks.com/stacking-order-of-multiple-backgrounds/
+// @browser-support: http://caniuse.com/#feat=multibackgrounds
 
 @mixin background(
   $background-1       , $background-2: false,
@@ -21,6 +26,7 @@
   @if (type-of($fallback) == color) or ($fallback == "transparent") {
     $fallback-color: $fallback;
   }
+
   @else {
     $fallback-color: _extract-background-color($backgrounds);
   }
@@ -28,6 +34,7 @@
   @if $fallback-color {
     background-color: $fallback-color;
   }
+
   background: _background-add-prefix($backgrounds, webkit);
   background: _background-add-prefix($backgrounds);
 }

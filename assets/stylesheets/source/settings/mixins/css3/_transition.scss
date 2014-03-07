@@ -1,4 +1,13 @@
+
+// Title:      Transition
+// Version:    3.1.8
+// Author:     Bourbon
+// Source:     http://bourbon.io
+
 // Shorthand mixin. Supports multiple parentheses-deliminated values for each variable.
+// @source: https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+// @browser-support: http://caniuse.com/#feat=transition
+
 // Example: @include transition (all, 2.0s, ease-in-out);
 //          @include transition ((opacity, width), (1.0s, 2.0s), ease-in, (0, 2s));
 //          @include transition ($property:(opacity, width), $delay: (1.5s, 2.5s));

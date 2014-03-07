@@ -1,4 +1,12 @@
+
+// Title:      Font Face
+// Version:    3.1.8
+// Author:     Bourbon
+// Source:     http://bourbon.io
+
 // Order of the includes matters, and it is: normal, bold, italic, bold+italic.
+// @source: https://developer.mozilla.org/en-US/docs/Web/CSS/font-face
+// @browser-support: http://caniuse.com/#feat=font-face
 
 @mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false ) {
   @font-face {

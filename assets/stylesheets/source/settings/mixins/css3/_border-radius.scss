@@ -1,6 +1,16 @@
-//************************************************************************//
-// Shorthand Border-radius mixins
-//************************************************************************//
+
+// Title:      Border radius
+// Version:    3.1.8
+// Author:     Bourbon
+// Source:     http://bourbon.io
+
+// @source: https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius
+// @browser-support: http://caniuse.com/#search=border-radius
+
+@mixin border-radius($radius) {
+  @include prefixer(border-radius, $radius, spec);
+}
+
 @mixin border-top-radius($radii) {
   @include prefixer(border-top-left-radius, $radii, spec);
   @include prefixer(border-top-right-radius, $radii, spec);

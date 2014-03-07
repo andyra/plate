@@ -1,4 +1,11 @@
+
+// Title:      Keyframes
+// Version:    3.1.8
+// Author:     Bourbon
+// Source:     http://bourbon.io
+
 // Adds keyframes blocks for supported prefixes, removing redundant prefixes in the block's content
+
 @mixin keyframes($name) {
   $original-prefix-for-webkit:    $prefix-for-webkit;
   $original-prefix-for-mozilla:   $prefix-for-mozilla;
@@ -13,6 +20,7 @@
       @content;
     }
   }
+
   @if $original-prefix-for-mozilla {
     @include disable-prefix-for-all();
     $prefix-for-mozilla: true;
@@ -20,6 +28,7 @@
       @content;
     }
   }
+
   @if $original-prefix-for-opera {
     @include disable-prefix-for-all();
     $prefix-for-opera: true;
@@ -27,6 +36,7 @@
       @content;
     }
   }
+
   @if $original-prefix-for-spec {
     @include disable-prefix-for-all();
     $prefix-for-spec: true;

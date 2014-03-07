@@ -1,14 +1,11 @@
 
 // Title:      Animation mixins
-// Version:    0.0.1
+// Version:    3.1.8
 // Author:     Bourbon
 // Source:     http://bourbon.io
 
-// Each of these mixins support comma separated lists of values, which allows
-// different transitions for individual properties to be described in a single
-// style rule. Each value in the list corresponds to the value at that same
-// position in the other properties.
-// @source: http://www.w3.org/TR/css3-animations/#the-animation-name-property
+// @source: https://developer.mozilla.org/en-US/docs/Web/CSS/animation
+// @browser-support: http://caniuse.com/#feat=css-animation
 
 // Official animation shorthand property.
 @mixin animation ($animations...) {
