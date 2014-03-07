@@ -21,24 +21,18 @@ $font-family-heading:     $font-family-base !default;
 // To create custom fonts, uncomment the `font-face` mixin below and fill with
 // the information specific to your font. You can then add your custom font
 // family name in front of the font stacks above to allow for fallbacks in the
-// event the font files don't load in old browsers. Add as many custom fonts
-// here as you see fit.
-// @source: http://bourbon.io/docs/#font-face
+// event the font files don't load in old browsers.
 
 // @include font-face($font-family, $file-path, $weight: normal, $style: normal)
 
 // Type scale
 // ----------------------------------------------------------------------------
 
-// $font-size-base: the default size for body text (paragraphs, lists, etc.). as a unitless pixel value (e.g. 18, not 18px).
-
-
-// @todo: for some reason, the rem mixin isn't returning pixel values
-// when the font-size-base is in rems. Has something to do with the
-// variables (-xxl, etc.) below.
+// $font-size-base: the default size for body text (paragraphs, lists, etc.). as
+// a unitless pixel value (e.g. 18, not 18px).
 
 $type-unit:                 rem;
-$font-size-base:            18; // A unitless pixel value. This is what 1rem or 1 em will equal
+$font-size-base:            18; // This is what 1rem / em will equal
 $font-size-root:            ($font-size-base / 16 * 100)#{"%"}; // Used to set the base HTML font size %
 $type-ratio:                $perfect-fourth;
 
