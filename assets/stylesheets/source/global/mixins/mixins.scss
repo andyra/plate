@@ -16,13 +16,16 @@
 // Helpers
 
 // Functions
+@import "functions/strip-unit";
+@import "functions/type-scale";
+@import "functions/unit";
 
 // CSS3 Mixins
-@import "rem";
+@import "css3/rem";
 
 
 // Addons & other mixins
-@import "font-stacks";
+@import "addons/font-stacks";
 
 // Bourbon
 @import "bourbon/bourbon";
