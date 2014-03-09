@@ -1,6 +1,6 @@
 
-// Title:      Hide text
-// Version:    3.1.8
+// Title:      Hide Text
+// Version:    3.2.0-beta.2
 // Author:     Bourbon
 // Source:     https://github.com/thoughtbot/bourbon
 // Docs:       http://bourbon.io/docs/#hide-text
@@ -8,7 +8,12 @@
 // Hide text for image replacement
 
 @mixin hide-text {
-  color:            transparent;
-  font:             0/0 a;
-  text-shadow:      none;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+  }
 }

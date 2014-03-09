@@ -52,18 +52,21 @@
 @import "css3/keyframes";
 @import "css3/perspective";
 @import "css3/placeholder";
-@import "css3/rem";
 @import "css3/transform";
 @import "css3/transition";
 @import "css3/user-select";
 
 // Addons & other mixins
 @import "addons/clearfix";
+@import "addons/directional-values";
+@import "addons/ellipses";
 @import "addons/font-stacks";
 @import "addons/hide-text";
 @import "addons/html5-input-types";
 @import "addons/position";
 @import "addons/prefixer";
+@import "addons/rem";
+@import "addons/rem-andy";
 @import "addons/retina-image";
 @import "addons/size";
 @import "addons/timing-functions";

@@ -1,6 +1,6 @@
 
 // Title:      Retina Images
-// Version:    3.1.8
+// Version:    3.2.0-beta.2
 // Author:     Bourbon
 // Source:     https://github.com/thoughtbot/bourbon
 // Docs:       https://github.com/thoughtbot/bourbon/docs/#prefixer
@@ -14,22 +14,21 @@
 //   @include retina-image(home-icon, 32px 20px);
 // }
 
-@mixin retina-image($filename, $background-size, $extension: png, $retina-filename: null, $asset-pipeline: false) {
+@mixin retina-image($filename, $background-size, $extension: png, $retina-filename: null, $retina-suffix: _2x, $asset-pipeline: false) {
   @if $asset-pipeline {
     background-image: image-url("#{$filename}.#{$extension}");
   }
   @else {
-    background-image: url("#{$filename}.#{$extension}");
+    background-image:       url("#{$filename}.#{$extension}");
   }
 
   @include hidpi {
-
     @if $asset-pipeline {
       @if $retina-filename {
         background-image: image-url("#{$retina-filename}.#{$extension}");
       }
       @else {
-        background-image: image-url("#{$filename}@2x.#{$extension}");
+        background-image: image-url("#{$filename}#{$retina-suffix}.#{$extension}");
       }
     }
 
@@ -38,7 +37,7 @@
         background-image: url("#{$retina-filename}.#{$extension}");
       }
       @else {
-        background-image: url("#{$filename}@2x.#{$extension}");
+        background-image: url("#{$filename}#{$retina-suffix}.#{$extension}");
       }
     }
 
