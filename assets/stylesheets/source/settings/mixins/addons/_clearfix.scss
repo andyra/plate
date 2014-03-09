@@ -1,15 +1,13 @@
+
+// Title:      Micro clearfix hack
+// Version:    0.0.1
+// Author:     Nicolas Gallagher
+// Source:     http://github/com/andyra/proto
+
+// @source: http://nicolasgallagher.com/micro-clearfix-hack/
+// @browser-support: Firefox 3.5+, Safari 4+, Chrome, Opera 9+, IE 6+
+
 // Micro clearfix provides an easy way to contain floats without adding additional markup
-//
-// Example usage:
-//
-//    // Contain all floats within .wrapper
-//    .wrapper {
-//      @include clearfix;
-//      .content,
-//      .sidebar {
-//        float : left;
-//      }
-//    }
 
 @mixin clearfix {
   *zoom: 1;
@@ -24,6 +22,3 @@
     clear: both;
   }
 }
-
-// Acknowledgements
-// Micro clearfix: [Nicolas Gallagher](http://nicolasgallagher.com/micro-clearfix-hack/)

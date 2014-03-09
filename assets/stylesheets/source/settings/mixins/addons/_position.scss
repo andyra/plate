@@ -1,3 +1,18 @@
+
+// Title:      Title
+// Version:    3.1.8
+// Author:     Bourbon
+// Source:     https://github.com/thoughtbot/bourbon
+// Docs:       http://bourbon.io/docs/#position
+
+// Shorthand notation for setting the position of elements in your page. The
+// first parameter is optional, with a default value of relative. The second
+// parameter is a space delimited list of values that follow the standard CSS
+// shorthand notation.
+
+// Example:
+// @include position(relative, 0px 0 0 100px);
+
 @mixin position ($position: relative, $coordinates: 0 0 0 0) {
 
   @if type-of($position) == list {

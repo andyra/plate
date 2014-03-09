@@ -1,3 +1,19 @@
+
+// Title:      Retina Images
+// Version:    3.1.8
+// Author:     Bourbon
+// Source:     https://github.com/thoughtbot/bourbon
+// Docs:       https://github.com/thoughtbot/bourbon/docs/#prefixer
+
+// The mixin is a helper to generate a retina background-image and non-retina
+// background-image. The retina background-image will output to a hidpi media-
+// query. The mixin uses a _2x.png retina filename by default.
+
+// Example
+// span {
+//   @include retina-image(home-icon, 32px 20px);
+// }
+
 @mixin retina-image($filename, $background-size, $extension: png, $retina-filename: null, $asset-pipeline: false) {
   @if $asset-pipeline {
     background-image: image-url("#{$filename}.#{$extension}");

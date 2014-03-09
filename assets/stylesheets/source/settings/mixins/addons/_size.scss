@@ -1,3 +1,12 @@
+
+// Title:      Size
+// Version:    3.1.8
+// Author:     Bourbon
+// Source:     https://github.com/thoughtbot/bourbon
+// Docs:       http://bourbon.io/docs/#size
+
+// Width x Height. Accepts all units. Unitless values default to px.
+
 @mixin size($size) {
   @if length($size) == 1 {
     @if $size == auto {

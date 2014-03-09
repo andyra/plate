@@ -1,6 +1,17 @@
-//************************************************************************//
-// Example: @include prefixer(border-radius, $radii, webkit ms spec);
-//************************************************************************//
+
+// Title:      Prefixer
+// Version:    3.1.8
+// Author:     Bourbon
+// Source:     https://github.com/thoughtbot/bourbon
+// Docs:       http://bourbon.io/docs/#prefixer
+
+// The prefixer is for generating vendor prefixed declarations. The prefixer
+// accepts the following prefixes: webkit moz ms o spec
+
+// Example:
+// @include prefixer(border-radius, $radii, webkit ms spec);
+
+// Settings
 $prefix-for-webkit:    true !default;
 $prefix-for-mozilla:   true !default;
 $prefix-for-microsoft: true !default;
