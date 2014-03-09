@@ -1,3 +1,10 @@
+
+// Title:      Tint & Shade
+// Version:    3.2.0-beta.2
+// Author:     Bourbon
+// Source:     https://github.com/thoughtbot/bourbon
+// Docs:       http://bourbon.io/docs/#tint-shade
+
 // Add percentage of white to a color
 @function tint($color, $percent){
   @return mix(white, $color, $percent);

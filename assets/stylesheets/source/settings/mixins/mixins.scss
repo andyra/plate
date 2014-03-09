@@ -22,13 +22,10 @@
 @import "helpers/shape-size-stripper";
 
 // Functions
-@import "functions/compact";
-@import "functions/flex-grid";
-@import "functions/grid-width";
-@import "functions/linear-gradient";
+@import "functions/gradient-linear";
+@import "functions/gradient-radial";
 @import "functions/modular-scale";
 @import "functions/px-to-em";
-@import "functions/radial-gradient";
 @import "functions/strip-unit";
 @import "functions/tint-shade";
 @import "functions/transition-property-name";
@@ -45,14 +42,14 @@
 @import "css3/box-sizing";
 @import "css3/columns";
 @import "css3/flex-box";
+@import "css3/gradient-linear";
+@import "css3/gradient-radial";
 @import "css3/hidpi-media-query";
 @import "css3/image-rendering";
 @import "css3/inline-block";
 @import "css3/keyframes";
-@import "css3/linear-gradient";
 @import "css3/perspective";
 @import "css3/placeholder";
-@import "css3/radial-gradient";
 @import "css3/rem";
 @import "css3/transform";
 @import "css3/transition";
@@ -64,11 +61,10 @@
 @import "addons/html5-input-types";
 @import "addons/position";
 @import "addons/prefixer";
-@import "addons/ratios";
 @import "addons/retina-image";
 @import "addons/size";
 @import "addons/timing-functions";
 @import "addons/triangle";
 
 // Bourbon
-@import "neat/neat";
+// @import "neat/neat";

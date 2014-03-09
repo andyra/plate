@@ -22,33 +22,3 @@
 @import "settings/settings";
 @import "base/base";
 @import "components/components";
-
-
-// @temp styles for testing
-body { @include outer-container; }
-article { @include span-columns(6); }
-p { font-size: 1em; }
-
-// The problem is that adding a number + unit makes a string, not a number Now
-// we can't strip the unit or do any math with it The way around this is to
-// multiply the end value (with or without a unit) by 1em, 1rem, or 1px. Our
-// problem is that we can't really do that because, since the unit is dynamic,
-// we always have to reference the string.
-
-// $font-size-base:        18     // unitless
-// u(18) => 1
-// $test-val really should have a unit attached.
-
-
-h1 {
-  // font-size: $test-val;
-  @include rem(font-size, $font-size-xxxl);
-  @include rem(padding, 18px 1rem 2em $font-size-md);
-}
-
-// h1 { @include font-size($font-size-xxxl); }
-// h2 { @include font-size($font-size-xxl); }
-// h3 { @include font-size($font-size-xl); }
-// h4 { @include font-size($font-size-lg); }
-// h5 { @include font-size($font-size-md); }
-// h6 { @include font-size($font-size-sm); }

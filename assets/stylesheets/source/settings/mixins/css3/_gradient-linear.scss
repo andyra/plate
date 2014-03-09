@@ -3,11 +3,12 @@
 // Version:    3.1.8
 // Author:     Bourbon
 // Source:     https://github.com/thoughtbot/bourbon
+// Docs:       http://bourbon.io/docs/#linear-gradient
 
 // @source: https://developer.mozilla.org/en-US/docs/Web/CSS/gradient
 // @browser-support: http://caniuse.com/#feat=css-gradients
 
-@mixin linear-gradient($pos, $G1, $G2: false,
+@mixin gradient-linear($pos, $G1, $G2: false,
                        $G3: false, $G4: false,
                        $G5: false, $G6: false,
                        $G7: false, $G8: false,
