@@ -1,6 +1,6 @@
 
 // Title:      Placeholder
-// Version:    3.1.8
+// Version:    3.2.0-beta.2
 // Author:     Bourbon
 // Source:     https://github.com/thoughtbot/bourbon
 // Docs:       http://bourbon.io/docs/#palceholder
@@ -8,32 +8,12 @@
 // @source: https://developer.mozilla.org/en-US/docs/Web/CSS/placeholder
 // @browser-support: http://caniuse.com/#feat=placeholder
 
-$placeholders: '-webkit-input-placeholder',
-               '-moz-placeholder',
-               '-ms-input-placeholder';
-
 @mixin placeholder {
-  @each $placeholder in $placeholders {
-    @if $placeholder == "-webkit-input-placeholder" {
-      &::#{$placeholder} {
-        @content;
-      }
-    }
-    @else if $placeholder == "-moz-placeholder" {
-      // FF 18-
-      &:#{$placeholder} {
-        @content;
-      }
+  $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
 
-      // FF 19+
-      &::#{$placeholder} {
-        @content;
-      }
-    }
-    @else {
-      &:#{$placeholder} {
-        @content;
-      }
+  @each $placeholder in $placeholders {
+    &:#{$placeholder}-placeholder {
+      @content;
     }
   }
 }

@@ -14,7 +14,6 @@ module.exports = (grunt) ->
         options:
           style: 'compressed'
           sourceMap: false
-          quiet: true
     watch:
       sass:
         files: [
