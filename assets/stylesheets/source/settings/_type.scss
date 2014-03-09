@@ -175,7 +175,7 @@ code {
 // For a longer measure (larger screens), use slightly greater leading.
 // For a shorter measure (smaller screens), use slightly smaller leading.
 
-$line-height-base:          $golden-ratio !default;     // Unitless. Based on the font size of the element (16 * 1.5 = 24)
+$line-height-base:          $golden !default;     // Unitless. Based on the font size of the element (16 * 1.5 = 24)
 $line-height-computed:      type-unit($font-size-base * $line-height-base) !default;
 
 
