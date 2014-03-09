@@ -1,0 +1,25 @@
+
+// Title:      Font unit conversion
+// Version:    0.0.1
+// Author:     Andy Smith
+// Source:     http://github/com/andyra/proto
+
+// Converts a pixel value into rem/em value. If unit($font-size-base) is set to `px`,
+// this function will simply return the value unmodified.
+
+// ex: font-unit(18) => 18px            unit($font-size-base) == px
+// ex: font-unit(18) => 1em             unit($font-size-base) == em
+// ex: font-unit(18, 21) => 0.857em     unit($font-size-base) == em (based on a parent's font size)
+// ex: font-unit(18) => 1rem            unit($font-size-base): rem
+
+@function font-unit($pxval, $base: $font-size-base) {
+  @if unit($font-size-base) == px {
+    @return $pxval * 1px;
+  }
+  @if unit($font-size-base) == em {
+    @return $pxval / $font-size-base * 1em;
+  }
+  @if unit($font-size-base) == rem {
+    @return $pxval / $font-size-base * 1rem;
+  }
+}

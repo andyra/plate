@@ -14,4 +14,8 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 
-// Mixins, etc.
+// Functions
+@import "functions/font-unit";
+@import "functions/type-scale";
+
+// Mixins

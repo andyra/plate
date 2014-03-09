@@ -5,6 +5,8 @@
 // Source:     http://github/com/andyra/proto
 
 // @todo: lists: http://j.eremy.net/align-lists-flush-left/
+// @todo: Body line height should change based on how wide the content is.
+// @source: http://www.pearsonified.com/typography/
 
 // Font families
 // ----------------------------------------------------------------------------
@@ -31,25 +33,22 @@ $font-family-heading:     $font-family-base !default;
 // $font-size-base: the default size for body text (paragraphs, lists, etc.). as
 // a unitless pixel value (e.g. 18, not 18px).
 
-$type-unit:                 rem;
-$font-size-base:            18; // This is what 1rem / em will equal
-$font-size-root:            ($font-size-base / 16 * 100)#{"%"}; // Used to set the base HTML font size %
-$type-ratio:                $perfect-fourth;
+$font-size-root:            18px;
+$font-size-base:            1rem;
 
-// These should just be numbers without units. 18 or 1.8
-// We can use these unitless values to
-
-$font-size-xxxl:            type-scale(4) !default;
-$font-size-xxl:             type-scale(3) !default;
-$font-size-xl:              type-scale(2) !default;
-$font-size-lg:              type-scale(1) !default;
-$font-size-md:              type-scale(0) !default;
-$font-size-sm:              type-scale(-1) !default;
-$font-size-xs:              type-scale(-2) !default;
+$font-size-xxxl:            modular-scale($font-size-base,  4, $perfect-fourth) !default;
+$font-size-xxl:             modular-scale($font-size-base,  3, $perfect-fourth) !default;
+$font-size-xl:              modular-scale($font-size-base,  2, $perfect-fourth) !default;
+$font-size-lg:              modular-scale($font-size-base,  1, $perfect-fourth) !default;
+$font-size-md:              modular-scale($font-size-base,  0, $perfect-fourth) !default;
+$font-size-sm:              modular-scale($font-size-base, -1, $perfect-fourth) !default;
+$font-size-xs:              modular-scale($font-size-base, -2, $perfect-fourth) !default;
 
 // Line height
 // ----------------------------------------------------------------------------
 
+$line-height-base:          $golden !default; // Unitless
+$line-height-computed:      type-unit($font-size-base * $line-height-base) !default;
 
 // Weights
 // ----------------------------------------------------------------------------
@@ -66,117 +65,3 @@ $font-weight-black:       900 !default;
 
 $text-color:              $gray-dark !default;
 $heading-color:           $gray-dark !default;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Browser support
-// ----------------------------------------------------------------------------
-
-// @source: http://davidwalsh.name/rem-px-browser-function-sass source:
-// @http://csswizardry.com/2011/12/measuring-and-sizing-uis-2011-style/
-
-// So I guess the thing to remember is that ems allow stuff to scale wrt the font
-// size. So if you zoom in, the margins, padding, etc will stay in proportion.
-// This is especially useful for stuff like indenting and margins on lists
-
-// OK, so in media queries, for instance, all we have to do is set the HTML font
-// size and everything will adjust. That's pretty awesome.
-
-// PX and REM can be used for consistent padding and margins. EM and percent will
-// have inconsistent margins, based on the parent. That's actually why em / %
-// is good for layout; you want those to change based on the browser width
-// @source: http://j.eremy.net/confused-about-rem-and-em/
-// @tool: http://pxtoem.com/
-
-// 1. Use functions
-//    - Two css files (styles.css, styles.ie.css). If you don't create a
-//      separate css file, the main one can be modern only or use px/em
-//    - If you ever want to remove support for IE8, you can just remove one file
-//      and that's it.
-// 2. Use mixins
-//    - Single css file (styles.css)
-//    - More unorganized, maybe.
-
-/*
-
-// If using px, em
-code {
-  font-size: $font-size-sm;
-  padding: rem(2px, 4px);
-}
-
-// If using rem
-code {
-  @include font-size($font-size-sm);
-  @include padding(2px 4px);
-}
-
-*/
-
-// Font sizing
-// ----------------------------------------------------------------------------
-
-
-// Font sizes are our basis for modular measurement
-// The first ingredient is the base font size. The ratio is the second ingredient. Text size, width, and line height work from the same modular scale to create a nice text block.
-// @source: http://alistapart.com/article/more-meaningful-typography
-// @source: http://modularscale.com
-
-
-
-
-// Line height
-// ----------------------------------------------------------------------------
-
-// @todo: Body line height should change based on how wide the content is.
-// @source: http://www.pearsonified.com/typography/
-
-// Some general rules for leading:
-// - with continuous copy, use large leading;
-// - with light text on dark background, use large leading;
-// - with long line lengths, use large leading;
-// - with large x-height, use large leading;
-// - with short burst of information, use small leading.
-// @source: http://coding.smashingmagazine.com/2011/03/14/technical-web-typography-guidelines-and-techniques/#tt-rhythm
-
-// A note on line lengths: shoot for 45-75 characters per line.
-// @source: http://www.inkwell.ie/typography/bringhurst.html
-// For a longer measure (larger screens), use slightly greater leading.
-// For a shorter measure (smaller screens), use slightly smaller leading.
-
-$line-height-base:          $golden !default;     // Unitless. Based on the font size of the element (16 * 1.5 = 24)
-$line-height-computed:      type-unit($font-size-base * $line-height-base) !default;
-
-
-

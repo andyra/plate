@@ -15,7 +15,8 @@
 
 // Body reset
 html {
-  font-size: $font-size-root;
+  // Set the base HTML font size  in %
+  font-size: (strip-unit($font-size-root) / 16 * 100) + "%";
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
