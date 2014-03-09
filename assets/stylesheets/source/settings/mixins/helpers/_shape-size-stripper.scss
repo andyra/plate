@@ -1,3 +1,9 @@
+
+// Title:      Shape size stripper
+// Version:    3.2.0-beta.2
+// Author:     Bourbon
+// Source:     https://github.com/thoughtbot/bourbon
+
 @function _shape-size-stripper($shape-size) {
   $shape-size-spec: null;
   @each $value in $shape-size {

@@ -1,3 +1,10 @@
+
+// Title:      Radial argument parser
+// Version:    3.2.0-beta.2
+// Author:     Bourbon
+// Source:     https://github.com/thoughtbot/bourbon
+
+
 @function _radial-arg-parser($G1, $G2, $pos, $shape-size) {
   @each $value in $G1, $G2 {
     $first-val: nth($value, 1);

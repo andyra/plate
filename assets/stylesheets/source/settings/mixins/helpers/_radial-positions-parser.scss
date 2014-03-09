@@ -1,3 +1,10 @@
+
+// Title:      Radial positions parser
+// Version:    3.2.0-beta.2
+// Author:     Bourbon
+// Source:     https://github.com/thoughtbot/bourbon
+
+
 @function _radial-positions-parser($gradient-pos) {
   $shape-size: nth($gradient-pos, 1);
   $pos:        nth($gradient-pos, 2);

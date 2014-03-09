@@ -1,3 +1,10 @@
+
+// Title:      Linear positions parser
+// Version:    3.2.0-beta.2
+// Author:     Bourbon
+// Source:     https://github.com/thoughtbot/bourbon
+
+
 @function _linear-positions-parser($pos) {
   $type: type-of(nth($pos, 1));
   $spec: null;

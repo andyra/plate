@@ -1,4 +1,11 @@
-// User for linear and radial gradients within background-image or border-image properties
+
+// Title:      Render gradients
+// Version:    3.2.0-beta.2
+// Author:     Bourbon
+// Source:     https://github.com/thoughtbot/bourbon
+
+// User for linear and radial gradients within background-image or border-image
+// properties
 
 @function _render-gradients($gradient-positions, $gradients, $gradient-type, $vendor: false) {
   $pre-spec: null;
