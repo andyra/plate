@@ -37,18 +37,17 @@ $font-family-heading:    $font-family-base !default;
 $em-base:         16px;
 $font-size-base:  1rem;
 
-$font-size-xxxl:  modular-scale($font-size-base,  4, $perfect-fourth) !default;
-$font-size-xxl:   modular-scale($font-size-base,  3, $perfect-fourth) !default;
-$font-size-xl:    modular-scale($font-size-base,  2, $perfect-fourth) !default;
-$font-size-lg:    modular-scale($font-size-base,  1, $perfect-fourth) !default;
-$font-size-md:    modular-scale($font-size-base,  0, $perfect-fourth) !default;
+$font-size-xl:    modular-scale($font-size-base,  3, $perfect-fourth) !default;
+$font-size-lg:    modular-scale($font-size-base,  2, $perfect-fourth) !default;
+$font-size-md:    modular-scale($font-size-base,  1, $perfect-fourth) !default;
+$font-size-base:  modular-scale($font-size-base,  0, $perfect-fourth) !default;
 $font-size-sm:    modular-scale($font-size-base, -1, $perfect-fourth) !default;
 $font-size-xs:    modular-scale($font-size-base, -2, $perfect-fourth) !default;
 
 // Line height
 // ----------------------------------------------------------------------------
 
-$line-height-base:      $golden !default; // Unitless
+$line-height-base:      $golden !default; // Unitless number
 $line-height-computed:  font-unit($font-size-base * $line-height-base) !default;
 
 // Weights
