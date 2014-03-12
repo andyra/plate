@@ -11,12 +11,12 @@
 // Font families
 // ----------------------------------------------------------------------------
 
-$font-family-sans:        $helvetica !default;
-$font-family-serif:       $georgia !default;
-$font-family-monospace:   $monospace !default;
+$font-family-sans:       $helvetica !default;
+$font-family-serif:      $georgia !default;
+$font-family-monospace:  $monospace !default;
 
-$font-family-base:        $font-family-sans !default;
-$font-family-heading:     $font-family-base !default;
+$font-family-base:       $font-family-sans !default;
+$font-family-heading:    $font-family-base !default;
 
 // Custom fonts
 //
@@ -34,35 +34,35 @@ $font-family-heading:     $font-family-base !default;
 // $font-size-base: the default size for body text (paragraphs, lists, etc.).
 // The unit you set here (px, em, rem) will be your default type unit
 
-$em-base:                   18px;
-$font-size-base:            1rem;
+$em-base:         16px;
+$font-size-base:  1rem;
 
-$font-size-xxxl:            modular-scale($font-size-base,  4, $perfect-fourth) !default;
-$font-size-xxl:             modular-scale($font-size-base,  3, $perfect-fourth) !default;
-$font-size-xl:              modular-scale($font-size-base,  2, $perfect-fourth) !default;
-$font-size-lg:              modular-scale($font-size-base,  1, $perfect-fourth) !default;
-$font-size-md:              modular-scale($font-size-base,  0, $perfect-fourth) !default;
-$font-size-sm:              modular-scale($font-size-base, -1, $perfect-fourth) !default;
-$font-size-xs:              modular-scale($font-size-base, -2, $perfect-fourth) !default;
+$font-size-xxxl:  modular-scale($font-size-base,  4, $perfect-fourth) !default;
+$font-size-xxl:   modular-scale($font-size-base,  3, $perfect-fourth) !default;
+$font-size-xl:    modular-scale($font-size-base,  2, $perfect-fourth) !default;
+$font-size-lg:    modular-scale($font-size-base,  1, $perfect-fourth) !default;
+$font-size-md:    modular-scale($font-size-base,  0, $perfect-fourth) !default;
+$font-size-sm:    modular-scale($font-size-base, -1, $perfect-fourth) !default;
+$font-size-xs:    modular-scale($font-size-base, -2, $perfect-fourth) !default;
 
 // Line height
 // ----------------------------------------------------------------------------
 
-$line-height-base:          $golden !default; // Unitless
-$line-height-computed:      font-unit($font-size-base * $line-height-base) !default;
+$line-height-base:      $golden !default; // Unitless
+$line-height-computed:  font-unit($font-size-base * $line-height-base) !default;
 
 // Weights
 // ----------------------------------------------------------------------------
 
-$font-weight-thin:        100 !default;
-$font-weight-light:       300 !default;
-$font-weight-normal:      400 !default;
-$font-weight-medium:      500 !default;
-$font-weight-bold:        700 !default;
-$font-weight-black:       900 !default;
+$font-weight-thin:    100 !default;
+$font-weight-light:   300 !default;
+$font-weight-normal:  400 !default;
+$font-weight-medium:  500 !default;
+$font-weight-bold:    700 !default;
+$font-weight-black:   900 !default;
 
 // Colors
 // ----------------------------------------------------------------------------
 
-$text-color:              $gray-dark !default;
-$heading-color:           $gray-dark !default;
+$text-color:     $gray-dark !default;
+$heading-color:  $gray-dark !default;
