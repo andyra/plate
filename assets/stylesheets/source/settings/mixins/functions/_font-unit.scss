@@ -7,19 +7,28 @@
 // Converts a pixel value into rem/em value. If unit($font-size-base) is set to `px`,
 // this function will simply return the value unmodified.
 
-// ex: font-unit(18) => 18px            unit($font-size-base) == px
-// ex: font-unit(18) => 1em             unit($font-size-base) == em
-// ex: font-unit(18, 21) => 0.857em     unit($font-size-base) == em (based on a parent's font size)
-// ex: font-unit(18) => 1rem            unit($font-size-base): rem
+// ex: font-unit(16)     => 16px        if unit($font-size-base) == px
+// ex: font-unit(16)     => 1em         if unit($font-size-base) == em
+// ex: font-unit(16, 24) => 0.666em     if unit($font-size-base) == em (based on a parent's font size)
+// ex: font-unit(16)     => 1rem        if unit($font-size-base) == rem
 
 @function font-unit($pxval, $base: $font-size-base) {
+  // Strip the unit if one is accidentally passed in
+  $pxval: strip-unit($pxval);
+
   @if unit($font-size-base) == px {
     @return $pxval * 1px;
   }
-  @if unit($font-size-base) == em {
-    @return $pxval / $font-size-base * 1em;
+
+  @elseif unit($font-size-base) == em {
+    @return $pxval / $base * 1em;
   }
-  @if unit($font-size-base) == rem {
-    @return $pxval / $font-size-base * 1rem;
+
+  @elseif unit($font-size-base) == rem {
+    @return $pxval / $base * 1rem;
+  }
+
+  @else {
+    @warn "$font-size-base must be in px, em, or rem"
   }
 }
