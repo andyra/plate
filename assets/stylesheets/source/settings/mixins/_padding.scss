@@ -1,0 +1,11 @@
+
+// Title:      Padding
+// Version:    0.0.1
+// Author:     Andy Smith
+// Source:     http://github/com/andyra/proto
+
+// This is just an alias for the rem mixin for better readability
+
+@mixin padding($size) {
+  @include rem(padding, $size);
+}

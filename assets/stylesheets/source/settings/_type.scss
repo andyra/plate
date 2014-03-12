@@ -30,10 +30,11 @@ $font-family-heading:     $font-family-base !default;
 // Type scale
 // ----------------------------------------------------------------------------
 
-// $font-size-base: the default size for body text (paragraphs, lists, etc.). as
-// a unitless pixel value (e.g. 18, not 18px).
+// $em-base: the document's base font size in pixels.
+// $font-size-base: the default size for body text (paragraphs, lists, etc.).
+// The unit you set here (px, em, rem) will be your default type unit
 
-$font-size-root:            18px;
+$em-base:                   18px;
 $font-size-base:            1rem;
 
 $font-size-xxxl:            modular-scale($font-size-base,  4, $perfect-fourth) !default;
@@ -48,7 +49,7 @@ $font-size-xs:              modular-scale($font-size-base, -2, $perfect-fourth) 
 // ----------------------------------------------------------------------------
 
 $line-height-base:          $golden !default; // Unitless
-$line-height-computed:      type-unit($font-size-base * $line-height-base) !default;
+$line-height-computed:      font-unit($font-size-base * $line-height-base) !default;
 
 // Weights
 // ----------------------------------------------------------------------------

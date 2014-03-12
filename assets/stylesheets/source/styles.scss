@@ -22,3 +22,10 @@
 @import "settings/settings";
 @import "base/base";
 @import "components/components";
+
+
+h1 {
+  // padding: type-unit($font-size-base * $line-height-base);
+  // @include rem(padding, $line-height-computed);
+  @include rem(padding, 2rem); // Note: this doesn't work
+}

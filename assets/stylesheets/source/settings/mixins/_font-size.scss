@@ -1,0 +1,20 @@
+
+// Title:      Font size
+// Version:    0.0.1
+// Author:     Andy Smith
+// Source:     http://github/com/andyra/proto
+
+// This is just an alias for the rem mixin for better readability
+
+@mixin font-size($size) {
+  @if unit($font-size-base) == "rem" {
+    // The `rem` mixin expects values in px, so let's convert our relative font
+    // size to be in a px value.
+    @include rem(font-size, $size * strip-unit($em-base));
+  }
+
+  // We don't need fallbacks for px or em
+  @else {
+    font-size: $size;
+  }
+}
