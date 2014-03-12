@@ -32,7 +32,9 @@ $font-family-code:     $monospace !default;
 // The unit you set here (px, em, rem) will be your default type unit
 
 $em-base:         16px;
-$font-size-base:  1em; // px, em, or rem
+
+$font-size-root:  16px;
+$font-size-base:  1em;
 
 $font-size-xl:    modular-scale($font-size-base,  3, $perfect-fourth) !default;
 $font-size-lg:    modular-scale($font-size-base,  2, $perfect-fourth) !default;
@@ -43,6 +45,9 @@ $font-size-xs:    modular-scale($font-size-base, -2, $perfect-fourth) !default;
 
 // Line height
 // ----------------------------------------------------------------------------
+
+// @todo: use something other than $line-height-computed
+// leading-base, leading-unitless
 
 $line-height-base:      $golden !default; // Unitless number
 $line-height-computed:  font-unit($font-size-base * $line-height-base) !default;
@@ -72,6 +77,7 @@ $heading-color:  $gray-dark !default;
 // functionality of the Compass mixins
 // @source: http://compass-style.org/reference/compass/typography/vertical_rhythm/#const-font-unit
 
+$debug-baseline-grid:         false;
 $round-to-nearest-half-line:  true;
 $min-line-padding:            true;
 
