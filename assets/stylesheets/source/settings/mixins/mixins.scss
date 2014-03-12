@@ -15,7 +15,9 @@
 @import "neat/neat";
 
 // Functions
+@import "functions/absolute-unit";
 @import "functions/font-unit";
+@import "functions/relative-unit";
 @import "functions/strip-unit";
 
 // Mixins

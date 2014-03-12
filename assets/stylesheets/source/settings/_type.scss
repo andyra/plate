@@ -64,3 +64,16 @@ $font-weight-black:   900 !default;
 
 $text-color:     $gray-dark !default;
 $heading-color:  $gray-dark !default;
+
+// @todo: Vertical Rhythm
+// ----------------------------------------------------------------------------
+
+// Note: these don't do anything yet, but should duplicate much of the
+// functionality of the Compass mixins
+// @source: http://compass-style.org/reference/compass/typography/vertical_rhythm/#const-font-unit
+
+$round-to-nearest-half-line:  true;
+$min-line-padding:            true;
+
+$leader-base:                 0;            // the amount of whitespace in a line
+$half-leader:                 $leader / 2;  // the amount of whitespace above and below a line
