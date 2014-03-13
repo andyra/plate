@@ -4,18 +4,30 @@
 // Author:     Andy Smith
 // Source:     http://github/com/andyra/proto
 
-// Import global variables and mixins here. Anything that lives on this level
-// should be generic and applicable scross the entire project. Component-
-// specific mixins or variables should live at the component level.
+// Import global variables, functions, and mixins here. Anything that lives on
+// this level should be generic and applicable scross the entire project.
+// Component-specific mixins or variables should live at the component level.
 
-// Mixins, functions, etc.
-@import "mixins/mixins";
+// Libraries
+@import "lib/bourbon/bourbon";  // v3.2.0.beta.2
+@import "lib/neat/neat";        // v1.6.0.pre
 
 // Variables
 @import "breakpoints";
 @import "colors";
+@import "type";
 @import "components";
 @import "debug";
 @import "grid";
 @import "scaffolding";
-@import "type";
+
+// Functions
+@import "functions/absolute-unit";
+@import "functions/font-unit";
+@import "functions/relative-unit";
+@import "functions/strip-unit";
+
+// Mixins
+@import "mixins/debug";
+@import "mixins/font-size";
+@import "mixins/visual-baseline";

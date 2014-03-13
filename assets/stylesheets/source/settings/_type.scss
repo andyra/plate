@@ -50,7 +50,7 @@ $font-size-xs:    modular-scale($font-size-base, -2, $perfect-fourth) !default;
 // leading-base, leading-unitless
 
 $line-height-base:      $golden !default; // Unitless number
-$line-height-computed:  font-unit($font-size-base * $line-height-base) !default;
+$line-height-computed:  $font-size-base * $line-height-base !default;
 
 // Weights
 // ----------------------------------------------------------------------------
@@ -77,9 +77,8 @@ $heading-color:  $gray-dark !default;
 // functionality of the Compass mixins
 // @source: http://compass-style.org/reference/compass/typography/vertical_rhythm/#const-font-unit
 
-$debug-baseline-grid:         false;
 $round-to-nearest-half-line:  true;
 $min-line-padding:            true;
 
-$leader-base:                 0;            // the amount of whitespace in a line
-$half-leader:                 $leader / 2;  // the amount of whitespace above and below a line
+$leader-base:                 0; // the amount of whitespace in a line
+$half-leader:                 $leader-base / 2;  // the amount of whitespace above and below a line

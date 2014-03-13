@@ -13,6 +13,7 @@ module.exports = (grunt) ->
           'assets/stylesheets/styles.min.css': 'assets/stylesheets/source/styles.scss'
         options:
           style: 'compressed'
+          quiet: true
           sourceMap: false
     watch:
       sass:
