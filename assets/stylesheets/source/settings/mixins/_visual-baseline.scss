@@ -1,0 +1,18 @@
+
+// Title:      Visual Baseline
+// Version:    0.0.1
+// Author:     Andy Smith
+// Source:     http://github/com/andyra/proto
+
+// Displays a visual baseline grid to help debug.
+// @source: http://www.soholaunch.com/Blog.php?id=62
+// @todo: this probably isn't very robust (or accurate?) and might need to be
+// refactored
+
+@if $visual-baseline == true {
+  body {
+    @include linear-gradient(top, rgba(0,0,0,0) 95%, $visual-baseline-color 100%);
+    background-size: 100% $line-height-computed;
+    background-position: -5px; // Use to offset and center your grid
+  }
+}
