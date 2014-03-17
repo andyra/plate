@@ -1,0 +1,38 @@
+
+// Title:      Pixel to relative unit conversion
+// Version:    0.0.1
+// Author:     Andy Smith
+// Source:     http://github/com/andyra/proto
+
+// Converts a pixel value into the value of $font-size-base. If unit($font-size-
+// base) is set to `px`, this function will simply return the value unmodified.
+
+// ex: px-to-rel(16)     => 16px        if unit($font-size-base) == px
+// ex: px-to-rel(16)     => 1em         if unit($font-size-base) == em
+// ex: px-to-rel(16, 24) => 0.666em     if unit($font-size-base) == em (based on a parent's font size)
+// ex: px-to-rel(16)     => 1rem        if unit($font-size-base) == rem
+
+@function px-to-rel($pxval, $base: $font-size-base) {
+  // Strip the unit if one is accidentally passed in
+  $pxval: strip-unit($pxval);
+
+  @if unit($font-size-base) == "px" {
+    @return $pxval * 1px;
+  }
+
+  @elseif unit($font-size-base) == "em" {
+    @return $pxval / $base * 1em;
+  }
+
+  @elseif unit($font-size-base) == "rem" {
+    @return $pxval / $base * 1rem;
+  }
+
+  @elseif unit($font-size-base) == "%" {
+    @return $pxval / $base * 100%;
+  }
+
+  @else {
+    @warn "$font-size-base must be in px, em, rem, or %";
+  }
+}

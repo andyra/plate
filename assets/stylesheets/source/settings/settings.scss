@@ -23,7 +23,8 @@
 
 // Functions
 @import "functions/absolute-unit";
-@import "functions/font-unit";
+@import "functions/px-to-rel";
+@import "functions/rel-to-px";
 @import "functions/relative-unit";
 @import "functions/strip-unit";
 @import "functions/unit-relative-to-parent";

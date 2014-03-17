@@ -1,0 +1,39 @@
+
+// Title:      Relative value to px conversion
+// Version:    0.0.1
+// Author:     Andy Smith
+// Source:     http://github/com/andyra/proto
+
+// Converts a relative value into the value of $font-size-base. If unit($font-
+// size-base) is set to `px`, this function will simply return the value
+// unmodified.
+
+// ex: set-unit(1)      => 16px        if unit($font-size-base) == px
+// ex: set-unit(1)      => 1em         if unit($font-size-base) == em
+// ex: set-unit(1, 24)  => 1.5em       if unit($font-size-base) == em (based on a parent's font size)
+// ex: set-unit(1)      => 1rem        if unit($font-size-base) == rem
+
+@function rel-to-px($num) {
+  // Strip the unit if one is accidentally passed in
+  $num: strip-unit($num);
+
+  @if unit($font-size-base) == "px" {
+    @return $num * $em-base;
+  }
+
+  @elseif unit($font-size-base) == "em" {
+    @return $num * 1em;
+  }
+
+  @elseif unit($font-size-base) == "rem" {
+    @return $num * 1rem;
+  }
+
+  @elseif unit($font-size-base) == "%" {
+    @return $num * 100%;
+  }
+
+  @else {
+    @warn "$font-size-base must be in px, em, rem, or %";
+  }
+}
