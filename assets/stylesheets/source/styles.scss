@@ -20,8 +20,28 @@
 @import "base/base";
 @import "components/components";
 
+h1, p {
+  background: rgba(yellow, .25);
+}
+
+$font-size-medium: 1.5em;
+
+// Adjust font-size and line-height at once with:
+// .element { @include type-scale($font-size-medium, 2); }
+//
+// If you're using ems and have to adjust the size based on the parent's size,
+// add a 3rd param like so:
+// .element { @include type-scale($font-size-medium, 2, $parents-font-size); }
+//
+// Or you can do it separately like this:
+// .element { font-size: $font-size-md;
+//            line-height: leading(2, $font-size-medium);
 
 h1 {
+  // @include type-scale($font-size-medium, 2);
+  font-size: $font-size-medium;
+  line-height: leading(2, $font-size-medium);
+
   // padding: type-unit($font-size-base * $line-height-base);
   // @include rem(padding, $line-height-computed);
   // @include rem(padding, 2rem); // Note: this doesn't work

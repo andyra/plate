@@ -32,8 +32,6 @@ $font-family-code:     $monospace !default;
 // The unit you set here (px, em, rem) will be your default type unit
 
 $em-base:         16px;
-
-$font-size-root:  16px;
 $font-size-base:  1em;
 
 $font-size-xxl:   modular-scale($font-size-base,  4, $perfect-fourth) !default;
@@ -50,7 +48,7 @@ $font-size-xs:    modular-scale($font-size-base, -2, $perfect-fourth) !default;
 // @todo: use something other than $line-height-computed
 // leading-base, leading-unitless
 
-$line-height-base:      $golden !default; // Unitless number
+$line-height-base:      1.5 !default; // Unitless number
 $line-height-computed:  $font-size-base * $line-height-base !default;
 
 // Weights
