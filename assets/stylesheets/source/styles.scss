@@ -41,12 +41,8 @@ $font-size-medium: 2rem;
 
 h1 {
   font-size: $font-size-medium;
-  // @include rem-fallback(margin, 1em 1rem 16px 2rem);
-  // @include margin(1 0 2);
-  // @include padding(0 .5);
-  // margin-top: 0;
-  // margin-bottom: leading(2, $font-size-medium) * 1em;
   @include leading(margin, 1 0 2);
+  // @include leading(padding, 0 1);
   // @include leading(padding-left, 1);
   // @include leading(line-height, 3, $font-size-medium);
 

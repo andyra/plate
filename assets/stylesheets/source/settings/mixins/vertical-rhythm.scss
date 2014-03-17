@@ -89,43 +89,13 @@
       $leading: leading($line, $base, $offset);
       $values: append($values, rel-to-px($leading));
     }
-    // next, we'll send $values to the rem mixin
-    #{$property}: $values;
 
-    // @include rem-fallback($property, $values);
+    @include rem-fallback($property, $values);
   }
-
-  // For each one, calculate the leading values from the function.
-  // Unless the property is line-height, pass this value to the rem mixin for
-  // fallbacks if needed.
-  // After this is working correctly, we can make aliases.
-
 }
 
-// .element {
-//   @include leading(line-height, 2);
-//   @include leading(margin, 1 0 2);
-// }
 
 
-// .element {
-//   font-size: $font-size-md;
-//   line-height: leading(2);  // this would need to be unitless
-//   margin: leading(1 0);  // this would need a unit
-// }
-
-// .element {
-//   @include font-size($font-size-md, 2);
-//   // the line height should be optional. If you don't include it, the mixin
-//   // should calculate the minimum line height for you
-
-//   @include leading(margin, 1 0 2);
-//   @include leading(padding-left, .5);
-//   // this should have a unit value based on your font-base
-//   // if using ems, you'll need to pass in the font size of the element.
-
-//   @include leading(line-height, 2);
-// }
 
 @mixin margin-leading($lines, $font-size) {
   $unit: unit($font-size-base);
