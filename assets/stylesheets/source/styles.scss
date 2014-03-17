@@ -37,11 +37,11 @@ h1, p {
 //   line-height: leading(2, $font-size-medium);
 // }
 
-$font-size-medium: 2rem;
+$font-size-medium: $font-size-base * 2;
 
 h1 {
   font-size: $font-size-medium;
-  @include leading(margin, 1 0 2);
+  @include leading(margin, 1 0 2, $font-size-medium);
   // @include leading(padding, 0 1);
   // @include leading(padding-left, 1);
   // @include leading(line-height, 3, $font-size-medium);

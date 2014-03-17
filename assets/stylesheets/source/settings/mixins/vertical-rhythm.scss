@@ -49,7 +49,7 @@
   $font-size: $font-size-base,
   $offset: 0
 ) {
-  @if absolute-unit($font-size-base) and $font-size != $font-size-base {
+  @if unit($font-size-base) == "px" and $font-size != $font-size-base {
     @warn "$font-size-base is in pixels but a relative font size was passed to the rhythm function";
   }
 
