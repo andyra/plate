@@ -36,6 +36,7 @@ $em-base:         16px;
 $font-size-root:  16px;
 $font-size-base:  1em;
 
+$font-size-xxl:   modular-scale($font-size-base,  4, $perfect-fourth) !default;
 $font-size-xl:    modular-scale($font-size-base,  3, $perfect-fourth) !default;
 $font-size-lg:    modular-scale($font-size-base,  2, $perfect-fourth) !default;
 $font-size-md:    modular-scale($font-size-base,  1, $perfect-fourth) !default;
@@ -77,8 +78,28 @@ $heading-color:  $gray-dark !default;
 // functionality of the Compass mixins
 // @source: http://compass-style.org/reference/compass/typography/vertical_rhythm/#const-font-unit
 
+// $font-size-base:     16px;
+// $line-height-base:   24px;
+//
+
+
+// Allows the `adjust-font-size-to` mixin and the `lines-for-font-size` function
+// to round the line height to the nearest half line height instead of the
+// nearest integral line height to avoid large spacing between lines.
 $round-to-nearest-half-line:  true;
+
+// Ensure there is at least this many pixels
+// of vertical padding above and below the text.
 $min-line-padding:            true;
 
-$leader-base:                 0; // the amount of whitespace in a line
-$half-leader:                 $leader-base / 2;  // the amount of whitespace above and below a line
+// The basic unit of font rhythm.
+// 24px, 1.5em, 1.5rem
+// The same as line-height-computed.
+// $base-rhythm-unit: $line-height-base / $font-size-base * $font-unit;
+
+// The leader is the amount of whitespace in a line.
+// It might be useful in your calculations.
+$leader-base: ($line-height-base - $font-size-base) * $em-base / $font-size-base;
+$leader-half: $leader-base / 2;
+
+$default-border-style:        solid !default;
