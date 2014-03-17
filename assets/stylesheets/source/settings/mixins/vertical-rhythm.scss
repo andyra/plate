@@ -68,27 +68,31 @@
 @mixin leading(
   $property,
   $lines: 1,
-  $font-size: $font-size-base,
+  $base: $font-size-base,
   $offset: 0
 ) {
-  @if absolute-unit($font-size-base) and $font-size != $font-size-base {
+  @if absolute-unit($font-size-base) and $base != $font-size-base {
     @warn "$font-size-base is in pixels but a relative font size was passed to the rhythm function";
   }
 
   @if $property == 'line-height' {
-    line-height: leading($lines, $font-size, $offset);
+    // Should be unitless
+    line-height: leading($lines, $base, $offset);
   }
   @else {
     $values: ();
     @each $line in $lines {
       // Here we need to make sure we are using the correct units (rem, em, etc.)
+      // right now these are just unitless values
       // them rem() mixin expects these values to have in units.
       // This works for em and rem, but px needs to be multiplied
-      $leading: leading($line, $font-size, $offset) * 1rem;
-      $values: append($values, $leading);
+      $leading: leading($line, $base, $offset);
+      $values: append($values, rel-to-px($leading));
     }
     // next, we'll send $values to the rem mixin
     #{$property}: $values;
+
+    // @include rem-fallback($property, $values);
   }
 
   // For each one, calculate the leading values from the function.
