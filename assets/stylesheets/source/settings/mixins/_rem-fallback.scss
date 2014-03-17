@@ -1,0 +1,32 @@
+
+// Title:      Rem with px fallback
+// Version:    0.0.1
+// Author:     Andy Smith
+// Source:     http://github/com/andyra/proto
+
+// Adds a pixel fallback for any rem values, leaves others as-is
+
+@mixin rem-fallback($property, $sizes, $base: $em-base) {
+
+  $legacy-values: ();
+  $modern-values: $sizes;
+
+  @each $size in $sizes {
+    @if unit($size) == "rem" {
+      // If the unit is rem, convert to px and drop in the legacy array
+      $legacy-values: append($legacy-values, strip-unit($size) * $base);
+    }
+    @else {
+      // If the unit is legacy safe, drop it in the legacy array as-is
+      $legacy-values: append($legacy-values, $size);
+    }
+  }
+
+  @if unit($font-size-base) == "rem" {
+    #{$property}: $legacy-values;
+    #{$property}: $modern-values;
+  } @else {
+    #{$property}: $legacy-values;
+  }
+}
+

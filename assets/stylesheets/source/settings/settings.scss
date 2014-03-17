@@ -26,10 +26,12 @@
 @import "functions/font-unit";
 @import "functions/relative-unit";
 @import "functions/strip-unit";
+@import "functions/unit-relative-to-parent";
 
 // Mixins
 @import "mixins/debug";
 @import "mixins/font-size";
+@import "mixins/rem-fallback";
 @import "mixins/visual-baseline";
 
 @import "mixins/vertical-rhythm";

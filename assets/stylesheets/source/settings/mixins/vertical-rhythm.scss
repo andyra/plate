@@ -53,14 +53,92 @@
     @warn "$font-size-base is in pixels but a relative font size was passed to the rhythm function";
   }
 
-  $rhythm: $font-size-base * ($lines * $line-height-base - $offset) / $font-size;
+  $leading: $font-size-base * ($lines * $line-height-base - $offset) / $font-size;
 
   // Round the pixels down to nearest integer.
-  @if unit($rhythm) == px {
-    $rhythm: floor($rhythm);
+  @if unit($leading) == px {
+    $leading: floor($leading);
   }
-  @return $rhythm;
+  @return $leading;
 }
+
+// Calculate leading units.
+// Values that could be passed in here: margin, padding, line-height, height,
+// width, max-height/width, etc.
+@mixin leading(
+  $property,
+  $lines: 1,
+  $font-size: $font-size-base,
+  $offset: 0
+) {
+  @if absolute-unit($font-size-base) and $font-size != $font-size-base {
+    @warn "$font-size-base is in pixels but a relative font size was passed to the rhythm function";
+  }
+
+  @if $property == 'line-height' {
+    line-height: leading($lines, $font-size, $offset);
+  }
+  @else {
+    $values: ();
+    @each $line in $lines {
+      // Here we need to make sure we are using the correct units (rem, em, etc.)
+      // them rem() mixin expects these values to have in units.
+      // This works for em and rem, but px needs to be multiplied
+      $leading: leading($line, $font-size, $offset) * 1rem;
+      $values: append($values, $leading);
+    }
+    // next, we'll send $values to the rem mixin
+    #{$property}: $values;
+  }
+
+  // For each one, calculate the leading values from the function.
+  // Unless the property is line-height, pass this value to the rem mixin for
+  // fallbacks if needed.
+  // After this is working correctly, we can make aliases.
+
+}
+
+// .element {
+//   @include leading(line-height, 2);
+//   @include leading(margin, 1 0 2);
+// }
+
+
+// .element {
+//   font-size: $font-size-md;
+//   line-height: leading(2);  // this would need to be unitless
+//   margin: leading(1 0);  // this would need a unit
+// }
+
+// .element {
+//   @include font-size($font-size-md, 2);
+//   // the line height should be optional. If you don't include it, the mixin
+//   // should calculate the minimum line height for you
+
+//   @include leading(margin, 1 0 2);
+//   @include leading(padding-left, .5);
+//   // this should have a unit value based on your font-base
+//   // if using ems, you'll need to pass in the font size of the element.
+
+//   @include leading(line-height, 2);
+// }
+
+@mixin margin-leading($lines, $font-size) {
+  $unit: unit($font-size-base);
+  $value: ();
+
+  // for each of those numbers, we need to calculate what that is based on
+  // the font size of the element. If no font size is present, we can just use
+  // the base font size. I think for rem and px, you will never have to enter
+  // a font size.
+  @each $line in $lines {
+
+  }
+
+  margin: $value;
+}
+
+
 
 
 

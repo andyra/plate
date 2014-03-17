@@ -32,7 +32,8 @@ $font-family-code:     $monospace !default;
 // The unit you set here (px, em, rem) will be your default type unit
 
 $em-base:         16px;
-$font-size-base:  1em;
+$font-size-base:  1rem;
+$rem-fallback:    true;
 
 $font-size-xxl:   modular-scale($font-size-base,  4, $perfect-fourth) !default;
 $font-size-xl:    modular-scale($font-size-base,  3, $perfect-fourth) !default;

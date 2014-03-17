@@ -24,8 +24,6 @@ h1, p {
   background: rgba(yellow, .25);
 }
 
-$font-size-medium: 1.5em;
-
 // Adjust font-size and line-height at once with:
 // .element { @include type-scale($font-size-medium, 2); }
 //
@@ -34,13 +32,23 @@ $font-size-medium: 1.5em;
 // .element { @include type-scale($font-size-medium, 2, $parents-font-size); }
 //
 // Or you can do it separately like this:
-// .element { font-size: $font-size-md;
-//            line-height: leading(2, $font-size-medium);
+// .element {
+//   font-size: $font-size-md;
+//   line-height: leading(2, $font-size-medium);
+// }
+
+$font-size-medium: 2rem;
 
 h1 {
-  // @include type-scale($font-size-medium, 2);
   font-size: $font-size-medium;
-  line-height: leading(2, $font-size-medium);
+  @include rem-fallback(margin, 1em 1rem 16px 2rem);
+  // @include margin(1 0 2);
+  // @include padding(0 .5);
+  // margin-top: 0;
+  // margin-bottom: leading(2, $font-size-medium) * 1em;
+  // @include leading(margin, 1 0 2);
+  // @include leading(padding-left, 1);
+  // @include leading(line-height, 3, $font-size-medium);
 
   // padding: type-unit($font-size-base * $line-height-base);
   // @include rem(padding, $line-height-computed);

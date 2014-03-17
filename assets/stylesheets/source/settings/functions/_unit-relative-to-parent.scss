@@ -1,0 +1,11 @@
+
+// Title:      Unit relative to parent
+// Version:    0.12.2
+// Author:     Compass
+// Source:     http://compass-style.org/reference/compass/typography/vertical_rhythm/#function-relative-unit
+
+// Returns true if a unit gets its value from the parent element (e.g. em or %)
+
+@function unit-relative-to-parent($number) {
+  @return unit($number) == "%" or unit($number) == "em";
+}
