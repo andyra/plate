@@ -1,0 +1,28 @@
+
+// Title:      Leading
+// Version:    0.0.1
+// Author:     Andy Smith
+// Source:     http://github/com/andyra/proto
+
+// Calculate leading units to create a consistent vertical rhythm.
+// $lines: how many multiples of the baseline rhythm the text should use up.
+// $font-size: The size of the type you're working with
+// $offset: not sure?
+
+@function leading(
+  $lines: 1,
+  $font-size: $font-size-base,
+  $offset: 0
+) {
+  @if unit($font-size-base) == "px" and $font-size != $font-size-base {
+    @warn "$font-size-base is in pixels but a relative font size was passed to the rhythm function";
+  }
+
+  $leading: $font-size-base * ($lines * $line-height-base - $offset) / $font-size;
+
+  // Round the pixels down to nearest integer.
+  @if unit($leading) == px {
+    $leading: floor($leading);
+  }
+  @return $leading;
+}

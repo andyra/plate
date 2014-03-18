@@ -23,6 +23,7 @@
 
 // Functions
 @import "functions/absolute-unit";
+@import "functions/leading";
 @import "functions/px-to-rel";
 @import "functions/rel-to-px";
 @import "functions/relative-unit";
@@ -32,7 +33,9 @@
 // Mixins
 @import "mixins/debug";
 @import "mixins/font-size";
+@import "mixins/leading";
 @import "mixins/rem-fallback";
+@import "mixins/type-scale";
 @import "mixins/visual-baseline";
 
 @import "mixins/vertical-rhythm";

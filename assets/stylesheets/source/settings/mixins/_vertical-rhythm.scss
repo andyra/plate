@@ -1,0 +1,41 @@
+
+// Title:      Vertical Rhythm
+// Version:    0.12.2
+// Author:     Compass
+// Source:     https://github.com/chriseppstein/compass/blob/stable/frameworks/compass/stylesheets/compass/typography/_vertical_rhythm.scss
+
+
+
+
+
+
+
+@mixin margin-leading($lines, $font-size) {
+  $unit: unit($font-size-base);
+  $value: ();
+
+  // for each of those numbers, we need to calculate what that is based on
+  // the font size of the element. If no font size is present, we can just use
+  // the base font size. I think for rem and px, you will never have to enter
+  // a font size.
+  @each $line in $lines {
+
+  }
+
+  margin: $value;
+}
+
+
+
+
+
+// Calculate the minimum multiple of rhythm units needed to contain the font-size.
+@function lines-for-font-size($font-size) {
+  $lines: if($round-to-nearest-half-line,
+              ceil(2 * $font-size / $line-height-base) / 2,
+              ceil($font-size / $line-height-base));
+  @if $lines * $line-height-base - $font-size < $min-line-padding * 2 {
+    $lines: $lines + if($round-to-nearest-half-line, 0.5, 1);
+  }
+  @return $lines;
+}

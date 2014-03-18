@@ -1,0 +1,42 @@
+
+// Title:      Leading
+// Version:    0.0.1
+// Author:     Andy Smith
+// Source:     http://github/com/andyra/proto
+
+// Calculate leading units for consistent vertical rhythm and automatically
+// create properties using this calculated value. Possible properties include:
+// margin, padding, line-height, height, width, max-height/width, etc.
+
+// You will need to include the $base param if the property is calculated from
+// the font's size (unitless line-heights, for example), or if your $font-size-
+// base unit is in ems or % (since those are both relative to the font size).
+
+@mixin leading(
+  $property,
+  $lines: 1,
+  $base: $font-size-base,
+  $offset: 0
+) {
+  @if absolute-unit($font-size-base) and $base != $font-size-base {
+    @warn "$font-size-base is in pixels but a relative font size was passed to the rhythm function";
+  }
+
+  @if $property == 'line-height' {
+    // Should be unitless
+    line-height: leading($lines, $base, $offset);
+  }
+  @else {
+    $values: ();
+    @each $line in $lines {
+      // Here we need to make sure we are using the correct units (rem, em, etc.)
+      // right now these are just unitless values
+      // them rem() mixin expects these values to have in units.
+      // This works for em and rem, but px needs to be multiplied
+      $leading: leading($line, $base, $offset);
+      $values: append($values, rel-to-px($leading));
+    }
+
+    @include rem-fallback($property, $values);
+  }
+}

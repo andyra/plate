@@ -1,0 +1,39 @@
+
+// Title:      Type scale
+// Version:    0.0.1
+// Author:     Andy Smith
+// Source:     http://github/com/andyra/proto
+
+// Adjust a block to have a different font size and line height to maintain
+// vertical rhythm.
+// $font-size: (required): the size you want the text to end up.
+// $lines: how many multiples of the baseline rhythm the text should use up.
+// It defaults to the smallest integer large enough to fit the font.
+// $base: adjust from a font-size other than the base font-size (for ems).
+
+// @todo:
+// Make sure this can work with REM fallbacks, too
+// $rem-fallback: true !default;
+// Make sure the line-height is unitless
+
+@mixin type-scale(
+  $font-size,
+  $lines: lines-for-font-size($font-size),
+  $base: $font-size-base
+) {
+
+  @if absolute_unit($font-size-base) and $base != $font-size-base {
+    @warn "$font-size-base is in pixels but a relative font size was passed to type-scale";
+  }
+
+  // Set font-size
+  @include rem-fallback(font-size, ($font-size-base * $font-size / $base), $base);
+
+  // Set line-height
+  @if absolute-unit($font-size-base) {
+    line-height: leading($lines, $font-size-base);
+  }
+  @else {
+    line-height: leading($lines, $font-size);
+  }
+}
