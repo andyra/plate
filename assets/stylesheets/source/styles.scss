@@ -20,7 +20,7 @@
 @import "base/base";
 @import "components/components";
 
-h1, p {
+h1, p, .box {
   background: rgba(yellow, .25);
 }
 
@@ -42,10 +42,14 @@ h1, p {
 $font-size-medium: $font-size-base * 2;
 
 h1 {
-  font-size: $font-size-medium;
-  @include leading(line-height, 2, $font-size-medium);
-  @include leading(margin, 1 0 2);
-  // @include type-scale($font-size-medium, 2);
-  // @include leading(margin, 1 0 2, $font-size-medium);
+  @include type-scale($font-size-medium);
+  @include margin(1 0 2);
+}
 
+p {
+  @include margin-bottom(1);
+}
+
+.box {
+  @include leading(height, 5);
 }
