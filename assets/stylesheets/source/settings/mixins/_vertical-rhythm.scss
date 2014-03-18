@@ -44,7 +44,6 @@
   @return $lines;
 }
 
-
 // Mixins
 // ----------------------------------------------------------------------------
 
@@ -157,4 +156,48 @@
 
 @mixin padding-bottom($lines: 1, $base: $font-size-base, $offset: 0) {
   @include leading(padding-bottom, $lines, $base, $offset);
+}
+
+// Borders
+// ----------------------------------------------------------------------------
+
+// Apply a border and whitespace to any side without destroying the vertical
+// rhythm. The whitespace must be greater than the width of the border.
+@mixin apply-side-rhythm-border($side, $width: 1px, $lines: 1, $font-size: $font-size-base, $border-style: $default-border-style) {
+  @if not relative-unit($font-size-base) and $font-size != $font-size-base {
+    @warn "relative-unit($font-size-base) is false but a relative font size was passed to apply-side-rhythm-border";
+  }
+  border-#{$side}: {
+    style: $border-style;
+    width: $font-size-base * $width / $font-size;
+  };
+  padding-#{$side}: leading($lines, $font-size, $offset: $width);
+}
+
+// Apply borders and whitespace equally to all sides.
+@mixin rhythm-borders($width: 1px, $lines: 1, $font-size: $font-size-base, $border-style: $default-border-style) {
+  @if not relative-unit($font-size-base) and $font-size != $font-size-base {
+    @warn "relative-unit($font-size-base) is false but a relative font size was passed to rhythm-borders";
+  }
+  border: {
+    style: $border-style;
+    width: $font-size-base * $width / $font-size;
+  };
+  padding: leading($lines, $font-size, $offset: $width);
+}
+
+// Apply a leading border.
+@mixin border-top($width: 1px, $lines: 1, $font-size: $font-size-base, $border-style: $default-border-style) {
+  @include apply-side-rhythm-border(top, $width, $lines, $font-size, $border-style);
+}
+
+// Apply a trailing border.
+@mixin border-bottom($width: 1px, $lines: 1, $font-size: $font-size-base, $border-style: $default-border-style) {
+  @include apply-side-rhythm-border(bottom, $width, $lines, $font-size, $border-style);
+}
+
+// Apply both leading and trailing borders.
+@mixin borders-horizontal($width: 1px, $lines: 1, $font-size: $font-size-base, $border-style: $default-border-style) {
+  @include leading-border($width, $lines, $font-size, $border-style);
+  @include trailing-border($width, $lines, $font-size, $border-style);
 }

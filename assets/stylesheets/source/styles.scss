@@ -20,26 +20,13 @@
 @import "base/base";
 @import "components/components";
 
-h1, p, .box {
+$font-size-medium: $font-size-base * 2;
+
+h1,
+p,
+.box {
   background: rgba(yellow, .25);
 }
-
-// Adjust font-size and line-height at once with:
-// .element { @include type-scale($font-size-medium, 2); }
-//
-// If you're using ems and have to adjust the size based on the parent's size,
-// add a 3rd param like so:
-// .element { @include type-scale($font-size-medium, 2, $parents-font-size); }
-//
-// Or you can do it separately like this:
-// .element {
-//   font-size: $font-size-md;
-//   line-height: leading(2, $font-size-medium);
-// }
-
-
-
-$font-size-medium: $font-size-base * 2;
 
 h1 {
   @include type-scale($font-size-medium);
@@ -47,7 +34,8 @@ h1 {
 }
 
 p {
-  @include margin-bottom(1);
+  @include margin-bottom(2);
+  // @include leading-border(.2em);
 }
 
 .box {

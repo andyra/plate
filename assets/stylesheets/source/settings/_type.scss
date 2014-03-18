@@ -31,7 +31,6 @@ $font-family-code:     $monospace !default;
 // $font-size-base: the default size for body text (paragraphs, lists, etc.).
 // The unit you set here (px, em, rem) will be your default type unit
 // $rem-fallback: whether or not to include px fallback for rem (IE8 support)
-// @todo: make a rem-fallback in the mixin
 
 $em-base:         18px;
 $font-size-base:  1rem !default;

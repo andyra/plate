@@ -7,7 +7,8 @@
 // Displays a visual baseline grid to help debug.
 // @source: http://www.soholaunch.com/Blog.php?id=62
 // @todo: this probably isn't very robust (or accurate?) and might need to be
-// refactored
+// refactored. It might be interesting to make a pseudo element to position
+// behind or in front.
 
 @if $visual-baseline == true {
   body {

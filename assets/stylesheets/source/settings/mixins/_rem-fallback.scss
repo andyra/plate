@@ -23,7 +23,9 @@
   }
 
   @if unit($font-size-base) == "rem" {
-    #{$property}: $legacy-values;
+    @if $rem-fallback == true {
+      #{$property}: $legacy-values;
+    }
     #{$property}: $modern-values;
   } @else {
     #{$property}: $legacy-values;
