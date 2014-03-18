@@ -79,7 +79,11 @@
       $values: append($values, rel-to-px($leading));
     }
 
-    @include rem-fallback($property, $values);
+    @if $rem-fallback == true {
+      @include rem-fallback($property, $values);
+    } @else {
+      #{$property}: $values;
+    }
   }
 }
 
@@ -101,7 +105,11 @@
   }
 
   // Set font-size
-  @include rem-fallback(font-size, ($font-size-base * $font-size / $base), $base);
+  @if $rem-fallback == true {
+    @include rem-fallback(font-size, ($font-size-base * $font-size / $base), $base);
+  } @else {
+    font-size: $font-size-base * $font-size / $base;
+  }
 
   // Set line-height
   @if absolute-unit($font-size-base) {

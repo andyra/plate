@@ -1,0 +1,13 @@
+
+// Title:      Headings selector
+// Version:    0.12.2
+// Author:     Compass
+// Source:     http://github/com/andyra/proto
+
+@mixin headings($from: 1, $to: 6){
+  @for $i from $from through $to{
+    h#{$i}{
+      @content
+    }
+  }
+}
