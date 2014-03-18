@@ -13,24 +13,25 @@
 // ex: set-unit(1, 24)  => 1.5em       if unit($font-size-base) == em (based on a parent's font size)
 // ex: set-unit(1)      => 1rem        if unit($font-size-base) == rem
 
-@function rel-to-px($num) {
+@function rel-to-px($relval, $base: $em-base) {
   // Strip the unit if one is accidentally passed in
-  $num: strip-unit($num);
+  $relval: strip-unit($relval);
+  $base: strip-unit($base);
 
   @if unit($font-size-base) == "px" {
-    @return $num * $em-base;
+    @return $relval * $base;
   }
 
   @elseif unit($font-size-base) == "em" {
-    @return $num * 1em;
+    @return $relval * 1em;
   }
 
   @elseif unit($font-size-base) == "rem" {
-    @return $num * 1rem;
+    @return $relval * 1rem;
   }
 
   @elseif unit($font-size-base) == "%" {
-    @return $num * 100%;
+    @return $relval * 100%;
   }
 
   @else {

@@ -12,9 +12,10 @@
 // ex: px-to-rel(16, 24) => 0.666em     if unit($font-size-base) == em (based on a parent's font size)
 // ex: px-to-rel(16)     => 1rem        if unit($font-size-base) == rem
 
-@function px-to-rel($pxval, $base: $font-size-base) {
+@function px-to-rel($pxval, $base: $em-base) {
   // Strip the unit if one is accidentally passed in
   $pxval: strip-unit($pxval);
+  $base: strip-unit($base);
 
   @if unit($font-size-base) == "px" {
     @return $pxval * 1px;

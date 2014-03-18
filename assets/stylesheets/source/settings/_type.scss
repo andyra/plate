@@ -24,7 +24,7 @@ $font-family-code:     $monospace !default;
 
 // @include font-face($font-family, $file-path, $weight: normal, $style: normal)
 
-// Type scale
+// Type size
 // ----------------------------------------------------------------------------
 
 // $em-base: the document's base font size in pixels.
@@ -44,14 +44,22 @@ $font-size-base:  modular-scale($font-size-base,  0, $perfect-fourth) !default;
 $font-size-sm:    modular-scale($font-size-base, -1, $perfect-fourth) !default;
 $font-size-xs:    modular-scale($font-size-base, -2, $perfect-fourth) !default;
 
-// Line height
+// Vertical Rhythm
 // ----------------------------------------------------------------------------
 
-// @todo: use something other than $line-height-computed
-// leading-base, leading-unitless, line-height / line-height-base
+$line-height-base:            1.5 !default; // Unitless number
+$line-height-computed:        $font-size-base * $line-height-base !default;
 
-$line-height-base:      1.5 !default; // Unitless number
-$line-height-computed:  $font-size-base * $line-height-base !default;
+// $round-to-nearest-half-line: Allows the `type-scale` mixin and the `lines-
+// for-font-size` function to round the line height to the nearest half line
+// height instead of the nearest integral line height to avoid large spacing
+// between lines.
+// $min-line-padding: Ensure there is at least this many pixels of vertical
+// padding above and below the text.
+
+$round-to-nearest-half-line:  true !default;
+$min-line-padding:            2px !default;
+$default-border-style:        solid !default;
 
 // Weights
 // ----------------------------------------------------------------------------
@@ -63,24 +71,8 @@ $font-weight-medium:  500 !default;
 $font-weight-bold:    700 !default;
 $font-weight-black:   900 !default;
 
-$font-weight-base:    $font-weight-normal !default;
-
 // Colors
 // ----------------------------------------------------------------------------
 
 $text-color:     $gray-dark !default;
 $heading-color:  $gray-dark !default;
-
-// Vertical Rhythm
-// ----------------------------------------------------------------------------
-
-// $round-to-nearest-half-line: Allows the `type-scale` mixin and the `lines-
-// $for-font-size` function to round the line height to the nearest half line
-// $height instead of the nearest integral line height to avoid large spacing
-// $between lines.
-// $min-line-padding: Ensure there is at least this many pixels of vertical
-// $padding above and below the text.
-
-$round-to-nearest-half-line:  true !default;
-$min-line-padding:            2px !default;
-$default-border-style:        solid !default;

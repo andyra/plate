@@ -35,7 +35,7 @@ h1 {
 
 p {
   @include margin-bottom(2);
-  // @include leading-border(.2em);
+  @include border-top(.2rem);
 }
 
 .box {
