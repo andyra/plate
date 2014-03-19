@@ -16,8 +16,13 @@
 // Headings
 // ----------------------------------------------------------------------------
 
+// Maybe local variables all start with the section title and
+// global variables start with the css rule. So:
+// $heading-font instead of $font-family-heading
+
 // Variables
 $heading-color:             $gray-dark !default;
+$heading-font-family:       $font-family-base !default;
 
 // Paragraphs
 // ----------------------------------------------------------------------------
@@ -25,21 +30,11 @@ $heading-color:             $gray-dark !default;
 // Variables
 $paragraph-indent:          1.5em !default;
 
-// Mixins
-
-// Hyphens
-// Accepted values: [ none | manual | auto ]
-// @source: http://trentwalton.com/2011/09/07/css-hyphenation
-
-@mixin hyphens($val) {
-  @include prefixer(hyphens, $val, webkit moz ms o spec)
-}
-
 // Hyphens
 // @source: http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
 
 body {
-  @include css-hyphens(auto);
+  @include hyphens(auto);
 }
 
 abbr,
@@ -55,7 +50,7 @@ samp,
 tt,
 var,
 xmp {
-  @include css-hyphens(none);
+  @include hyphens(none);
 }
 
 // Emphasis

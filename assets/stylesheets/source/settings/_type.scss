@@ -9,9 +9,12 @@
 // Font families
 // ----------------------------------------------------------------------------
 
-$font-family-base:     $helvetica !default;
-$font-family-heading:  $font-family-base !default;
-$font-family-code:     $monospace !default;
+// Font stacks
+$font-family-sans:      $helvetica !default;
+$font-family-serif:     $georgia !default;
+$font-family-mono:      $monospace !default;
+
+$font-family-base:      $font-family-sans;
 
 // Custom fonts
 //
@@ -71,7 +74,6 @@ $font-weight-black:   900 !default;
 // ----------------------------------------------------------------------------
 
 $text-color:     $gray-dark !default;
-$heading-color:  $gray-dark !default;
 
 // Browser support
 // ----------------------------------------------------------------------------
