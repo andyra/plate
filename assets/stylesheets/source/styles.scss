@@ -28,7 +28,7 @@ p,
 }
 
 @include headings() {
-  // @include margin(1 0);
+  @include margin(1 0);
   background: rgba(yellow, .25);
 }
 

@@ -19,7 +19,7 @@
   $base: strip-unit($base);
 
   @if unit($font-size-base) == "px" {
-    @return $relval * $base;
+    @return $relval * $base * 1px;
   }
 
   @elseif unit($font-size-base) == "em" {
