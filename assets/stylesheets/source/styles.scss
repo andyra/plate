@@ -19,32 +19,3 @@
 @import "settings/settings";
 @import "base/base";
 @import "components/components";
-
-$font-size-medium: $font-size-base * 2;
-
-p,
-.box {
-  background: rgba(yellow, .25);
-}
-
-@include headings() {
-  @include margin(1 0);
-  background: rgba(yellow, .25);
-}
-
-h1 { @include type-scale($font-size-xl); }
-h1 { font-size: $font-size-xl; }
-h2 { @include type-scale($font-size-lg); }
-h3 { @include type-scale($font-size-md); }
-h4 { @include type-scale($font-size-base); }
-h5 { @include type-scale($font-size-sm); }
-h6 { @include type-scale($font-size-xs); }
-
-p {
-  @include margin-bottom(2);
-  @include border-top(.2rem);
-}
-
-.box {
-  @include leading(height, 5);
-}
