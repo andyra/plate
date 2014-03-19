@@ -12,18 +12,18 @@ $border-radius-lg:           6px !default;
 $border-radius-sm:           3px !default;
 
 // Padding
-$padding-base-vertical:      6px !default;
-$padding-base-horizontal:    12px !default;
+$padding-base-vertical:      0.5em !default;
+$padding-base-horizontal:    1em !default;
 
-$padding-lg-vertical:        10px !default;
-$padding-lg-horizontal:      16px !default;
+$padding-lg-vertical:        1em !default;
+$padding-lg-horizontal:      1.5em !default;
 
-$padding-sm-vertical:        5px !default;
-$padding-sm-horizontal:      10px !default;
+$padding-sm-vertical:        0.35em !default;
+$padding-sm-horizontal:      0.75em !default;
 
-$padding-xs-vertical:        1px !default;
-$padding-xs-horizontal:      5px !default;
+$padding-xs-vertical:        0.25em !default;
+$padding-xs-horizontal:      0.5em !default;
 
 // Active element colors
-$component-active-color:    #fff !default;
+$component-active-color:    white !default;
 $component-active-bg:       $brand-primary !default;
