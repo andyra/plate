@@ -28,7 +28,7 @@ p,
 }
 
 @include headings() {
-  @include margin(1 0);
+  // @include margin(1 0);
   background: rgba(yellow, .25);
 }
 
@@ -36,7 +36,8 @@ h1 { @include type-scale($font-size-xl); }
 h2 { @include type-scale($font-size-lg); }
 h3 { @include type-scale($font-size-md); }
 h4 { @include type-scale($font-size-base); }
-h5,h6 { @include type-scale($font-size-sm); }
+h5 { @include type-scale($font-size-sm); }
+h6 { @include type-scale($font-size-xs); }
 
 p {
   @include margin-bottom(2);

@@ -34,10 +34,13 @@
 // needed to contain the font-size.
 
 @function lines-for-font-size($font-size) {
+  $font-size: if(absolute-unit($font-size), $font-size/$em-base, $font-size);
   $font-size: strip-unit($font-size);
+
   $lines: if($round-to-nearest-half-line,
               ceil(2 * $font-size / $line-height-base) / 2,
               ceil($font-size / $line-height-base));
+
   @if $lines * $line-height-base - $font-size < $min-line-padding * 2 {
     $lines: $lines + if($round-to-nearest-half-line, 0.5, 1);
   }
@@ -73,8 +76,8 @@
     $values: ();
     @each $line in $lines {
       // Here we need to make sure we are using the correct units (rem, em,
-      // etc.) since the rem() mixin expects values with units. This works for
-      // em and rem, but px needs to be multiplied
+      // etc.) since the rem-fallback mixin expects values with units. This
+      // works for em and rem, but px needs to be multiplied
       $leading: leading($line, $base, $offset);
       $values: append($values, rel-to-px($leading));
     }
@@ -112,12 +115,7 @@
   }
 
   // Set line-height
-  @if absolute-unit($font-size-base) {
-    line-height: leading($lines, $font-size-base);
-  }
-  @else {
-    line-height: leading($lines, $font-size);
-  }
+  line-height: leading($lines, $font-size);
 }
 
 // Aliases and shortcuts
