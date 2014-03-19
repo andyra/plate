@@ -34,7 +34,6 @@ $font-family-code:     $monospace !default;
 
 $px-base:           16px;
 $font-size-base:    1rem !default;
-$rem-fallback:      true !default;
 
 $font-size-xxl:     modular-scale($font-size-base,  4, $perfect-fourth) !default;
 $font-size-xl:      modular-scale($font-size-base,  3, $perfect-fourth) !default;
@@ -76,3 +75,9 @@ $font-weight-black:   900 !default;
 
 $text-color:     $gray-dark !default;
 $heading-color:  $gray-dark !default;
+
+// Browser support
+// ----------------------------------------------------------------------------
+
+// Allow for px values to support IE8 and below if $font-size-base is in rems.
+$rem-fallback:    true !default;
