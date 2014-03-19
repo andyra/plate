@@ -36,7 +36,7 @@
 // needed to contain the font-size.
 
 @function lines-for-font-size($font-size) {
-  $font-size: if(absolute-unit($font-size), $font-size/$em-base, $font-size);
+  $font-size: if(absolute-unit($font-size), $font-size/$font-size-px-base, $font-size);
   $font-size: strip-unit($font-size);
 
   $lines: if($round-to-nearest-half-line,

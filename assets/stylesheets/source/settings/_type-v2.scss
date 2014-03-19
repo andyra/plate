@@ -6,15 +6,26 @@
 // @todo: Body line height should change based on how wide the content is.
 // @source: http://www.pearsonified.com/typography/
 
+// Type base
+// ----------------------------------------------------------------------------
+
+$font-family-base:    $helvetica !default;
+$font-size-px-base:   18px !default;
+$font-size-base:      1rem !default;
+$line-height-base:    1.5 !default;
+$font-weight-base:    normal;
+$font-color-base:     $gray-dark;
+
 // Font families
 // ----------------------------------------------------------------------------
 
-$font-family-base:     $helvetica !default;
-$font-family-heading:  $helvetica !default;
-$font-family-code:     $monospace !default;
+$font-family-sans:    $helvetica !default;
+$font-family-serif:   $georgia !default;
+$font-family-mono:    $monospace !default;
 
 // Custom fonts
-//
+// ----------------------------------------------------------------------------
+
 // To create custom fonts, uncomment the `font-face` mixin below and fill with
 // the information specific to your font. You can then add your custom font
 // family name in front of the font stacks above to allow for fallbacks in the
@@ -25,30 +36,19 @@ $font-family-code:     $monospace !default;
 // Type size
 // ----------------------------------------------------------------------------
 
-// $font-size-px-base: the document's base font size in pixels.
-// $font-size-base: the default size for body text (paragraphs, lists, etc.).
-// The unit you set here (px, em, rem) will be your default type unit.
-// $rem-fallback: whether or not to include px fallback for rem (IE8 support)
 // If you're sizing with pixels and using the modular-scale function,
 // you'll need to round off the values to get px integers.
 
-$font-size-px-base: 18px;
-$font-size-base:    1rem !default;
-$rem-fallback:      true !default;
-
-$font-size-xxl:     modular-scale($font-size-base,  4, $perfect-fourth) !default;
-$font-size-xl:      modular-scale($font-size-base,  3, $perfect-fourth) !default;
-$font-size-lg:      modular-scale($font-size-base,  2, $perfect-fourth) !default;
-$font-size-md:      modular-scale($font-size-base,  1, $perfect-fourth) !default;
-$font-size-base:    modular-scale($font-size-base,  0, $perfect-fourth) !default;
-$font-size-sm:      modular-scale($font-size-base, -1, $perfect-fourth) !default;
-$font-size-xs:      modular-scale($font-size-base, -2, $perfect-fourth) !default;
+$font-size-xxl:   modular-scale($font-size-base,  4, $perfect-fourth) !default;
+$font-size-xl:    modular-scale($font-size-base,  3, $perfect-fourth) !default;
+$font-size-lg:    modular-scale($font-size-base,  2, $perfect-fourth) !default;
+$font-size-md:    modular-scale($font-size-base,  1, $perfect-fourth) !default;
+$font-size-base:  modular-scale($font-size-base,  0, $perfect-fourth) !default;
+$font-size-sm:    modular-scale($font-size-base, -1, $perfect-fourth) !default;
+$font-size-xs:    modular-scale($font-size-base, -2, $perfect-fourth) !default;
 
 // Vertical Rhythm
 // ----------------------------------------------------------------------------
-
-$line-height-base:            1.5 !default; // Unitless number
-$line-height-computed:        $font-size-base * $line-height-base !default;
 
 // $round-to-nearest-half-line: Allows the `type-scale` mixin and the `lines-
 // for-font-size` function to round the line height to the nearest half line
@@ -57,9 +57,10 @@ $line-height-computed:        $font-size-base * $line-height-base !default;
 // $min-line-padding: Ensure there is at least this many pixels of vertical
 // padding above and below the text.
 
-$round-to-nearest-half-line:  true !default;
-$min-line-padding:            2px !default;
 $default-border-style:        solid !default;
+$line-height-computed:        $font-size-base * $line-height-base !default;
+$min-line-padding:            2px !default;
+$round-to-nearest-half-line:  true !default;
 
 // Weights
 // ----------------------------------------------------------------------------
@@ -71,8 +72,8 @@ $font-weight-medium:  500 !default;
 $font-weight-bold:    700 !default;
 $font-weight-black:   900 !default;
 
-// Colors
+// Browser support
 // ----------------------------------------------------------------------------
 
-$text-color:     $gray-dark !default;
-$heading-color:  $gray-dark !default;
+// Allow for px values to support IE8 and below if $font-size-base is in rems.
+$rem-fallback:    true !default;
