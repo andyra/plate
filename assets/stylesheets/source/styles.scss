@@ -33,6 +33,7 @@ p,
 }
 
 h1 { @include type-scale($font-size-xl); }
+h1 { font-size: $font-size-xl; }
 h2 { @include type-scale($font-size-lg); }
 h3 { @include type-scale($font-size-md); }
 h4 { @include type-scale($font-size-base); }
