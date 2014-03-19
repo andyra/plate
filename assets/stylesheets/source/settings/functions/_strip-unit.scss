@@ -1,10 +1,7 @@
-
-// Title:      Strip unit
-// Version:    3.2.0-beta.2
-// Author:     Bourbon
-// Source:     https://github.com/thoughtbot/bourbon
-
+// ============================================================================
 // Strip Unit
+// ============================================================================
+
 // Accepts a string of numbers and letters and returns only the integers
 
 @function strip-unit($num) {

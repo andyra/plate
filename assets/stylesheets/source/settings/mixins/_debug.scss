@@ -1,29 +1,28 @@
-
-// Title:      Debug
-// Version:    5.0.1
-// Author:     Harry Roberts
-// Source:     https://github.com/csswizardry/inuit.css/blob/master/generic/_debug.scss
+// ============================================================================
+// Debug
+// ============================================================================
 
 // Enable this stylesheet to visually detect any improperly nested or
 // potentially invalid markup, or any potentially inaccessible code.
 // Please note that this method of checking markup quality should not be relied
 // upon entirely. Validate your markup!
+// @source: https://github.com/csswizardry/inuit.css/blob/master/generic/_debug.scss
 
-// brown1:     definite error
-// gold2:  double-check
-// None:    should be fine
+// red:     definite error
+// yellow:  double-check
+// none:    should be fine
 
 @if $debug-mode == true {
 
   // Are there any empty elements in your page?
   :empty {
-      outline: 5px solid gold2;
+    outline: 5px solid gold;
   }
 
   // Images require `alt` attributes, empty `alt`s are fine but should be double-
-  // checked, no `alt` is bad and is flagged brown1.
+  // checked, no `alt` is bad and is flagged tomato.
   img {
-    outline: 5px solid brown1;
+    outline: 5px solid tomato;
   }
 
   img[alt] {
@@ -31,14 +30,13 @@
   }
 
   img[alt=""] {
-    outline: 5px solid gold2;
+    outline: 5px solid gold;
   }
-
 
   // Links sometimes, though not always, benefit from `title` attributes. Links
   // without are never invalid but it’s a good idea to check.
   a {
-    outline: 5px solid gold2;
+    outline: 5px solid gold;
   }
 
   a[title] {
@@ -48,25 +46,25 @@
   // Double-check any links whose `href` is something questionable.
   a[href="#"],
   a[href*="javascript"] {
-    outline: 5px solid gold2;
+    outline: 5px solid gold;
   }
 
   // The `target` attribute ain’t too nice...
   a[target] {
-    outline: 5px solid gold2;
+    outline: 5px solid gold;
   }
 
   // Ensure any lists only contain `li`s as children.
   ul,
   ol {
     > *:not(li) {
-      outline: 5px solid brown1;
+      outline: 5px solid tomato;
     }
   }
 
   // It’s always nice to give `th`s `scope` attributes.
   th {
-    outline: 5px solid gold2;
+    outline: 5px solid gold;
   }
 
   th[scope] {
@@ -75,30 +73,30 @@
 
   // `tr`s as children of `table`s ain’t great, did you need a `thead`/`tbody`?
   table > tr {
-    outline: 5px solid gold2;
+    outline: 5px solid gold;
   }
 
   // `tfoot` needs to come *before* `tbody`.
   tbody + tfoot {
-    outline: 5px solid gold2;
+    outline: 5px solid gold;
   }
 
   // Forms require `action` attributes
   form {
-    outline: 5px solid brown1;
+    outline: 5px solid tomato;
   }
 
   form[action] {
     outline: none;
   }
 
-  // Various form-field types have requibrown1 attributes. `input`s need `type`
+  // Various form-field types have requitomato attributes. `input`s need `type`
   // attributes, `textarea`s need `rows` and `cols` attributes and submit buttons
   // need a `value` attribute.
 
   textarea,
   input {
-    outline: 5px solid brown1;
+    outline: 5px solid tomato;
   }
 
   input[type] {
@@ -110,7 +108,7 @@
   }
 
   input[type=submit] {
-    outline: 5px solid brown1;
+    outline: 5px solid tomato;
   }
 
   input[type=submit][value] {
@@ -119,12 +117,12 @@
 
   // Avoid inline styles where possible.
   [style] {
-    outline: 5px solid gold2;
+    outline: 5px solid gold;
   }
 
   // You should avoid using IDs for CSS, is this doing any styling?
   [id] {
-    outline: 5px solid gold2;
+    outline: 5px solid gold;
   }
 
   // Are you using the grid system correctly?
@@ -132,7 +130,7 @@
   .grid-wrapper > :not(.grid),
   .gw--rev > :not(.g),
   .grid-wrapper--rev > :not(.grid) {
-    outline: 5px solid brown1;
+    outline: 5px solid tomato;
   }
 
 } // end @if

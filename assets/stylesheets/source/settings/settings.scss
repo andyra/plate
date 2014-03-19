@@ -1,8 +1,6 @@
-
-// Title:      Global settings
-// Version:    0.0.1
-// Author:     Andy Smith
-// Source:     http://github/com/andyra/proto
+// ============================================================================
+// Settings
+// ============================================================================
 
 // Import global variables, functions, and mixins here. Anything that lives on
 // this level should be generic and applicable scross the entire project.
@@ -27,7 +25,6 @@
 @import "functions/rel-to-px";
 @import "functions/relative-unit";
 @import "functions/strip-unit";
-@import "functions/unit-relative-to-parent";
 
 // Mixins
 @import "mixins/debug";
