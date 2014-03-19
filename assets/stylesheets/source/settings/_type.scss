@@ -25,14 +25,14 @@ $font-family-code:     $monospace !default;
 // Type size
 // ----------------------------------------------------------------------------
 
-// $font-size-px-base: the document's base font size in pixels.
+// $px-base: the document's base font size in pixels.
 // $font-size-base: the default size for body text (paragraphs, lists, etc.).
 // The unit you set here (px, em, rem) will be your default type unit.
 // $rem-fallback: whether or not to include px fallback for rem (IE8 support)
 // If you're sizing with pixels and using the modular-scale function,
 // you'll need to round off the values to get px integers.
 
-$font-size-px-base: 18px;
+$px-base:           18px;
 $font-size-base:    1rem !default;
 $rem-fallback:      true !default;
 

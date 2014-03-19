@@ -15,7 +15,7 @@
 // whose root is set in ems. So we set the root font size in percentages of
 // the default font size.
 html {
-  font-size: strip-unit($font-size-px-base) / 16 * 100%;
+  font-size: strip-unit($px-base) / 16 * 100%;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 

@@ -4,14 +4,14 @@
 
 // Adds a pixel fallback for any rem values, leaves others as-is
 
-@mixin rem-fallback($property, $sizes, $base: $font-size-px-base) {
+@mixin rem-fallback($property, $sizes, $base: $px-base) {
   $legacy-values: ();
   $modern-values: $sizes;
 
   @each $size in $sizes {
     @if unit($size) == "rem" {
       // If the unit is rem, convert to px and drop in the legacy array
-      $legacy-values: append($legacy-values, strip-unit($size) * $font-size-px-base);
+      $legacy-values: append($legacy-values, strip-unit($size) * $px-base);
     }
     @else {
       // If the unit is legacy safe, drop it in the legacy array as-is

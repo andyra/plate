@@ -11,7 +11,7 @@
 // ex: set-unit(1, 24)  => 1.5em       if unit($font-size-base) == em (based on a parent's font size)
 // ex: set-unit(1)      => 1rem        if unit($font-size-base) == rem
 
-@function rel-to-px($relval, $base: $font-size-px-base) {
+@function rel-to-px($relval, $base: $px-base) {
   // Strip the unit if one is accidentally passed in
   $relval: strip-unit($relval);
   $base: strip-unit($base);

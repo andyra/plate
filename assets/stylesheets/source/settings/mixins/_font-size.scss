@@ -9,7 +9,7 @@
   @if unit($font-size-base) == "rem" {
     // The `rem` mixin expects values in px, so let's convert our relative font
     // size to be in a px value.
-    @include rem(font-size, $size * strip-unit($font-size-px-base));
+    @include rem(font-size, $size * strip-unit($px-base));
   }
 
   // We don't need fallbacks for px or em
