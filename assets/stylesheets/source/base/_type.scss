@@ -1,0 +1,164 @@
+// ============================================================================
+// Type
+// ============================================================================
+
+// Contents
+// ----------------------------------------------------------------------------
+
+// Variables
+// Headings
+// Paragraphs
+// Emphasis
+// Lists
+// Blockquotes
+// Code
+// Misc
+
+// Headings
+// ----------------------------------------------------------------------------
+
+// Variables
+$heading-color:             $gray-dark !default;
+
+// Paragraphs
+// ----------------------------------------------------------------------------
+
+// Variables
+$paragraph-indent:          1.5em !default;
+
+// Mixins
+
+// Hyphens
+// Accepted values: [ none | manual | auto ]
+// @source: http://trentwalton.com/2011/09/07/css-hyphenation
+
+@mixin hyphens($val) {
+  @include prefixer(hyphens, $val, webkit moz ms o spec)
+}
+
+// Hyphens
+// @source: http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+
+body {
+  @include css-hyphens(auto);
+}
+
+abbr,
+acronym,
+blockquote,
+code,
+dir,
+kbd,
+listing,
+plaintext,
+q,
+samp,
+tt,
+var,
+xmp {
+  @include css-hyphens(none);
+}
+
+// Emphasis
+// ----------------------------------------------------------------------------
+
+// Variables
+$small-print-size:          65% !default;
+
+$small-caps-color: gray !default;
+$small-caps-weight: 600 !default;
+
+$dropcap-float-position: left !default;
+$dropcap-font-size: 4em !default;
+$dropcap-font-family: inherit !default;
+$dropcap-txt-indent: 0 !default;
+$dropcap-margin: inherit !default;
+$dropcap-padding: inherit !default;
+$dropcap-color: inherit !default;
+$dropcap-line-height: 1 !default;
+$dropcap-bg: transparent !default;
+
+// Mixins
+
+// Smallcaps
+// Depends on the font family; some font-families don't support small caps or
+// don't provide them with their web font.
+@mixin smallcaps($color, $font-weight) {
+  color: $color;
+  font-variant: small-caps;
+  font-weight: $font-weight;
+  text-transform: lowercase;
+}
+
+// Abbreviations
+// <abbr title="hyper text markup language">HMTL</abbr>
+
+abbr {
+  @include smallcaps($small-caps-color, $small-caps-weight);
+
+  &[title]:hover {
+    cursor: help;
+  }
+}
+
+// Dropcaps
+
+.drop-cap {
+  &:first-letter {
+    background: $dropcap-bg;
+    color: $dropcap-color;
+    float: $dropcap-float-position;
+    font-family: $dropcap-font-family;
+    font-size: $dropcap-font-size;
+    line-height: $dropcap-line-height;
+    margin: $dropcap-margin;
+    padding: $dropcap-padding;
+    text-indent: $dropcap-txt-indent;
+  }
+}
+
+// Combats our sibling paragraphs syling and indentation
+// as not to ruin our beautiful drop caps.
+p + .drop-cap {
+  margin-top: 0;
+  text-indent: 0;
+}
+
+// Lists
+// ----------------------------------------------------------------------------
+
+// Blockquotes
+// ----------------------------------------------------------------------------
+
+// <blockquote>: offset from normal text; content is from external source
+// <q>:          inline with normal text; content is form external source
+// Cite:         the source of a quote; usually inside of a blockquote
+
+// http://24ways.org/2005/swooshy-curly-quotes-without-images
+
+// Variables
+$blockquote-font-size:      4em !default;
+$blockquote-opacity:        0.5 !default;
+$blockquote-color:          #dc976e !default;
+
+$cite-display: block !default;
+$cite-text-align: right !default;
+$cite-font-size: inherit !default;
+
+// Code
+// ----------------------------------------------------------------------------
+
+// Variables
+$code-color:                #c7254e !default;
+$code-bg:                   #f9f2f4 !default;
+
+$kbd-color:                 white !default;
+$kbd-bg:                    $gray !default;
+$pre-bg:                    $gray-lighter !default;
+
+$pre-color:                 $gray-dark !default;
+$pre-border-color:          $gray-light !default;
+$pre-scrollable-max-height: 340px !default;
+
+// Misc
+// ----------------------------------------------------------------------------
