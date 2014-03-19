@@ -99,14 +99,23 @@
 // It defaults to the smallest integer large enough to fit the font.
 // $base: adjust from a font-size other than the base font-size (for ems).
 
-@mixin type-scale(
+// Example
+// .element {
+//   @include type-size($font-size-lg);
+// }
+
+// .element {
+//   @include type-size($font-size-sm, 3);
+// }
+
+@mixin type-size(
   $font-size,
   $lines: lines-for-font-size($font-size),
   $base: $font-size-base
 ) {
 
   @if absolute_unit($font-size-base) and $base != $font-size-base {
-    @warn "$font-size-base is in pixels but a relative font size was passed to type-scale";
+    @warn "$font-size-base is in pixels but a relative font size was passed to type-size";
   }
 
   // Set font-size

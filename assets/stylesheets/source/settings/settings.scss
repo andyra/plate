@@ -7,8 +7,16 @@
 // Component-specific mixins or variables should live at the component level.
 
 // Libraries
-@import "lib/bourbon/bourbon";  // v3.2.0.beta.2
-@import "lib/neat/neat";        // v1.6.0.pre
+@import "lib/bourbon/bourbon";       // v3.2.0.beta.2
+@import "lib/neat/neat";             // v1.6.0.pre
+
+// Functions
+@import "functions/absolute-unit";
+@import "functions/font-size-scale";
+@import "functions/px-to-rel";
+@import "functions/rel-to-px";
+@import "functions/relative-unit";
+@import "functions/strip-unit";
 
 // Variables
 @import "breakpoints";
@@ -18,13 +26,6 @@
 @import "debug";
 @import "grid";
 @import "scaffolding";
-
-// Functions
-@import "functions/absolute-unit";
-@import "functions/px-to-rel";
-@import "functions/rel-to-px";
-@import "functions/relative-unit";
-@import "functions/strip-unit";
 
 // Mixins
 @import "mixins/debug";
