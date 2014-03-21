@@ -12,9 +12,10 @@
 
 // Functions
 @import "functions/absolute-unit";
-@import "functions/font-size-scale";
-@import "functions/px-to-rel";
-@import "functions/rel-to-px";
+@import "functions/leading";
+@import "functions/min-lines-for";
+@import "functions/px-to-font-unit";
+@import "functions/rel-to-font-unit";
 @import "functions/relative-unit";
 @import "functions/strip-unit";
 
@@ -32,6 +33,7 @@
 @import "mixins/font-size";
 @import "mixins/headings";
 @import "mixins/hyphens";
+@import "mixins/leading";
+@import "mixins/leading-borders";
 @import "mixins/rem-fallback";
-@import "mixins/vertical-rhythm";
 @import "mixins/visual-baseline";

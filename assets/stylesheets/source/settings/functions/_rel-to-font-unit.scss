@@ -6,12 +6,14 @@
 // If $font-unit is set to `px`, this function will simply return the
 // value unmodified.
 
-// ex: rel-to-px(1)      => 16px        if $font-unit == px
-// ex: rel-to-px(1)      => 1em         if $font-unit == em
-// ex: rel-to-px(1, 24)  => 1.5em       if $font-unit == em (based on a parent's font size)
-// ex: rel-to-px(1)      => 1rem        if $font-unit == rem
+// $font-unit == px
+// rel-to-font-unit(1)      => 16px
+// $font-unit == em
+// rel-to-font-unit(1, 24)  => 1.5em
+// $font-unit == rem
+// rel-to-font-unit(1)      => 1rem
 
-@function rel-to-px($relval, $base: $font-size-base) {
+@function rel-to-font-unit($relval, $base: $font-size-base) {
   // Strip the unit if one is accidentally passed in
   $relval: strip-unit($relval);
   $base: strip-unit($base);
@@ -26,10 +28,6 @@
 
   @elseif $font-unit == "rem" {
     @return $relval * 1rem;
-  }
-
-  @elseif $font-unit == "%" {
-    @return $relval * 100%;
   }
 
   @else {

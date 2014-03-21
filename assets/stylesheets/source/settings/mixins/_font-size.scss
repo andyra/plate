@@ -2,18 +2,20 @@
 // Font Size
 // ============================================================================
 
-// This is just an alias for the rem mixin for better readability.
-// The units here could be in absolute or relative units.
+// Quickly generate a font size and line-height based on a vertical rhythm. The
+// number of lines is set automatically for you appropriate to the font-size,
+// although you can pass in a custom number of lines if you like.
+// $font-size must be in px.
 
-@mixin font-size($size) {
-  @if unit($font-size-base) == "rem" {
-    // The `rem` mixin expects values in px, so let's convert our relative font
-    // size to be in a px value.
-    @include rem(font-size, $size * strip-unit($px-base));
-  }
+// @include font-size($font-size-h1);
+// @include font-size($font-size-h2, 3); (line-height will take up 3 units)
+// @todo: min-lines-for()
 
-  // We don't need fallbacks for px or em
-  @else {
-    font-size: $size;
+@mixin font-size($font-size, $lines: min-lines-for($font-size), $base: $font-size-base) {
+  // Provide a px fallback for rem values
+  @if $font-unit == "rem" and $px-fallback == true {
+    font-size: $font-size;
   }
+  font-size: px-to-font-unit($font-size, $base);
+  line-height: strip-unit(leading($lines, $font-size));
 }

@@ -2,46 +2,89 @@
 // Type Settings
 // ============================================================================
 
-// @todo: lists: http://j.eremy.net/align-lists-flush-left/
-// @todo: Body line height should change based on how wide the content is.
-// @source: http://www.pearsonified.com/typography/
-
-// Font families
-// ----------------------------------------------------------------------------
-
-// Font stacks
-$font-family-sans:      $helvetica !default;
-$font-family-serif:     $georgia !default;
-$font-family-mono:      $monospace !default;
-
-$font-family-base:      $font-family-sans;
-
-// Custom fonts
-//
-// To create custom fonts, uncomment the `font-face` mixin below and fill with
-// the information specific to your font. You can then add your custom font
-// family name in front of the font stacks above to allow for fallbacks in the
-// event the font files don't load in old browsers.
-
-// @include font-face($font-family, $file-path, $weight: normal, $style: normal)
-
 // Type size
 // ----------------------------------------------------------------------------
 
-// $px-base: the document's base font size in pixels.
-// $font-size-base: the unit you set here will be your default type unit.
+// Define in pixels; mixins will convert measurements to the most appropriate
+// units (rems, ems, px, %, or unitless).
 
-$px-base:           16px !default;
-$font-size-base:    1rem !default;
-$font-size-ratio:   $golden !default;
+$font-size-base:    16px !default;
+$line-height-base:  24px !default;
 
-$font-size-xxl:     font-size-scale(4) !default;
-$font-size-xl:      font-size-scale(3) !default;
-$font-size-lg:      font-size-scale(2) !default;
-$font-size-md:      font-size-scale(1) !default;
-$font-size-base:    font-size-scale(0) !default;
-$font-size-sm:      font-size-scale(-1) !default;
-$font-size-xs:      font-size-scale(-2) !default;
+$font-size-h1:      48px !default;
+$font-size-h2:      36px !default;
+$font-size-h3:      30px !default;
+$font-size-h4:      24px !default;
+$font-size-h5:      20px !default;
+$font-size-h6:      18px !default;
+$font-size-sm:      14px !default;
+$font-size-xs:      11px !default;
+
+// Options
+$font-unit:         rem  !default; // px, em, or rem
+$px-fallback:       true !default; // only required if using rems
+$line-height-ratio: $line-height-base / $font-size-base !default;
+
+// Families
+// ----------------------------------------------------------------------------
+
+$sans:              $helvetica !default;
+$serif:             $georgia !default;
+$mono:              $monospace !default;
+$font-family-base:  $sans !default;
+
+// Weights
+// ----------------------------------------------------------------------------
+
+$font-weight-thin:    100 !default;
+$font-weight-light:   300 !default;
+$font-weight-normal:  400 !default;
+$font-weight-medium:  500 !default;
+$font-weight-bold:    700 !default;
+$font-weight-black:   900 !default;
+
+// Colors
+// ----------------------------------------------------------------------------
+
+$text-color:     $gray-dark !default;
+
+
+
+
+
+
+
+
+
+/*
+
+// Used to create percentages on HTML element at certain breakpoints
+$rootsize-0:        12;
+$rootsize-1:        14;
+$rootsize-2:        15;
+$rootsize-3:        17;
+$rootsize-4:        18;
+
+----------
+
+$font-size-base:    16px;
+$line-height-base:  1.5;
+$leading:           $font-size-base * $line-height-base;
+
+----------
+
+@mixin font-size($font-size, $line-height: true) {
+  font-size: $font-size;
+  font-size: ($font-size / $typecsset-base-font-size) * 1rem;
+
+  @if $line-height == true {
+    line-height: ceil($font-size / $typecsset-base-line-height) * ($typecsset-base-line-height / $font-size);
+  }
+}
+
+*/
+
+
 
 // Vertical Rhythm
 // ----------------------------------------------------------------------------
@@ -59,24 +102,3 @@ $line-height-computed:        $font-size-base * $line-height-base !default;
 $round-to-nearest-half-line:  true !default;
 $min-line-padding:            2px !default;
 $default-border-style:        solid !default;
-
-// Weights
-// ----------------------------------------------------------------------------
-
-$font-weight-thin:    100 !default;
-$font-weight-light:   300 !default;
-$font-weight-normal:  400 !default;
-$font-weight-medium:  500 !default;
-$font-weight-bold:    700 !default;
-$font-weight-black:   900 !default;
-
-// Colors
-// ----------------------------------------------------------------------------
-
-$text-color:     $gray-dark !default;
-
-// Browser support
-// ----------------------------------------------------------------------------
-
-// Allow for px values to support IE8 and below if $font-size-base is in rems.
-$rem-fallback:    true !default;

@@ -1,0 +1,12 @@
+// ============================================================================
+// Leading
+// ============================================================================
+
+// Calculate leading to create a consistent vertical rhythm.
+// Returns a value in your $font-unit.
+
+@function leading($lines: 1, $font-size: $font-size-base, $offset: 0) {
+  $leading: $font-size-base * ($lines * $line-height-base - $offset) / $font-size;
+
+  @return px-to-font-unit($leading);
+}

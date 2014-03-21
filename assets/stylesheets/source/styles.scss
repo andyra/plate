@@ -19,3 +19,16 @@
 @import "settings/settings";
 @import "base/base";
 @import "components/components";
+
+@include headings() {
+  background: rgba(yellow, .25);
+  margin: 0;
+}
+
+$weird-size: 49px;
+
+h1 {
+  @include font-size($weird-size);
+  @include margin(1 0 2);
+  @include border-top(11px, $font-size: $weird-size);
+}

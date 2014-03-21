@@ -1,0 +1,47 @@
+// ============================================================================
+// Leading Borders
+// ============================================================================
+
+// Add borders to elements without upsetting the baseline grid.
+
+@mixin border($width: 1px, $lines: 1, $font-size: $font-size-base) {
+  // Get the border width value into your font unit of choice
+  $border-width: if(unit($width) == "px", px-to-font-unit($width), $width);
+
+  @include rem-fallback(border-width, $border-width);
+  @include leading(padding, $lines, $font-size-base, $width);
+  border-style: solid;
+}
+
+@mixin border-side($side, $width: 1px, $lines: 1, $font-size: $font-size-base) {
+  // Get the border width value into your font unit of choice
+  $border-width: if(unit($width) == "px", px-to-font-unit($width), $width);
+
+  @include rem-fallback(border-#{$side}-width, $border-width);
+  @include leading(padding-#{$side}, $lines, $font-size-base, $width);
+  border-#{$side}-style: solid;
+}
+
+// Aliases
+// ----------------------------------------------------------------------------
+
+@mixin border-top($width, $lines: 1, $font-size: $font-size-base) {
+  @include border-side(top, $width, $lines, $font-size);
+}
+
+@mixin border-bottom($width, $lines: 1, $font-size: $font-size-base) {
+  @include border-side(bottom, $width, $lines, $font-size);
+}
+
+@mixin border-left($width, $lines: 1, $font-size: $font-size-base) {
+  @include border-side(left, $width, $lines, $font-size);
+}
+
+@mixin border-right($width, $lines: 1, $font-size: $font-size-base) {
+  @include border-side(right, $width, $lines, $font-size);
+}
+
+@mixin border-horizontal($width, $lines: 1, $font-size: $font-size-base) {
+  @include border-side(bottom, $width, $lines, $font-size);
+  @include border-side(top, $width, $lines, $font-size);
+}

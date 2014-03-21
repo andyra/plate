@@ -2,6 +2,12 @@
 // Type
 // ============================================================================
 
+// @todo: http://csswizardry.com/2011/01/html5-and-text-level-semantics/#small-el
+// @todo: http://webdesign.tutsplus.com/articles/a-web-designers-typographic-boilerplate--webdesign-15234
+// @todo: lists: http://j.eremy.net/align-lists-flush-left/
+// @todo: Body line height should change based on how wide the content is.
+// @source: http://www.pearsonified.com/typography/
+
 // Contents
 // ----------------------------------------------------------------------------
 
@@ -19,10 +25,6 @@
 // Maybe local variables all start with the section title and
 // global variables start with the css rule. So:
 // $heading-font instead of $font-family-heading
-
-// Variables
-$heading-color:             $gray-dark !default;
-$heading-font-family:       $font-family-base !default;
 
 // Paragraphs
 // ----------------------------------------------------------------------------
