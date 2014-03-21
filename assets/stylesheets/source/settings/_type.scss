@@ -8,20 +8,22 @@
 // Define in pixels; mixins will convert measurements to the most appropriate
 // units (rems, ems, px, %, or unitless).
 
-$font-size-base:    16px !default;
+$font-size-base:    18px !default;
 $line-height-base:  24px !default;
 
-$font-size-h1:      48px !default;
-$font-size-h2:      36px !default;
-$font-size-h3:      30px !default;
-$font-size-h4:      24px !default;
-$font-size-h5:      20px !default;
-$font-size-h6:      18px !default;
-$font-size-sm:      14px !default;
-$font-size-xs:      11px !default;
-
-// Options
 $font-unit:         rem  !default; // px, em, or rem
+$font-scale-ratio:  $perfect-fourth !default;
+
+// Size via a modular scale
+$font-size-h1:      font-scale(5) !default;
+$font-size-h2:      font-scale(4) !default;
+$font-size-h3:      font-scale(3) !default;
+$font-size-h4:      font-scale(2) !default;
+$font-size-h5:      font-scale(1) !default;
+$font-size-h6:      font-scale(0) !default;
+$font-size-sm:      font-scale(-1) !default;
+$font-size-xs:      font-scale(-2) !default;
+
 $px-fallback:       true !default; // only required if using rems
 $line-height-ratio: $line-height-base / $font-size-base !default;
 
@@ -47,58 +49,3 @@ $font-weight-black:   900 !default;
 // ----------------------------------------------------------------------------
 
 $text-color:     $gray-dark !default;
-
-
-
-
-
-
-
-
-
-/*
-
-// Used to create percentages on HTML element at certain breakpoints
-$rootsize-0:        12;
-$rootsize-1:        14;
-$rootsize-2:        15;
-$rootsize-3:        17;
-$rootsize-4:        18;
-
-----------
-
-$font-size-base:    16px;
-$line-height-base:  1.5;
-$leading:           $font-size-base * $line-height-base;
-
-----------
-
-@mixin font-size($font-size, $line-height: true) {
-  font-size: $font-size;
-  font-size: ($font-size / $typecsset-base-font-size) * 1rem;
-
-  @if $line-height == true {
-    line-height: ceil($font-size / $typecsset-base-line-height) * ($typecsset-base-line-height / $font-size);
-  }
-}
-
-*/
-
-
-
-// Vertical Rhythm
-// ----------------------------------------------------------------------------
-
-$line-height-base:            1.5 !default; // Unitless number
-$line-height-computed:        $font-size-base * $line-height-base !default;
-
-// $round-to-nearest-half-line: Allows the `type-size` mixin and the `lines-
-// for-font-size` function to round the line height to the nearest half line
-// height instead of the nearest integral line height to avoid large spacing
-// between lines.
-// $min-line-padding: Ensure there is at least this many pixels of vertical
-// padding above and below the text.
-
-$round-to-nearest-half-line:  true !default;
-$min-line-padding:            2px !default;
-$default-border-style:        solid !default;

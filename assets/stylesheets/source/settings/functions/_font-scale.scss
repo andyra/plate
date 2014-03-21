@@ -5,11 +5,11 @@
 // Uses Bourbon's modular-scale mixin to increment font sizes. Pixel values are
 // rounded off to the nearest integer.
 
-@function font-size-scale($increment) {
+@function font-scale($increment) {
   $size: if(
-    unit($font-size-base) == "px",
-    round(modular-scale($font-size-base, $increment, $font-size-ratio)),
-    modular-scale($font-size-base, $increment, $font-size-ratio)
+    $font-unit == "px",
+    round(modular-scale($font-size-base, $increment, $font-scale-ratio)),
+          modular-scale($font-size-base, $increment, $font-scale-ratio)
   );
 
   @return $size;
