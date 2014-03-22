@@ -1,0 +1,10 @@
+// ============================================================================
+// Misc Typography
+// ============================================================================
+
+hr {
+  @include margin(1 0);
+  background-color: $text-color;
+  border: 0;
+  border-bottom: $border-size-base solid $text-color;
+}

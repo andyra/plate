@@ -1,0 +1,56 @@
+// ============================================================================
+// Fancies for Typography
+// ============================================================================
+
+// Variables
+// ----------------------------------------------------------------------------
+
+$small-caps-color:        $gray !default;
+$small-caps-weight:       600 !default;
+
+// Base styles
+// ----------------------------------------------------------------------------
+
+// Drop caps
+.drop-cap {
+  &:first-letter {
+    color: inherit;
+    float: left;
+    font-family: $font-family-base;
+    font-size: 3em;
+    font-weight: $font-weight-bold;
+    line-height: 1;
+    margin: 0 .125em 0 0;
+    padding: 0;
+    text-indent: 0;
+  }
+}
+
+// Combats our sibling paragraphs syling and indentation
+// as not to ruin our beautiful drop caps.
+p + .drop-cap {
+  margin-top: 0;
+  text-indent: 0;
+}
+
+// Consistent height numbers with OpenType
+.lining-numerals {
+  @include font-feature-settings(lnum kern);
+}
+
+// Ascending and descending numbers with OpenType
+.oldstyle-numerals {
+  @include font-feature-settings(onum kern);
+}
+
+// Real small caps
+.small-caps {
+  @include font-feature-settings(smcp kern);
+  letter-spacing: 0.1em;
+}
+
+// Letter space those capitals people, Jan Tschichold would be proud.
+.upper {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
