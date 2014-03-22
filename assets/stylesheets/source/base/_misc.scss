@@ -2,9 +2,29 @@
 // Misc Typography
 // ============================================================================
 
+// Addresses
+address {
+  @include margin-bottom(1);
+  font-style: normal;
+  line-height: $line-height-ratio;
+}
+
+// Horizontal rules
 hr {
   @include margin(1 0);
   background-color: $text-color;
   border: 0;
   border-bottom: $border-size-base solid $text-color;
+}
+
+// Abbreviations and acronyms
+abbr[title],
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted $link-color;
+}
+
+.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
 }

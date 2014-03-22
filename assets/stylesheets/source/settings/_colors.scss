@@ -6,14 +6,33 @@
 // editor. SASS will convert these values to HEX in the compiled CSS.
 // @source: http://css-tricks.com/yay-for-hsla/
 
+// Grays
 $gray-darker:           hsl(0, 0%, 12%) !default;
 $gray-dark:             hsl(0, 0%, 20%) !default;
 $gray:                  hsl(0, 0%, 32%) !default;
 $gray-light:            hsl(0, 0%, 60%) !default;
 $gray-lighter:          hsl(0, 0%, 95%) !default;
 
-$brand-primary:         hsl(204, 67%, 48%) !default;
-$brand-info:            hsl(179, 46%, 59%) !default;
-$brand-success:         hsl(156, 53%, 42%) !default;
-$brand-warning:         hsl( 34, 82%, 56%) !default;
-$brand-danger:          hsl(  4, 66%, 53%) !default;
+// Colors
+$color-primary:         hsl(204, 67%, 48%) !default;
+$color-info:            hsl(179, 46%, 59%) !default;
+$color-success:         hsl(156, 53%, 42%) !default;
+$color-warning:         hsl( 34, 82%, 56%) !default;
+$color-danger:          hsl(  4, 66%, 53%) !default;
+
+// State colors
+$state-success-text:             $color-success !default;
+$state-success-bg:               lighten($state-success-text, 20%) !default;
+$state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+$state-info-text:                $color-info !default;
+$state-info-bg:                  lighten($state-info-text, 20%) !default;
+$state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%) !default;
+
+$state-warning-text:             $color-warning !default;
+$state-warning-bg:               lighten($state-warning-text, 20%) !default;
+$state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+
+$state-danger-text:              $color-danger !default;
+$state-danger-bg:                lighten($state-danger-text, 20%) !default;
+$state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;

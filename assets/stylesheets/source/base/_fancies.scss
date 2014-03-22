@@ -12,6 +12,8 @@ $small-caps-weight:       600 !default;
 // ----------------------------------------------------------------------------
 
 // Drop caps
+
+%drop-cap,
 .drop-cap {
   &:first-letter {
     color: inherit;
@@ -34,22 +36,27 @@ p + .drop-cap {
 }
 
 // Consistent height numbers with OpenType
+
+%lining-numerals,
 .lining-numerals {
   @include font-feature-settings(lnum kern);
 }
 
 // Ascending and descending numbers with OpenType
+%oldstyle-numerals,
 .oldstyle-numerals {
   @include font-feature-settings(onum kern);
 }
 
 // Real small caps
+%small-caps,
 .small-caps {
   @include font-feature-settings(smcp kern);
   letter-spacing: 0.1em;
 }
 
 // Letter space those capitals people, Jan Tschichold would be proud.
+%upper,
 .upper {
   letter-spacing: 0.1em;
   text-transform: uppercase;

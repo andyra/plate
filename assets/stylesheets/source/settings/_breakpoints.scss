@@ -4,11 +4,14 @@
 
 // Sets the default media feature that media() and new-breakpoint() revert to
 // when only a breakpoint value is passed.
-$default-feature: min-width;
+$default-feature:        min-width;
 
 // Default screen size breakpoints to use with media queries.
-$screen-xs:    (480 / 16) * 1em !default;
-$screen-sm:    (640 / 16) * 1em !default;
-$screen-md:    (800 / 16) * 1em !default;
-$screen-lg:   (1024 / 16) * 1em !default;
-$screen-xl:   (1600 / 16) * 1em !default;
+$screen-xs:               (480 / 16) * 1em !default;
+$screen-sm:               (640 / 16) * 1em !default;
+$screen-md:               (800 / 16) * 1em !default;
+$screen-lg:              (1024 / 16) * 1em !default;
+$screen-xl:              (1600 / 16) * 1em !default;
+
+// The point at which the grid switches to favor larger screens
+$breakpoint-grid-float:   $screen-sm;

@@ -5,6 +5,17 @@
 // A good resource on when/how to use <blockquote> and <cite>:
 // @source: http://html5doctor.com/cite-and-blockquote-reloaded/
 
+blockquote {
+  @include font-size($font-size-md);
+  border-left: $border-size-lg solid;
+  padding-left: 2rem;
+  quotes: "\201C" "\201D";
+
+  // Remove margin on last <p>
+  p:last-of-type { margin-bottom: 0; }
+}
+
+// Inline quotes
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 
@@ -12,21 +23,7 @@ q {
   &:after  { content: close-quote; }
 }
 
-blockquote {
-  @include font-size($font-size-md);
-  border-left: $border-size-lg solid;
-  padding-left: 2rem;
-  quotes: "\201C" "\201D";
-
-  p {
-    font-style: italic;
-
-    // Remove margin on last <p>
-    &:last-of-type { margin-bottom: 0; }
-  }
-
-}
-
+// Citations
 cite {
   @include font-size($font-size-base);
   font-style: normal;

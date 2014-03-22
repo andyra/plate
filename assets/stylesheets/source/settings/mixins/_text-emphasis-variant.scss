@@ -1,0 +1,13 @@
+// ============================================================================
+// Text Emphasis Variant
+// ============================================================================
+
+@mixin text-emphasis-variant($parent, $color) {
+  #{$parent} {
+    color: $color;
+  }
+
+  a#{$parent}:hover {
+    color: darken($color, 10%);
+  }
+}
