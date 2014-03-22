@@ -11,22 +11,25 @@
   @include box-sizing(border-box);
 }
 
-// IE 6 refuses to resize fonts set in pixels and it weirdly resizes fonts
-// whose root is set in ems. So we set the root font size in percentages of
-// the default font size.
 html {
-  @include prefixer(text-size-adjust, 100%, ms webkit);
-  font-size: strip-unit($font-size-base) / 16 * 100%;
-  // Remove gray highlight when tapping links in mobile safari
+  -ms-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-text-size-adjust: 100%;
+  font-size: root-size(14px);
+
+  @include media($screen-sm) {
+    font-size: root-size($font-size-base);
+  }
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
   background-color: $body-bg;
   color: $text-color;
   font-family: $font-family-base;
+  font-style: normal;
+  font-weight: $font-weight-normal;
   line-height: $line-height-base;
-  -webkit-font-smoothing: antialiased;
 }
 
 // Reset fonts for relevant elements

@@ -1,0 +1,10 @@
+// ============================================================================
+// Root Size
+// ============================================================================
+
+// Used for calculating font percentages for the root HTML element. Useful for
+// resizing all text on smaller screens.
+
+@function root-size($pxval) {
+  @return strip-unit($pxval) / 16 * 100%;
+}

@@ -2,44 +2,35 @@
 // Type Settings
 // ============================================================================
 
-// Type size
-// ----------------------------------------------------------------------------
+// Define all font sizes here in pixels; mixins will convert measurements to the
+// unit set in $font-unit.
 
-// Define in pixels; mixins will convert measurements to the most appropriate
-// units (rems, ems, px, %, or unitless).
+// Base
+$font-size-base:      16px !default;
+$line-height-ratio:   1.5;
+$line-height-base:    $font-size-base * $line-height-ratio !default;
+$font-unit:           rem  !default;
+$px-fallback:         true !default; // only required if using rems
+$font-scale-ratio:    $perfect-fourth !default; // used for font-scale()
 
-$font-size-base:    16px !default;
-$line-height-base:  24px !default;
+// Sizes
+$font-size-h1:        font-scale(5) !default;
+$font-size-h2:        font-scale(4) !default;
+$font-size-h3:        font-scale(3) !default;
+$font-size-h4:        font-scale(2) !default;
+$font-size-h5:        font-scale(1) !default;
+$font-size-h6:        font-scale(0) !default;
 
-$font-unit:         rem  !default; // px, em, or rem
-$font-scale-ratio:  $perfect-fourth !default;
-
-// Size via a modular scale
-// @source: http://modularscale.com/
-$font-size-h1:      font-scale(5) !default;
-$font-size-h2:      font-scale(4) !default;
-$font-size-h3:      font-scale(3) !default;
-$font-size-h4:      font-scale(2) !default;
-$font-size-h5:      font-scale(1) !default;
-$font-size-h6:      font-scale(0) !default;
-
-$font-size-sm:      font-scale(-1) !default;
-$font-size-xs:      font-scale(-2) !default;
-
-$px-fallback:       true !default; // only required if using rems
-$line-height-ratio: $line-height-base / $font-size-base !default;
+$font-size-sm:        font-scale(-1) !default;
+$font-size-xs:        font-scale(-2) !default;
 
 // Families
-// ----------------------------------------------------------------------------
-
-$sans:              $helvetica !default;
-$serif:             $georgia !default;
-$mono:              $monospace !default;
-$font-family-base:  $sans !default;
+$sans:                $helvetica !default;
+$serif:               $georgia !default;
+$mono:                $monospace !default;
+$font-family-base:    $sans !default;
 
 // Weights
-// ----------------------------------------------------------------------------
-
 $font-weight-thin:    100 !default;
 $font-weight-light:   300 !default;
 $font-weight-normal:  400 !default;
@@ -48,6 +39,4 @@ $font-weight-bold:    700 !default;
 $font-weight-black:   900 !default;
 
 // Colors
-// ----------------------------------------------------------------------------
-
-$text-color:     $gray-dark !default;
+$text-color:          $gray-dark !default;
