@@ -2,23 +2,25 @@
 // Font Unit
 // ============================================================================
 
-// Pass in a px value and get back the value in your $font-unit of choice.
+// Pass in a px value and get back the value in the unit of your choice.
+// Defaults to the unit set in $font-unit, but can be changed by passing px, em,
+// or rem in $custom-unit.
 
-// $font-unit: "px";
-// font-unit($font-size-base)       => 16px;
-// $font-unit: "rem";
-// font-unit($font-size-base)       => 1rem;
-// $font-unit: "em";
-// font-unit($font-size-base, 24px) => 0.666em;
+// font-unit($font-size-base)       => 16px;      when $font-unit == "px";
+// font-unit($font-size-base)       => 1rem;      when $font-unit == "rem";
+// font-unit($font-size-base, 24px) => 0.666em;   when $font-unit == "em";
+// font-unit($font-size-base, rem)  => 1rem;      when $font-unit == "em";
 
-@function font-unit($pxval, $base: $font-size-base) {
-  @if $font-unit == "px" {
+@function font-unit($pxval, $base: $font-size-base, $custom-unit: false) {
+  $unit: if($custom-unit == false, $font-unit, $custom-unit);
+
+  @if $unit == "px" {
     @return $pxval;
   }
-  @elseif $font-unit == "em" {
+  @elseif $unit == "em" {
     @return $pxval / $base * 1em;
   }
-  @elseif $font-unit == "rem" {
+  @elseif $unit == "rem" {
     @return $pxval / $font-size-base * 1rem;
   }
   @else {

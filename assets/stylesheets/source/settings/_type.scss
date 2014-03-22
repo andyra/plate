@@ -8,19 +8,21 @@
 // Define in pixels; mixins will convert measurements to the most appropriate
 // units (rems, ems, px, %, or unitless).
 
-$font-size-base:    18px !default;
+$font-size-base:    16px !default;
 $line-height-base:  24px !default;
 
 $font-unit:         rem  !default; // px, em, or rem
 $font-scale-ratio:  $perfect-fourth !default;
 
 // Size via a modular scale
+// @source: http://modularscale.com/
 $font-size-h1:      font-scale(5) !default;
 $font-size-h2:      font-scale(4) !default;
 $font-size-h3:      font-scale(3) !default;
 $font-size-h4:      font-scale(2) !default;
 $font-size-h5:      font-scale(1) !default;
 $font-size-h6:      font-scale(0) !default;
+
 $font-size-sm:      font-scale(-1) !default;
 $font-size-xs:      font-scale(-2) !default;
 

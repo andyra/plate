@@ -2,12 +2,13 @@
 // Breakpoint Variables
 // ============================================================================
 
-// Default screen size breakpoints to use with media queries. Variables shouldn't
-// be created for one-off adjustments (ex: `@include media(min-width 456px)`)
+// Sets the default media feature that media() and new-breakpoint() revert to
+// when only a breakpoint value is passed.
+$default-feature: min-width;
 
-// @todo: screen sizes in ems or what?
-
-$screen-xs:                   480px !default;
-$screen-sm:                   768px !default;
-$screen-md:                   960px !default;
-$screen-lg:                  1200px !default;
+// Default screen size breakpoints to use with media queries.
+$screen-xs:    (480 / 16) * 1em !default;
+$screen-sm:    (640 / 16) * 1em !default;
+$screen-md:    (800 / 16) * 1em !default;
+$screen-lg:   (1024 / 16) * 1em !default;
+$screen-xl:   (1600 / 16) * 1em !default;
