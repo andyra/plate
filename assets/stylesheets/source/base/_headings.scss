@@ -13,10 +13,12 @@ $heading-font-weight:       $font-weight-bold;
 // ----------------------------------------------------------------------------
 
 h1, h2, h3, h4, h5, h6 {
+  @include font-feature-settings(dlig liga lnum kern);
   @include margin(1 0);
   color: $heading-color;
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
+  text-rendering: optimizeLegibility;
 }
 
 h1 { @include font-size($font-size-h1); }

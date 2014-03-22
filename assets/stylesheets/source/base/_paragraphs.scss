@@ -1,3 +1,13 @@
 // ============================================================================
 // Paragraphs
 // ============================================================================
+
+// OpenType ligatures and oldstyle figures enabled if available.
+p {
+  @include font-feature-settings(kern onum liga);
+  @include margin-bottom(1);
+}
+
+.lead {
+  @include font-size($font-size-md);
+}

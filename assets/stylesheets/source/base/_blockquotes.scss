@@ -1,0 +1,39 @@
+// ============================================================================
+// Blockquotes
+// ============================================================================
+
+// A good resource on when/how to use <blockquote> and <cite>:
+// @source: http://html5doctor.com/cite-and-blockquote-reloaded/
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+
+  &:before { content: open-quote; }
+  &:after  { content: close-quote; }
+}
+
+blockquote {
+  @include font-size($font-size-md);
+  border-left: $border-size-lg solid;
+  padding-left: 2rem;
+  quotes: "\201C" "\201D";
+
+  p {
+    font-style: italic;
+
+    // Remove margin on last <p>
+    &:last-of-type { margin-bottom: 0; }
+  }
+
+}
+
+cite {
+  @include font-size($font-size-base);
+  font-style: normal;
+  display: block;
+  text-indent: 0;
+
+  &:before {
+    content: "\2014 \00A0"; // mdash + nbsp
+  }
+}

@@ -4,7 +4,7 @@
 
 // Calculate the minimum number of rhythm units needed to contain the font-size.
 
-$round-to-nearest-half-line: false;
+$round-to-nearest-half-line: true;
 $min-line-padding: 2px;
 
 @function min-lines-for($font-size) {

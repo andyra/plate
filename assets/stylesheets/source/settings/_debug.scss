@@ -4,7 +4,7 @@
 
 // Debug mode will visually highlight any potential markup/accessibility quirks
 // in the browser. Set to `true` or `false`.
-$debug-mode:                true !default;
+$debug-mode:                false !default;
 
 // Set $visual-grid to true to make sure your site is lining up as expected
 $visual-grid:               false !default;
@@ -13,7 +13,7 @@ $visual-grid-index:         back !default;
 $visual-grid-opacity:       0.5 !default;
 
 // Displays a baseline grid to make sure the vertical rhythm is consistent.
-$visual-baseline:           true !default;
+$visual-baseline:           false !default;
 $visual-baseline-color:     lightgreen !default;
 $visual-baseline-image:     null !default;
 

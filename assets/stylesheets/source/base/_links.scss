@@ -1,0 +1,18 @@
+// ============================================================================
+// Links
+// ============================================================================
+
+$link-color:        $brand-primary;
+$link-hover-color:  darken($link-color, 15%);
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+}

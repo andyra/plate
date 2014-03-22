@@ -8,17 +8,6 @@
 // @todo: Body line height should change based on how wide the content is.
 // @source: http://www.pearsonified.com/typography/
 
-// Contents
-// ----------------------------------------------------------------------------
-
-// Headings
-// Paragraphs
-// Emphasis
-// Lists
-// Blockquotes
-// Code
-// Misc
-
 // Paragraphs
 // ----------------------------------------------------------------------------
 
@@ -113,26 +102,6 @@ p + .drop-cap {
   text-indent: 0;
 }
 
-// Lists
-// ----------------------------------------------------------------------------
-
-// Blockquotes
-// ----------------------------------------------------------------------------
-
-// <blockquote>: offset from normal text; content is from external source
-// <q>:          inline with normal text; content is form external source
-// Cite:         the source of a quote; usually inside of a blockquote
-
-// http://24ways.org/2005/swooshy-curly-quotes-without-images
-
-// Variables
-$blockquote-font-size:      4em !default;
-$blockquote-opacity:        0.5 !default;
-$blockquote-color:          #dc976e !default;
-
-$cite-display: block !default;
-$cite-text-align: right !default;
-$cite-font-size: inherit !default;
 
 // Code
 // ----------------------------------------------------------------------------
@@ -148,6 +117,3 @@ $pre-bg:                    $gray-lighter !default;
 $pre-color:                 $gray-dark !default;
 $pre-border-color:          $gray-light !default;
 $pre-scrollable-max-height: 340px !default;
-
-// Misc
-// ----------------------------------------------------------------------------
