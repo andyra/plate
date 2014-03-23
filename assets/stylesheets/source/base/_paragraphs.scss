@@ -5,7 +5,7 @@
 // OpenType ligatures and oldstyle figures enabled if available.
 p {
   @include font-feature-settings(kern onum liga);
-  @include margin-bottom(1);
+  @include margin(0 0 1);
   word-break: break-all;
   word-break: break-word; // Non standard for webkit
 }

@@ -10,9 +10,9 @@ $font-unit:           rem  !default;
 $font-scale-ratio:    $perfect-fourth !default; // used for font-scale()
 
 // Sizes
-$font-size-base:      16px !default;
-$font-size-lg:        20px !default;
-$font-size-sm:        14px !default;
+$font-size-base:      18px !default;
+$font-size-lg:        font-scale(1) !default;
+$font-size-sm:        font-scale(-1) !default;
 
 $font-size-h1:        font-scale(5) !default;
 $font-size-h2:        font-scale(4) !default;
@@ -22,8 +22,9 @@ $font-size-h5:        font-scale(1) !default;
 $font-size-h6:        font-scale(0) !default;
 
 // Line height
-$line-height-ratio:   1.618;
+$line-height-ratio:   1.5;
 $line-height-base:    $font-size-base * $line-height-ratio !default;
+$round-to-half-line:  true;
 
 // Families
 $sans:                $helvetica !default;

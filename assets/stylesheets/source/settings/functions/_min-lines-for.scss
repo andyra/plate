@@ -3,8 +3,6 @@
 // ============================================================================
 
 // Calculate the minimum number of rhythm units needed to contain the font-size.
-
-$round-to-nearest-half-line: true;
 $min-line-padding: 2px;
 
 @function min-lines-for($font-size) {
@@ -12,12 +10,12 @@ $min-line-padding: 2px;
   $font-size: strip-unit($font-size);
   $line-height-base: strip-unit($line-height-base);
 
-  $lines: if($round-to-nearest-half-line,
+  $lines: if($round-to-half-line,
              ceil(2 * $font-size / $line-height-base) / 2,
              ceil($font-size / $line-height-base));
 
   @if $lines * $line-height-base - $font-size < $min-line-padding * 2 {
-    $lines: $lines + if($round-to-nearest-half-line, 0.5, 1);
+    $lines: $lines + if($round-to-half-line, 0.5, 1);
   }
   @return $lines;
 }

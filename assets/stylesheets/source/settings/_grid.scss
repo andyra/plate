@@ -7,7 +7,7 @@
 
 // @todo: width in percents, ems, px, or what?
 // The size of the outer container
-$max-width:                  80%;
+$max-width:                  em(960, $font-size-base);
 
 // Column count
 $grid-columns:               12;
@@ -21,7 +21,3 @@ $gutter:                     golden-ratio(1%, 1);
 // probably always be set to true
 // @source: http://www.paulirish.com/2012/box-sizing-border-box-ftw/
 $border-box-sizing:          true;
-
-// Sets the default media feature that media() and new-breakpoint() revert to
-// when only a breakpoint value is passed.
-$default-feature:            min-width;
