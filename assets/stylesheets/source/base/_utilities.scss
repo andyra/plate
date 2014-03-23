@@ -1,0 +1,62 @@
+// ============================================================================
+// Utility Classes
+// ============================================================================
+
+// Floats
+// ----------------------------------------------------------------------------
+
+%clearfix,
+.clearfix {
+  @include clearfix();
+}
+
+%center-block,
+.center-block {
+  @include center-block();
+}
+
+%pull-right,
+.pull-right {
+  float: right !important;
+}
+
+%pull-left,
+.pull-left {
+  float: left !important;
+}
+
+// Toggling content
+// ----------------------------------------------------------------------------
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+%hide,
+.hide {
+  display: none !important;
+}
+
+%show,
+.show {
+  display: block !important;
+}
+
+%invisible,
+.invisible {
+  visibility: hidden;
+}
+
+%text-hide
+.text-hide {
+  @include text-hide();
+}
+
+// Position
+// ----------------------------------------------------------------------------
+
+%affix,
+.affix {
+  position: fixed;
+}

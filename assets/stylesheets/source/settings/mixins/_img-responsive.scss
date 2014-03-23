@@ -6,7 +6,7 @@
 // Part 1: Set a maximum relative to the parent
 // Part 2: Scale the height according to the width, otherwise you get stretching
 
-@mixin responsive-image($display: block) {
+@mixin img-responsive($display: block) {
   display: $display;
   height: auto;
   max-width: 100%;

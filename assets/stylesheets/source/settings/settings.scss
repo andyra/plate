@@ -32,16 +32,18 @@
 
 // Mixins
 @import "mixins/debug";
+@import "mixins/center-block";
 @import "mixins/font-feature-settings";
 @import "mixins/font-size";
 @import "mixins/font-smoothing";
 @import "mixins/headings";
 @import "mixins/hyphens";
+@import "mixins/img-responsive";
 @import "mixins/leading";
 @import "mixins/leading-borders";
 @import "mixins/rem-fallback";
-@import "mixins/responsive-image";
 @import "mixins/tab-focus";
 @import "mixins/text-emphasis-variant";
+@import "mixins/text-hide";
 @import "mixins/text-overflow";
 @import "mixins/visual-baseline";
