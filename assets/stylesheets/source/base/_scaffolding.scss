@@ -12,9 +12,8 @@
 }
 
 html {
-  -ms-text-size-adjust: 100%;
+  @include prefixer(text-size-adjust, 100%, webkit ms);
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  -webkit-text-size-adjust: 100%;
   font-size: root-size(14px);
 
   @include media($screen-sm) {

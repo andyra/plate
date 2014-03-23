@@ -6,9 +6,17 @@
 p {
   @include font-feature-settings(kern onum liga);
   @include margin-bottom(1);
+  word-break: break-all;
+  word-break: break-word; // Non standard for webkit
 }
 
 // Larger text for emphasis paragraphs
 .lead {
   @include font-size($font-size-md);
+}
+
+// Indent subsequent paragraphs
+.indent + p {
+  @include margin-top(-1);
+  text-indent: 2em;
 }

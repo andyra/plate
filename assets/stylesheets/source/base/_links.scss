@@ -5,7 +5,8 @@
 $link-color:        $color-primary;
 $link-hover-color:  darken($link-color, 15%);
 
-a {
+a,
+a:visited {
   color: $link-color;
   text-decoration: none;
 
