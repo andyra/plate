@@ -2,17 +2,7 @@
 // Fancies for Typography
 // ============================================================================
 
-// Variables
-// ----------------------------------------------------------------------------
-
-$small-caps-color:        $gray !default;
-$small-caps-weight:       600 !default;
-
-// Base styles
-// ----------------------------------------------------------------------------
-
 // Drop caps
-
 %drop-cap,
 .drop-cap {
   &:first-letter {
@@ -36,7 +26,6 @@ p + .drop-cap {
 }
 
 // Consistent height numbers with OpenType
-
 %lining-numerals,
 .lining-numerals {
   @include font-feature-settings(lnum kern);
