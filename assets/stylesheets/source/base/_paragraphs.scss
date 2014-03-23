@@ -12,7 +12,7 @@ p {
 
 // Larger text for emphasis paragraphs
 .lead {
-  @include font-size($font-size-md);
+  @include font-size($font-size-lg);
 }
 
 // Indent subsequent paragraphs

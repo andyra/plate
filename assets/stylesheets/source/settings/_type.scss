@@ -2,18 +2,18 @@
 // Type Settings
 // ============================================================================
 
-// Define all font sizes here in pixels; mixins will convert measurements to the
+// Define all font sizes in pixels; mixins will convert measurements to the
 // unit set in $font-unit.
 
 // Base
-$font-size-base:      16px !default;
-$line-height-ratio:   1.5;
-$line-height-base:    $font-size-base * $line-height-ratio !default;
 $font-unit:           rem  !default;
-$px-fallback:         true !default; // only required if using rems
 $font-scale-ratio:    $perfect-fourth !default; // used for font-scale()
 
 // Sizes
+$font-size-base:      16px !default;
+$font-size-lg:        20px !default;
+$font-size-sm:        14px !default;
+
 $font-size-h1:        font-scale(5) !default;
 $font-size-h2:        font-scale(4) !default;
 $font-size-h3:        font-scale(3) !default;
@@ -21,13 +21,9 @@ $font-size-h4:        font-scale(2) !default;
 $font-size-h5:        font-scale(1) !default;
 $font-size-h6:        font-scale(0) !default;
 
-$font-size-xxl:       font-scale(4) !default;
-$font-size-xl:        font-scale(3) !default;
-$font-size-lg:        font-scale(2) !default;
-$font-size-md:        font-scale(1) !default;
-
-$font-size-sm:        font-scale(-1) !default;
-$font-size-xs:        font-scale(-2) !default;
+// Line height
+$line-height-ratio:   1.618;
+$line-height-base:    $font-size-base * $line-height-ratio !default;
 
 // Families
 $sans:                $helvetica !default;
@@ -46,3 +42,6 @@ $font-weight-black:   900 !default;
 // Colors
 $text-color:          $gray-dark !default;
 $text-muted-color:    $gray-light !default;
+
+// IE8+ support
+$px-fallback:         true !default; // only required if using rems
