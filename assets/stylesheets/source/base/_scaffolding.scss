@@ -23,22 +23,12 @@ html {
 }
 
 body {
+  @include font-smoothing();
   @include hyphens(auto);
-  -webkit-font-smoothing: antialiased;
   background-color: $body-bg;
   color: $text-color;
   font-family: $font-family-base;
   font-style: normal;
   font-weight: $font-weight-normal;
   line-height: $line-height-base;
-}
-
-// Reset fonts for relevant elements
-input,
-button,
-select,
-textarea {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
 }
