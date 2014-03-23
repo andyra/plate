@@ -18,13 +18,14 @@ hr {
 }
 
 // Abbreviations and acronyms
-abbr[title],
-abbr[data-original-title] {
-  cursor: help;
-  border-bottom: 1px dotted $link-color;
-}
-
+abbr,
 .initialism {
   font-size: 90%;
   text-transform: uppercase;
+
+  &[title]:hover,
+  &[data-original-title]:hover {
+    cursor: help;
+    border-bottom: 1px dotted $link-color;
+  }
 }

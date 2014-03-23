@@ -56,14 +56,3 @@ $small-print-size:          65% !default;
   font-weight: $font-weight;
   text-transform: lowercase;
 }
-
-// Abbreviations
-// <abbr title="hyper text markup language">HMTL</abbr>
-
-abbr {
-  @include smallcaps($small-caps-color, $small-caps-weight);
-
-  &[title]:hover {
-    cursor: help;
-  }
-}
