@@ -1,0 +1,55 @@
+// ============================================================================
+// Images
+// ============================================================================
+
+// Variables
+// ----------------------------------------------------------------------------
+
+$thumbnail-padding:           4px !default;
+$thumbnail-bg:                $body-bg !default;
+$thumbnail-border:            #ddd !default;
+$thumbnail-border-radius:     $border-radius-base !default;
+
+$thumbnail-caption-color:     $text-color !default;
+$thumbnail-caption-padding:   9px !default;
+
+// Base styles
+// ----------------------------------------------------------------------------
+
+// Figures
+figure {
+  margin: 0;
+}
+
+// Images
+img {
+  vertical-align: middle;
+}
+
+// Variations
+// ----------------------------------------------------------------------------
+
+// Ensure images don't scale beyond their parents
+.img-responsive {
+  @include responsive-image();
+}
+
+.img-rounded {
+  border-radius: $border-radius-lg;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.img-thumbnail {
+  @include transition(all .2s ease-in-out);
+  background-color: $thumbnail-bg;
+  border-radius: $thumbnail-border-radius;
+  border: 1px solid $thumbnail-border;
+  line-height: $line-height-base;
+  padding: $thumbnail-padding;
+
+  // Keep them at most 100% wide
+  @include responsive-image(inline-block);
+}
