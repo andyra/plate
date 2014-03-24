@@ -5,7 +5,7 @@
 // Allow control over advanced typographic features in OpenType fonts.
 // @source: https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings
 
-@mixin font-feature-settings($feature-list: false) {
+@mixin font-feature-settings($feature-list: false, $val: 1) {
   @if $feature-list {
     // Create empty lists for standard and mozilla syntaxes
     $standard: ();
@@ -13,16 +13,12 @@
 
     // Add each listed feature to the standard and old Mozilla values
     @each $feature in $feature-list {
-      $standard: append( $standard, '#{$feature}' 1, comma );
-      $old-moz: append( $old-moz, '#{$feature}=1', comma );
+      $standard: append( $standard, '#{$feature}' #{$val}, comma );
+      $old-moz: append( $old-moz, '#{$feature}=#{$val}', comma );
     }
 
     // Print out the prefixed and non-prefixed code for all of the listed features
     -moz-font-feature-settings: $old-moz;
-    -moz-font-feature-settings: $standard;
-    -ms-font-feature-settings: $standard;
-    -o-font-feature-settings: $standard;
-    -webkit-font-feature-settings: $standard;
-    font-feature-settings: $standard;
+    @include prefixer(font-feature-settings, $standard, webkit moz ms o spec);
   }
 }

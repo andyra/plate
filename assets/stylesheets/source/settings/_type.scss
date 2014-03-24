@@ -24,7 +24,7 @@ $font-size-h6:        font-scale(0) !default;
 // Line height
 $line-height-ratio:   1.5;
 $line-height-base:    $font-size-base * $line-height-ratio !default;
-$round-to-half-line:  true;
+$round-to-half-line:  true; // used for the vertical baseline grid
 
 // Families
 $sans:                $helvetica !default;
@@ -45,4 +45,4 @@ $text-color:          $gray-dark !default;
 $text-muted-color:    $gray-light !default;
 
 // IE8+ support
-$px-fallback:         true !default; // only required if using rems
+$px-fallback:         true !default; // active only if using rems

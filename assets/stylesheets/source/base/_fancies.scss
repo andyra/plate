@@ -1,9 +1,43 @@
 // ============================================================================
-// Fancies for Typography
+// Fancies
 // ============================================================================
 
-// Drop caps
-%drop-cap,
+// Fancy bits and bobs for your type
+// @browser-support: http://caniuse.com/font-feature
+// @source: http://blog.fontdeck.com/post/15777165734/opentype-1
+
+// Variables
+// ----------------------------------------------------------------------------
+
+$caps-spacing: 0.1em;
+
+// Numbers
+// ----------------------------------------------------------------------------
+
+// Enable automatic fractions
+%fractions {
+  @include font-feature-settings(frac);
+}
+
+// Consistent height numbers
+%lining-numerals {
+  @include font-feature-settings(lnum kern);
+}
+
+// Ascending and descending numbers
+%oldstyle-numerals {
+  @include font-feature-settings(onum kern);
+}
+
+// Enable tabular (monospaced) figures
+%tabular {
+  @include font-feature-settings(tnum);
+}
+
+// Caps
+// ----------------------------------------------------------------------------
+
+// Make the first letter of a paragraph grand
 .drop-cap {
   &:first-letter {
     color: inherit;
@@ -25,31 +59,53 @@ p + .drop-cap {
   text-indent: 0;
 }
 
-// Consistent height numbers with OpenType
-%lining-numerals,
-.lining-numerals {
-  @include font-feature-settings(lnum kern);
-}
-
-// Ascending and descending numbers with OpenType
-%oldstyle-numerals,
-.oldstyle-numerals {
-  @include font-feature-settings(onum kern);
-}
-
 // Real small caps
-%small-caps,
-.small-caps {
+%small-caps {
   @include font-feature-settings(smcp kern);
-  letter-spacing: 0.1em;
+  letter-spacing: $caps-spacing;
 }
 
-// Letter space those capitals people, Jan Tschichold would be proud.
-%upper,
-.upper {
-  letter-spacing: 0.1em;
+// Convert both upper and lowercase to small caps (affects punctuation also)
+%small-caps-all {
+  @include font-feature-settings(c2sc, smcp);
+  letter-spacing: $caps-spacing;
+}
+
+// All uppercase letters
+%upper {
+  letter-spacing: $caps-spacing;
   text-transform: uppercase;
 }
+
+// Fancy bits
+// ----------------------------------------------------------------------------
+
+// Enable historical forms
+%historical {
+  @include font-feature-settings(hist);
+}
+
+%hyphens {
+  @include hyphens(none);
+}
+
+// Enable ligatures
+%ligatures {
+  @include font-feature-settings(liga);
+}
+
+// Disable common ligatures, usually on by default
+%no-ligatures {
+  @include font-feature-settings(liga, 0);
+}
+
+// Use the second available swash character
+%swash {
+  @include font-feature-settings(swsh);
+}
+
+// Punctuation
+// ----------------------------------------------------------------------------
 
 // Hyphens
 // @source: http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
