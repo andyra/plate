@@ -5,19 +5,7 @@
 // Variables for Bourbon Neat grids
 // @source: http://neat.bourbon.io/docs/#variables
 
-// @todo: width in percents, ems, px, or what?
-// The size of the outer container
 $max-width:                  em(960, $font-size-base);
-
-// Column count
 $grid-columns:               12;
-
-// Column and gutter sizing
-// The units here (px, em, rem, %) should be the same
 $column:                     golden-ratio(1%, 3);
 $gutter:                     golden-ratio(1%, 1);
-
-// Sets the box-sizing property of all elements to `border-box`. This should
-// probably always be set to true
-// @source: http://www.paulirish.com/2012/box-sizing-border-box-ftw/
-$border-box-sizing:          true;
