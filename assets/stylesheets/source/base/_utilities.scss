@@ -28,29 +28,39 @@
 // Toggling content
 // ----------------------------------------------------------------------------
 
-.hidden {
+// Hide from both screenreaders and browsers
+// @source: http://h5bp.com/u
+%hidden,
+.hidden,
+%hide,
+.hide {
   display: none !important;
   visibility: hidden !important;
 }
 
-%hide,
-.hide {
-  display: none !important;
+// Hide visually, but have it available for screenreaders
+// @source: h5bp.com/v
+%visually-hidden,
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
-%show,
-.show {
-  display: block !important;
-}
-
+// Hide visually and from screenreaders, but maintain layout
 %invisible,
 .invisible {
   visibility: hidden;
 }
 
-%text-hide
-.text-hide {
-  @include text-hide();
+%show,
+.show {
+  display: block !important;
 }
 
 // Position

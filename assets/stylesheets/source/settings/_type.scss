@@ -44,5 +44,6 @@ $font-weight-black:   900 !default;
 $text-color:          $gray-dark !default;
 $text-muted-color:    $gray-light !default;
 
-// IE8+ support
+// Options
 $px-fallback:         true !default; // active only if using rems
+$font-smoothing:      true !default;

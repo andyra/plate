@@ -15,8 +15,11 @@ address {
 hr {
   @include margin(1 0);
   background-color: $text-color;
+  border-top: $border-size-base solid $border-color-base;
   border: 0;
-  border-bottom: $border-size-base solid $text-color;
+  display: block;
+  height: $border-size-base;
+  padding: 0;
 }
 
 // Abbreviations and acronyms
