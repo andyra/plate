@@ -2,17 +2,225 @@
 // Forms
 // ============================================================================
 
-// Base styles
+// Variables
 // ----------------------------------------------------------------------------
 
-// Remove default fieldset styles.
+$legend-color:                  $text-color;
+$legend-border-color:           $border-color-base;
+
+// Make inputs at least the height of their button counterpart (base line-height + padding + border)
+$input-height:                  ($line-height-base + ($padding-base-vertical * 2) + 2) !default;
+
+$input-bg:                      white !default;
+$input-bg-disabled:             $gray-lighter !default;
+
+$input-color:                   $gray !default;
+$input-color-placeholder:       $gray-light !default;
+
+$input-border:                  $border-color-base !default;
+$input-border-radius:           $border-radius-base !default;
+$input-border-size:             $border-size-base !default;
+$input-border-focus:            $component-active-color !default;
+
+// Fieldsets
+// ----------------------------------------------------------------------------
+
 fieldset {
   border: 0;
   margin: 0;
+  min-width: 0;
   padding: 0;
 }
 
+// Legends
+// ----------------------------------------------------------------------------
+
+legend {
+  @include margin-bottom(1);
+  border: 0;
+  border-bottom: $border-size-base solid $legend-border-color;
+  color: $legend-color;
+  display: block;
+  padding: 0;
+  width: 100%;
+}
+
+// Labels
+// ----------------------------------------------------------------------------
+
+label {
+  display: inline-block;
+  font-weight: bold;
+}
+
+// Output
+// ----------------------------------------------------------------------------
+
+output {
+  @include font-size($font-size-base);
+  color: $input-color;
+  display: block;
+  padding-top: $padding-base-vertical;
+}
+
+// Help text
+// ----------------------------------------------------------------------------
+
+.form-help {
+  color: $text-muted-color;
+}
+
+// Common form controls
+// ----------------------------------------------------------------------------
+
+// Shared size and type resets for form controls. Apply `.form-control` to any
+// of the following form controls:
+// select, textarea, input (types = text, password, datetime, datetime-local,
+// date, month, time, week, number, email, url, search, tel, color)
+
+.form-control {
+  @include font-size($font-size-base);
+  @include placeholder();
+  @include transition(border-color $easing-base $timing-base);
+  background-color: $input-bg;
+  background-image: none; // reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border-radius: $input-border-radius;
+  border: $input-border-size solid $input-border;
+  color: $input-color;
+  display: block;
+  height: $input-height;
+  padding: $padding-base-vertical $padding-base-horizontal;
+  width: 100%;
+
+  &:focus {
+    @include box-shadow(0 0 8px rgba($input-border-focus, .6));
+    border-color: $input-border-focus;
+    outline: 0;
+  }
+
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    background-color: $input-bg-disabled;
+    opacity: 1; // iOS fix for unreadable disabled content
+  }
+}
+
+// Text input
+// ----------------------------------------------------------------------------
+
+// Search inputs in iOS
+//
+// This overrides the extra rounded corners on search inputs in iOS so that our
+// `.form-control` class can properly style them. Note that this cannot simply
+// be added to `.form-control` as it's not specific enough. For details, see
+// https://github.com/twbs/bootstrap/issues/11586.
+
+input[type="search"] {
+  @include box-sizing(border-box);
+  -webkit-appearance: none;
+}
+
+// Special styles for iOS date input
+//
+// In Mobile Safari, date inputs require a pixel line-height that matches the
+// given height of the input.
+
+input[type="date"] {
+  line-height: $input-height;
+}
+
+
+// Textarea
+// ----------------------------------------------------------------------------
+
 // Allow only vertical resizing of textareas.
-textarea {
+textarea.form-control {
+  height: auto;
   resize: vertical;
 }
+
+// Selects
+// ----------------------------------------------------------------------------
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+// Checkboxes & Radios
+// ----------------------------------------------------------------------------
+
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9; /* IE8-9 */
+  line-height: normal;
+}
+
+// Misc inputs
+// ----------------------------------------------------------------------------
+
+// Set the height of file controls to match text inputs
+input[type="file"] {
+  display: block;
+}
+
+// Make range inputs behave like textual form controls
+input[type="range"] {
+  display: block;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Grouped inputs
+// @source: http://purecss.io/forms/#grouped-inputs
+.input-group { }
+
+// Sizing
+
+// States
+
+// Required inputs
+// @source: http://purecss.io/forms/#required-inputs
+.input[required] { }
+
+// Disabled inputs
+// @source: http://purecss.io/forms/#disabled-inputs
+.input[disabled] { }
+
+// Read-only inputs
+// @source: http://purecss.io/forms/#read-only-inputs
+.input[readonly] { }
+
+
+// Layouts
+// ----------------------------------------------------------------------------
+
+// Default stacked forms
+.form { }
+
+// Inline forms
+.form-inline { }
+
+// Aligned forms
+.form-aligned { }

@@ -1,0 +1,18 @@
+// ============================================================================
+// Placeholder
+// ============================================================================
+
+@mixin placeholder($color: $input-color-placeholder) {
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1; // See https://github.com/twbs/bootstrap/pull/11526
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
