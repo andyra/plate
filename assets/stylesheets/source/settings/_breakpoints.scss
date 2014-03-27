@@ -27,4 +27,4 @@ $screen-lg-down:        new-breakpoint(max-width $screen-lg);
 $screen-xl-down:        new-breakpoint(max-width $screen-xl);
 
 // The point at which the grid switches to favor larger screens
-$breakpoint-grid-float:   $screen-sm;
+$grid-break:            $screen-sm;

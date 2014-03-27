@@ -59,7 +59,7 @@ dd {
 
 $dl-offset-horizontal: 12rem;
 
-@include media($breakpoint-grid-float) {
+@include media($grid-break) {
   .dl-horizontal {
     dt {
       @include rem-fallback(width, ($dl-offset-horizontal - 1rem));
