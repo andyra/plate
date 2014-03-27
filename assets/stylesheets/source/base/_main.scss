@@ -28,9 +28,7 @@
 }
 
 html {
-  // Turns off tap highlighting in mobile Safari
-  // @source: http://css-tricks.com/snippets/css/remove-gray-highlight-when-tapping-links-in-mobile-safari/
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0,0,0,0); // disable mobile Safari tap highlight
   font-size: root-size(14px);
   min-height: 100%;
   overflow-y: scroll;
