@@ -5,5 +5,9 @@
 // A component is a discrete, reuseable pattern that can be used throughout a
 // project without breaking. In general, avoid element selectors and IDs in
 // favor of classes.
+//
+// This is a manifest file used to import stylesheet partials. To add new
+// styles, create a new `.scss` file and import it below. All partials
+// should begin with an underscore.
 
 // @import "component-name";
