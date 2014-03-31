@@ -14,8 +14,8 @@
 
 // Base
 @import "normalize";
-@import "main";
 @import "print";
+@import "main";
 
 // Type
 @import "code";
@@ -28,14 +28,14 @@
 @import "paragraphs";
 @import "quotes";
 
-// Media
-@import "images";
-@import "media";
-
 // Forms
 @import "forms";
 
 // Tables
+
+// Media
+@import "images";
+@import "media";
 
 // Utilities
 @import "utilities";
