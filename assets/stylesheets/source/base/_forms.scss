@@ -10,7 +10,9 @@ $legend-color:                  $text-color;
 $legend-border-color:           $border-color-base;
 
 // Inputs
-$input-height:                  ($line-height-base + ($padding-base-vertical * 2) + 2) !default; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+// Make inputs at least the height of their button counterpart (base line-
+// height + padding + border)
+$input-height:                  ($line-height-base + ($padding-base-vertical * 2) + 2) !default;
 $input-bg:                      white !default;
 $input-bg-disabled:             $gray-lighter !default;
 $input-color:                   $gray !default;
