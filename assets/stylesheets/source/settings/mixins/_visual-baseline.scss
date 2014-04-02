@@ -7,13 +7,6 @@
 
 @if $visual-baseline == true {
   body {
-    @if $visual-baseline-image {
-      background: url($visual-baseline-image) repeat top left;
-    }
-    @else {
-      @include linear-gradient(top, rgba(0,0,0,0) 95%, $visual-baseline-color 100%);
-      background-size: 100% $line-height-base;
-      background-position: 0 0; // Use to offset and center your grid
-    }
+    background: url("http://basehold.it/image.php?height=#{$line-height-base}&hex=ff0000") repeat top left;
   }
 }
