@@ -22,7 +22,7 @@ $font-size-h5:        font-scale(1) !default;
 $font-size-h6:        font-scale(0) !default;
 
 // Line height
-$line-height-ratio:   1.5;
+$line-height-ratio:   $golden;
 $line-height-base:    $font-size-base * $line-height-ratio !default;
 $round-to-half-line:  true; // used for the vertical baseline grid
 
