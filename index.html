@@ -13,25 +13,83 @@
   </head>
   <body>
 
-    <h1>Default Form</h1>
+    <h1>Layouts</h1>
 
-    <form class="pure-form">
+    <h3>Default stacked Form</h3>
+
+    <form class="form-stacked">
       <fieldset>
-        <legend>A compact inline form</legend>
+        <legend>A Stacked Form</legend>
 
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
+        <label for="email">Email</label>
+        <input class="form-control" id="email" type="email" placeholder="Email">
 
-        <label for="remember">
-            <input id="remember" type="checkbox"> Remember me
+        <label for="password">Password</label>
+        <input class="form-control" id="password" type="password" placeholder="Password">
+
+        <label for="state">State</label>
+        <select class="form-control" id="state">
+          <option>AL</option>
+          <option>CA</option>
+          <option>IL</option>
+        </select>
+
+        <label for="remember" class="checkbox">
+          <input id="remember" type="checkbox"> Remember me
         </label>
 
-        <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+        <button type="submit" class="button button-primary">Sign in</button>
       </fieldset>
     </form>
 
-    <h1>Inline Form</h1>
-    <h1>Horizontal Form</h1>
+    <h3>Inline Form</h3>
+
+    <form class="form-inline">
+      <fieldset>
+        <legend>A compact inline form</legend>
+        <input class="form-control" type="email" placeholder="Email">
+        <input class="form-control" type="password" placeholder="Password">
+        <label for="remember">
+          <input id="remember" type="checkbox"> Remember me
+        </label>
+        <button type="submit" class="button button-primary">Sign in</button>
+      </fieldset>
+    </form>
+
+    <h3>Horizontal Form</h3>
+
+    <form class="form form-horizontal">
+      <fieldset>
+        <div class="form-group">
+          <label for="name">Username</label>
+          <input class="form-control" id="name" type="text" placeholder="Username">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input class="form-control" id="password" type="password" placeholder="Password">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input class="form-control" id="email" type="email" placeholder="Email Address">
+        </div>
+
+        <div class="form-group">
+          <label for="foo">Supercalifragilistic Label</label>
+          <input class="form-control" id="foo" type="text" placeholder="Enter something here...">
+        </div>
+
+        <div class="form-controls">
+          <label for="cb" class="checkbox">
+            <input class="form-control" id="cb" type="checkbox"> I've read the T's and C's
+          </label>
+
+          <button type="submit" class="button button-primary">Submit</button>
+        </div>
+      </fieldset>
+    </form>
+    <h3>Input Groups</h3>
 
   </body>
 </html>

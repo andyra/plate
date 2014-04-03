@@ -5,10 +5,6 @@
 // Variables
 // ----------------------------------------------------------------------------
 
-// Legend
-$legend-color:                  $text-color;
-$legend-border-color:           $border-color-base;
-
 // Inputs
 // Make inputs at least the height of their button counterpart (base line-
 // height + padding + border)
@@ -22,35 +18,48 @@ $input-border-radius:           $border-radius-base !default;
 $input-border-size:             1px !default;
 $input-border-focus:            $color-primary !default;
 
-// Layouts
+// Form elements
 // ----------------------------------------------------------------------------
 
-// Inline form
+fieldset {
+  @include padding(1 0);
+  margin: 0;
+  border: 0;
+}
 
-// Stacked form
+legend {
+  border: 0;
+  color: $text-muted-color;
+  display: block;
+  margin: 0;
+  padding: $padding-base-vertical 0;
+  width: 100%;
+}
 
-// Horizontal form
+label {
+  display: inline-block;
+  font-weight: $font-weight-bold;
+
+  &[required]:after {
+    content: "*";
+    color: $state-danger-text;
+    display: inline-block;
+    text-align: center;
+    width: 1em;
+  }
+}
 
 // Controls
 // ----------------------------------------------------------------------------
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="week"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-select,
-textarea {
+// Shared size and type resets for form controls. Apply `.form-control` to any
+// of the following form controls: select, textarea, input (types = text,
+// password, datetime, datetime-local, date, month, time, week, number, email,
+// url, search, tel, color)
+
+.form-control {
   @include box-shadow(inset 0 1px 3px rgba(black, .075));
+  @include margin-bottom(1);
   @include placeholder();
   @include rem(height, $input-height);
   @include transition(border-color $easing-base $timing-base);
@@ -59,7 +68,7 @@ textarea {
   border-radius: $input-border-radius;
   border: $input-border-size solid $input-border;
   color: $input-color;
-  display: inline-block;
+  display: block;
   padding: $padding-base-vertical $padding-base-horizontal;
 
   &:focus {
@@ -77,34 +86,50 @@ textarea {
   }
 }
 
-// Legends, etc.
+// Layouts
 // ----------------------------------------------------------------------------
 
-fieldset {
-  @include padding(1 0);
-  margin: 0;
-  border: 0;
+// Inline form
+.form-inline {
+  .form-control {
+    display: inline-block;
+    margin-bottom: 0;
+  }
 }
 
-legend {
-  border: 0;
-  color: $legend-color;
-  display: block;
-  margin: 0;
-  padding: $padding-base-vertical 0;
-  width: 100%;
+// Horizontal form
+// Defaults to stacked version on smaller screens
+$form-horizontal-label-width: 12em;
+
+@include media($grid-break) {
+  .form-horizontal {
+    .form-control {
+      display: inline-block;
+      margin-bottom: 0;
+    }
+
+    .form-group {
+      @include margin-bottom(.5);
+
+      label {
+        display: inline-block;
+        margin: 0 1em 0 0;
+        vertical-align: middle;
+        width: $form-horizontal-label-width;
+      }
+    }
+
+    .form-controls {
+      margin-left: $form-horizontal-label-width + 1em;
+    }
+  }
+
+  // Grouped inputs
+  // @source: http://purecss.io/forms/#grouped-inputs
+  .input-group {
+
+  }
 }
-
-// label {
-//   display: inline-block;
-//   font-weight: bold;
-
-//   &.required:after {
-//     content: "*";
-//     color: $state-danger-text;
-//     display: inline-block;
-//   }
-// }
 
 // Help text
 // ----------------------------------------------------------------------------
@@ -156,20 +181,6 @@ legend {
 
 
 
-// // Non-control elements
-// // ----------------------------------------------------------------------------
-
-
-
-// .form-help {
-//   color: $text-muted-color;
-// }
-
-// // Form controls
-// // ----------------------------------------------------------------------------
-
-
-
 // // Sizing
 // // ----------------------------------------------------------------------------
 
@@ -182,9 +193,6 @@ legend {
 // // Layouts
 // // ----------------------------------------------------------------------------
 
-
-// // Grouped inputs @source: http://purecss.io/forms/#grouped-inputs
-// .input-group { }
 
 // // Normalize specific inputs
 // // ----------------------------------------------------------------------------
