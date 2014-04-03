@@ -10,10 +10,11 @@
 
   // px => whatever
   @if unit($val) == "px" {
+    $abs-val: strip-unit($val);
     $rel-val: strip-unit($val) / $base;
 
     @if $to-unit == "px" {
-      @return $val * 1px;
+      @return $abs-val * 1px;
     }
     @elseif $to-unit == "em" {
       @return $rel-val * 1em;
@@ -81,6 +82,8 @@
 
   // Tell everyone that you're confused if you are
   @else {
-    @warn "$val doesn't appear to be in px, em, rem, %, or a 0."
+    @warn "$val doesn't appear to be in px, em, rem, %, or a 0.";
   }
+
+  @return null;
 }

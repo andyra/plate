@@ -20,8 +20,11 @@
   background: rgba($yellow, .35);
 }
 
+// OK, something's screwy. $leading is saying it's at 0rem
+// Maybe !global has something to do with it
+
 h1 {
-  // @include font-size($font-size-h1);
-  // @include margin(1 0);
-  margin-bottom: leading(1);
+  @include font-size($font-size-h1);
+  @include margin(1 0);
+  padding: $leading;
 }
