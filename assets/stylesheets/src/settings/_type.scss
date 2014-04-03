@@ -3,7 +3,7 @@
 // ============================================================================
 
 // Magic numbers
-$magic-number:        16px !default;
+$magic-number:        24px !default;
 $magic-ratio:         1.5 !default;
 
 // Sizes
@@ -43,4 +43,4 @@ $text-muted-color:    $gray-light !default;
 // Options
 $px-fallback:         true !default;
 $font-smoothing:      true !default;
-$round-to-half-line:  false; // used for the vertical baseline grid
+$round-to-half-line:  true !default; // used for the vertical baseline grid

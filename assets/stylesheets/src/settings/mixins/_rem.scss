@@ -12,7 +12,7 @@
   @each $size in $sizes {
     // If the unit is rem, convert to px and drop in the legacy array
     @if unit($size) == "rem" {
-      $legacy-values: append($legacy-values, strip-unit($size) * $font-size-base);
+      $legacy-values: append($legacy-values, convert-unit($size, px));
     }
     // If the unit is legacy safe, drop it in the legacy array as-is
     @else {

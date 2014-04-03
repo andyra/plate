@@ -23,7 +23,7 @@
       @return $rel-val * 1rem;
     }
     @elseif $to-unit == "%" or $to-unit == "percent" {
-      @return $rel-val * 100%;
+      @return $abs-val / 16 * 100%;
     }
     @else {
       @warn "$to-unit must be px, em, rem, or %";

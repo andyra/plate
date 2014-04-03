@@ -35,7 +35,7 @@ html {
 
   // Base font size on small screens & up
   @include media($screen-sm) {
-    font-size: convert-unit($font-size-base, "%");
+    font-size: convert-unit($magic-number, "%");
   }
 }
 
@@ -43,7 +43,7 @@ body {
   @if $font-smoothing {
     @include font-smoothing();
   }
-  // @include font-size($font-size-base);
+  @include font-size($font-size-base);
   @include hyphens(auto);
   background-color: $body-bg;
   color: $text-color;
