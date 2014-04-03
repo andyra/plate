@@ -6,19 +6,19 @@
 
 // Magic numbers
 $magic-number:        18px !default;
-$magic-ratio:         1.5 !default;
+$magic-ratio:         $golden !default;
 
 // Sizes
 $font-size-base:      1rem !default;
-$font-size-lg:        modular-scale($font-size-base,  1, $perfect-fourth) !default;
-$font-size-sm:        modular-scale($font-size-base, -1, $perfect-fourth) !default;
+$font-size-lg:        modular-scale($font-size-base,  1, 1.25) !default;
+$font-size-sm:        modular-scale($font-size-base, -1, 1.25) !default;
 
-$font-size-h1:        modular-scale($font-size-base,  5, $perfect-fourth) !default;
-$font-size-h2:        modular-scale($font-size-base,  4, $perfect-fourth) !default;
-$font-size-h3:        modular-scale($font-size-base,  3, $perfect-fourth) !default;
-$font-size-h4:        modular-scale($font-size-base,  2, $perfect-fourth) !default;
-$font-size-h5:        modular-scale($font-size-base,  1, $perfect-fourth) !default;
-$font-size-h6:        modular-scale($font-size-base,  0, $perfect-fourth) !default;
+$font-size-h1:        modular-scale($font-size-base,  5, 1.25) !default;
+$font-size-h2:        modular-scale($font-size-base,  4, 1.25) !default;
+$font-size-h3:        modular-scale($font-size-base,  3, 1.25) !default;
+$font-size-h4:        modular-scale($font-size-base,  2, 1.25) !default;
+$font-size-h5:        modular-scale($font-size-base,  1, 1.25) !default;
+$font-size-h6:        modular-scale($font-size-base,  0, 1.25) !default;
 
 // Line height
 $line-height:         $magic-ratio !default; // unitless value

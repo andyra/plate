@@ -1,0 +1,250 @@
+// ============================================================================
+// Forms
+// ============================================================================
+
+// Variables
+// ----------------------------------------------------------------------------
+
+// Legend
+$legend-color:                  $text-color;
+$legend-border-color:           $border-color-base;
+
+// Inputs
+// Make inputs at least the height of their button counterpart (base line-
+// height + padding + border)
+$input-height:                  $leading + convert-unit(($padding-base-vertical * 2) + 2, rem) !default;
+$input-bg:                      white !default;
+$input-bg-disabled:             $gray-lighter !default;
+$input-color:                   $gray !default;
+$input-color-placeholder:       $gray-light !default;
+$input-border:                  $border-color-base !default;
+$input-border-radius:           $border-radius-base !default;
+$input-border-size:             1px !default;
+$input-border-focus:            $color-primary !default;
+
+// Layouts
+// ----------------------------------------------------------------------------
+
+// Inline form
+
+// Stacked form
+
+// Horizontal form
+
+// Controls
+// ----------------------------------------------------------------------------
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+select,
+textarea {
+  @include box-shadow(inset 0 1px 3px rgba(black, .075));
+  @include placeholder();
+  @include rem(height, $input-height);
+  @include transition(border-color $easing-base $timing-base);
+  background-color: $input-bg;
+  background-image: none;
+  border-radius: $input-border-radius;
+  border: $input-border-size solid $input-border;
+  color: $input-color;
+  display: inline-block;
+  padding: $padding-base-vertical $padding-base-horizontal;
+
+  &:focus {
+    border-color: $input-border-focus;
+    outline: thin dotted \9; // IE6–9
+    outline: 0;
+  }
+
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    background-color: $input-bg-disabled;
+    opacity: 1; // iOS fix for unreadable disabled content
+  }
+}
+
+// Legends, etc.
+// ----------------------------------------------------------------------------
+
+fieldset {
+  @include padding(1 0);
+  margin: 0;
+  border: 0;
+}
+
+legend {
+  border: 0;
+  color: $legend-color;
+  display: block;
+  margin: 0;
+  padding: $padding-base-vertical 0;
+  width: 100%;
+}
+
+// label {
+//   display: inline-block;
+//   font-weight: bold;
+
+//   &.required:after {
+//     content: "*";
+//     color: $state-danger-text;
+//     display: inline-block;
+//   }
+// }
+
+// Help text
+// ----------------------------------------------------------------------------
+
+.form-help {
+
+}
+
+.form-help-inline { }
+.form-help-block { }
+.form-message { }
+.form-tip { }
+
+// Validation
+// ----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Non-control elements
+// // ----------------------------------------------------------------------------
+
+
+
+// .form-help {
+//   color: $text-muted-color;
+// }
+
+// // Form controls
+// // ----------------------------------------------------------------------------
+
+
+
+// // Sizing
+// // ----------------------------------------------------------------------------
+
+// // States
+// // ----------------------------------------------------------------------------
+
+// // Append & Prepend
+// // ----------------------------------------------------------------------------
+
+// // Layouts
+// // ----------------------------------------------------------------------------
+
+
+// // Grouped inputs @source: http://purecss.io/forms/#grouped-inputs
+// .input-group { }
+
+// // Normalize specific inputs
+// // ----------------------------------------------------------------------------
+
+// // Some basic normalization is required to ensure optimum display with or
+// // without those classes to better address browser inconsistencies.
+
+// // Search
+// //
+// // This overrides the extra rounded corners on search inputs in iOS so that our
+// // `.form-control` class can properly style them. Note that this cannot simply
+// // be added to `.form-control` as it's not specific enough. For details, see
+// // https://github.com/twbs/bootstrap/issues/11586.
+// // Override content-box in Normalize (* isn't specific enough)
+
+// input[type="search"] {
+//   -webkit-appearance: none;
+//   @include box-sizing(border-box);
+// }
+
+// // File
+// // Set the height of file controls to match text inputs
+// input[type="file"] {
+//   @include tab-focus();
+//   display: block;
+// }
+
+// // Range
+// // Make range inputs behave like textual form controls
+// input[type="range"] {
+//   display: block;
+//   width: 100%;
+// }
+
+// // Select
+// // Make multiple select elements height not fixed
+// select[multiple],
+// select[size] {
+//   height: auto;
+// }
+
+// // Textarea
+// // Reset height for `textarea`s
+// textarea.form-control {
+//   height: auto;
+// }
+
+// // Date
+// // In Mobile Safari, date inputs require a pixel line-height that matches the
+// // given height of the input.
+// input[type="date"] {
+//   line-height: $input-height;
+// }
+
+// // Checkboxes & Radios
+// // Position radios and checkboxes better
+// input[type="radio"],
+// input[type="checkbox"] {
+//   @include tab-focus();
+//   margin: 4px 0 0;
+//   margin-top: 1px \9; /* IE8-9 */
+//   line-height: normal;
+// }

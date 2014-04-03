@@ -20,6 +20,10 @@
     }
   }
 
-  #{$property}: $legacy-values;
-  #{$property}: $modern-values;
+  @if $px-fallback {
+    #{$property}: $legacy-values;
+    #{$property}: $modern-values;
+  } @else {
+    #{$property}: $modern-values;
+  }
 }

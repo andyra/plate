@@ -32,7 +32,7 @@
 
   // em, rem => whatever
   @elseif unit($val) == "em" or unit($val) == "rem" {
-    $abs-val: strip-unit($val) * $base;
+    $abs-val: ceil(strip-unit($val) * $base);
     $rel-val: strip-unit($val);
 
     @if $to-unit == "px" {
@@ -55,7 +55,7 @@
   // % => whatever
   @elseif unit($val) == "%" {
     // 130%
-    $abs-val: strip-unit($val) * $base / 100;
+    $abs-val: ceil(strip-unit($val) * $base / 100);
     $rel-val: strip-unit($val) / 100;
 
     @if $to-unit == "px" {
