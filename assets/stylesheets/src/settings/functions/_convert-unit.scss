@@ -8,69 +8,79 @@
 @function convert-unit($val, $to-unit, $base: $magic-number) {
   $base: strip-unit($base);
 
-  @if unit($val) != $to-unit {
+  // px => whatever
+  @if unit($val) == "px" {
+    $rel-val: strip-unit($val) / $base;
 
-    // px => whatever
-    @if unit($val) == "px" {
-      $rel-val: strip-unit($val) / $base;
-
-      @if $to-unit == "em" {
-        @return $rel-val * 1em;
-      }
-      @elseif $to-unit == "rem" {
-        @return $rel-val * 1rem;
-      }
-      @elseif $to-unit == "%" or $to-unit == "percent" {
-        @return $rel-val * 100%;
-      }
-      @else {
-        @warn "$to-unit must be px, em, rem, or %";
-      }
+    @if $to-unit == "px" {
+      @return $val * 1px;
     }
-
-    // em, rem => whatever
-    @if unit($val) == "em" or unit($val) == "rem" {
-      $abs-val: strip-unit($val) * $base;
-      $rel-val: strip-unit($val);
-
-      @if $to-unit == "px" {
-        @return $abs-val * 1px;
-      }
-      @elseif $to-unit == "em" {
-        @return $rel-val * 1em;
-      }
-      @elseif $to-unit == "rem" {
-        @return $rel-val * 1rem;
-      }
-      @elseif $to-unit == "%" or $to-unit == "percent" {
-        @return $rel-val * 100%;
-      }
-      @else {
-        @warn "$to-unit must be px, em, rem, or %";
-      }
+    @elseif $to-unit == "em" {
+      @return $rel-val * 1em;
     }
-
-    // % => whatever
-    @if unit($val) == "%" {
-      // 130%
-      $abs-val: strip-unit($val) * $base / 100;
-      $rel-val: strip-unit($val) / 100;
-
-      @if $to-unit == "px" {
-        @return $abs-val * 1px;
-      }
-      @if $to-unit == "em" {
-        @return $rel-val * 1em;
-      }
-      @elseif $to-unit == "rem" {
-        @return $rel-val * 1rem;
-      }
-      @else {
-        @warn "$to-unit must be px, em, rem, or %";
-      }
+    @elseif $to-unit == "rem" {
+      @return $rel-val * 1rem;
+    }
+    @elseif $to-unit == "%" or $to-unit == "percent" {
+      @return $rel-val * 100%;
+    }
+    @else {
+      @warn "$to-unit must be px, em, rem, or %";
     }
   }
-  @else {
+
+  // em, rem => whatever
+  @elseif unit($val) == "em" or unit($val) == "rem" {
+    $abs-val: strip-unit($val) * $base;
+    $rel-val: strip-unit($val);
+
+    @if $to-unit == "px" {
+      @return $abs-val * 1px;
+    }
+    @elseif $to-unit == "em" {
+      @return $rel-val * 1em;
+    }
+    @elseif $to-unit == "rem" {
+      @return $rel-val * 1rem;
+    }
+    @elseif $to-unit == "%" or $to-unit == "percent" {
+      @return $rel-val * 100%;
+    }
+    @else {
+      @warn "$to-unit must be px, em, rem, or %";
+    }
+  }
+
+  // % => whatever
+  @elseif unit($val) == "%" {
+    // 130%
+    $abs-val: strip-unit($val) * $base / 100;
+    $rel-val: strip-unit($val) / 100;
+
+    @if $to-unit == "px" {
+      @return $abs-val * 1px;
+    }
+    @if $to-unit == "em" {
+      @return $rel-val * 1em;
+    }
+    @elseif $to-unit == "rem" {
+      @return $rel-val * 1rem;
+    }
+    @elseif $to-unit == "%" or $to-unit == "percent" {
+      @return $val * 100%;
+    }
+    @else {
+      @warn "$to-unit must be px, em, rem, or %";
+    }
+  }
+
+  // If a zero is passed in, return it as-is
+  @elseif $val == 0 {
     @return $val;
+  }
+
+  // Tell everyone that you're confused if you are
+  @else {
+    @warn "$val doesn't appear to be in px, em, rem, %, or a 0."
   }
 }

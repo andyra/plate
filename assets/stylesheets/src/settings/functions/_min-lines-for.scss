@@ -8,13 +8,13 @@ $min-line-padding: 2px;
 @function min-lines-for($font-size) {
 
   $font-size: strip-unit($font-size);
-  $line-height-base: strip-unit($line-height-base);
+  $leading: strip-unit($leading);
 
   $lines: if($round-to-half-line,
-             ceil(2 * $font-size / $line-height-base) / 2,
-             ceil($font-size / $line-height-base));
+             ceil(2 * $font-size / $leading) / 2,
+             ceil($font-size / $leading));
 
-  @if $lines * $line-height-base - $font-size < $min-line-padding * 2 {
+  @if $lines * $leading - $font-size < $min-line-padding * 2 {
     $lines: $lines + if($round-to-half-line, 0.5, 1);
   }
   @return $lines;

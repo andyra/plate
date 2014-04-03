@@ -16,7 +16,12 @@
 @import "base/base";
 @import "components/components";
 
+@include headings() {
+  background: rgba($yellow, .35);
+}
+
 h1 {
-  @include margin(1 0);
-  background-color: $color-info;
+  // @include font-size($font-size-h1);
+  // @include margin(1 0);
+  margin-bottom: leading(1);
 }

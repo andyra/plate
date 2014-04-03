@@ -6,16 +6,12 @@
 // specific to a component (e.g. $widget-border-color: $blue) must exist at
 // the component level.
 
-// Color variables declared in hsl() to allow for easy adjusting w/o an image
-// editor. SASS will convert these values to HEX in the compiled CSS.
-// @source: http://css-tricks.com/yay-for-hsla/
-
 // Grays
-$gray-darker:           lighten(black, 12%) !default;
-$gray-dark:             lighten(black, 20%) !default;
-$gray:                  lighten(black, 32%) !default;
-$gray-light:            lighten(black, 60%) !default;
-$gray-lighter:          lighten(black, 95%) !default;
+$gray-darker:           lighten(#000, 12%) !default;
+$gray-dark:             lighten(#000, 20%) !default;
+$gray:                  lighten(#000, 32%) !default;
+$gray-light:            lighten(#000, 60%) !default;
+$gray-lighter:          lighten(#000, 95%) !default;
 
 // Colors
 $red:                   #DA3E34 !default;
