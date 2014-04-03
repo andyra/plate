@@ -5,54 +5,16 @@
 // Calculate the minimum number of rhythm units needed to contain the font-size.
 $min-line-padding: 2px;
 
-// @function min-lines-for($font-size) {
-//   $font-size: strip-unit($font-size);
-//   $leading: strip-unit($leading);
-
-//   $lines: if($round-to-half-line,
-//              ceil(2 * $font-size / $leading) / 2,
-//              ceil($font-size / $leading));
-
-//   @if $lines * $leading - $font-size < $min-line-padding * 2 {
-//     $lines: $lines + if($round-to-half-line, 0.5, 1);
-//   }
-//   @return $lines;
-// }
-
 @function min-lines-for($font-size) {
   $font-size: strip-unit($font-size);
-  $leading: strip-unit($leading);
+  $leading-val: strip-unit($leading);
 
   $lines: if($round-to-half-line,
-             ceil(2 * $font-size / $leading) / 2,
-             ceil($font-size / $leading));
+             ceil(2 * $font-size / $leading-val) / 2,
+             ceil($font-size / $leading-val));
 
-  @if $lines * $leading - $font-size < $min-line-padding * 2 {
+  @if $lines * $leading-val - $font-size < $min-line-padding * 2 {
     $lines: $lines + if($round-to-half-line, 0.5, 1);
   }
   @return $lines;
 }
-
-/*
-
-$lines * $line-height
-px = 4.20873 * 16
-
-
-
-4.20873 * 16 / 1.5 = 44.89312
-
-number of pixels tall
-
-
-48 tall, need 2 lines
-
-48/leading
-
-if strip-unit($font-size) / strip-unit($leading)
-$lines = 2 / 1.5 = 1.333333333
-
-
-$lines
-
-*/

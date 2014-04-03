@@ -9,25 +9,14 @@
   // Since we might be dealing with different units here (the offset might be
   // in px, for instance), we need to make sure the calculations are all made
   // from the same value.
-
-  // @bug: I have no idea why, but referencing the variable $leading here is
-  // failing. So: redefining exactly as in settings/type.scss
-  $leading-px: convert-unit(($font-size-base * $line-height), px);
-  $font-size-px: convert-unit($font-size, px);
-  $font-size-base-px: convert-unit($font-size-base, px);
-  $offset-px: convert-unit($offset, px);
+  $leading-val: convert-unit($leading, rem);
+  $font-size: convert-unit($font-size, rem);
+  $font-size-base: convert-unit($font-size-base, rem);
+  $offset: convert-unit($offset, rem);
 
   // Calculate the leading – the offset
-  $new-leading: $font-size-base-px * ($lines * $leading-px - $offset-px) / $font-size-px;
+  $leading-val: $font-size-base * ($lines * $leading-val - $offset) / $font-size;
 
-  // Convert to rems
-  @return convert-unit($new-leading, rem);
+  // Return value in rems
+  @return $leading-val;
 }
-
-
-/*
-
-          16 * (3.5 * 24 - 0) / 67.33968
-1.24741 = $font-size-base-px * ($lines * $leading-px - $offset-px) / $font-size-px
-
-*/

@@ -7,9 +7,13 @@
 @mixin leading($property, $lines: 1, $base: $font-size-base, $offset: 0) {
   $values: ();
 
+  // @bug: For some reason, $leading can't be used as a local variable here;
+  // it keeps overwriting the global one. So: renaming to $leading-val. Do a
+  // search/replace for $leading-val if you ever figure this out, as this is
+  // where I'm having to name variables strangely to avoid that problem.
   @each $line in $lines {
-    $leading: leading($line, $base, $offset);
-    $values: append($values, $leading);
+    $leading-val: leading($line, $base, $offset);
+    $values: append($values, $leading-val);
   }
 
   @if $px-fallback == true {

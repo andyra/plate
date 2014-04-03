@@ -14,7 +14,7 @@
 @import "lib/bourbon/bourbon";       // v3.2.0.beta.2
 @import "lib/neat/neat";             // v1.6.0.pre
 
-// Functions
+// // Functions
 @import "functions/absolute-unit";
 @import "functions/convert-unit";
 @import "functions/leading";
@@ -22,7 +22,7 @@
 @import "functions/relative-unit";
 @import "functions/strip-unit";
 
-// Variables
+// // Variables
 @import "breakpoints";
 @import "colors";
 @import "type";
@@ -31,7 +31,7 @@
 @import "grid";
 @import "main";
 
-// Mixins
+// // Mixins
 @import "mixins/debug";
 @import "mixins/font-feature-settings";
 @import "mixins/font-size";
