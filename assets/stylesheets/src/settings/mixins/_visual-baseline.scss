@@ -6,7 +6,17 @@
 // @source: http://www.soholaunch.com/Blog.php?id=62
 
 @if $visual-baseline == true {
+  // Convert the rem height to a unitless px value (i.e. 24).
+  $height: strip-unit(convert-unit($leading, px));
+
+  // Get the RGB values of the color variable
+  $r: red($visual-baseline-color);
+  $g: green($visual-baseline-color);
+  $b: blue($visual-baseline-color);
+
+  $image: "http://basehold.it/i/#{$height}/#{$r}/#{$g}/#{$b}";
+
   body {
-    background: url("http://basehold.it/image.php?height=#{$line-height-base}&hex=ff0000") repeat top left;
+    background: url($image) repeat 0 0;
   }
 }

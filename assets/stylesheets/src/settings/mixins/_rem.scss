@@ -2,27 +2,24 @@
 // Rem with px Fallback
 // ============================================================================
 
-// Adds a pixel fallback for any rem values, leaves other values as-is
+// Adds a pixel fallback for any rem values, leaves other values as-is.
+// Overrides the Bourbon rem mixing because I like this one better.
 
-@mixin rem-fallback($property, $sizes, $base: $font-size-base) {
+@mixin rem($property, $sizes, $base: $font-size-base) {
   $legacy-values: ();
   $modern-values: $sizes;
 
   @each $size in $sizes {
+    // If the unit is rem, convert to px and drop in the legacy array
     @if unit($size) == "rem" {
-      // If the unit is rem, convert to px and drop in the legacy array
       $legacy-values: append($legacy-values, strip-unit($size) * $font-size-base);
     }
+    // If the unit is legacy safe, drop it in the legacy array as-is
     @else {
-      // If the unit is legacy safe, drop it in the legacy array as-is
       $legacy-values: append($legacy-values, $size);
     }
   }
 
-  @if $font-unit == "rem" {
-    #{$property}: $legacy-values;
-    #{$property}: $modern-values;
-  } @else {
-    #{$property}: $legacy-values;
-  }
+  #{$property}: $legacy-values;
+  #{$property}: $modern-values;
 }

@@ -11,20 +11,28 @@
 // @source: http://css-tricks.com/yay-for-hsla/
 
 // Grays
-$gray-darker:           hsl(0, 0%, 12%) !default;
-$gray-dark:             hsl(0, 0%, 20%) !default;
-$gray:                  hsl(0, 0%, 32%) !default;
-$gray-light:            hsl(0, 0%, 60%) !default;
-$gray-lighter:          hsl(0, 0%, 95%) !default;
+$gray-darker:           lighten(black, 12%) !default;
+$gray-dark:             lighten(black, 20%) !default;
+$gray:                  lighten(black, 32%) !default;
+$gray-light:            lighten(black, 60%) !default;
+$gray-lighter:          lighten(black, 95%) !default;
 
 // Colors
-$color-primary:         hsl(204, 67%, 48%) !default;
-$color-info:            hsl(179, 46%, 59%) !default;
-$color-success:         hsl(156, 53%, 42%) !default;
-$color-warning:         hsl( 34, 82%, 56%) !default;
-$color-danger:          hsl(  4, 66%, 53%) !default;
+$red:                   #DA3E34 !default;
+$orange:                #FA893A !default;
+$yellow:                #F7C442 !default;
+$green:                 #309E76 !default;
+$blue:                  #0089C8 !default;
+$violet:                #6867B9 !default;
 
-// State colors
+// Abstractions
+$color-primary:         $blue !default;
+$color-info:            $blue !default;
+$color-success:         $green !default;
+$color-warning:         $orange !default;
+$color-danger:          $red !default;
+
+// States
 $state-success-text:    $color-success !default;
 $state-success-bg:      lighten($state-success-text, 20%) !default;
 $state-success-border:  darken(adjust-hue($state-success-bg, -10), 5%) !default;

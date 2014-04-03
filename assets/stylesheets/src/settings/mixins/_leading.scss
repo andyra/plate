@@ -9,14 +9,12 @@
 
   @each $line in $lines {
     $leading: leading($line, $base, $offset);
-    $values: append($values, rel-to-font-unit($leading));
+    $values: append($values, $leading);
   }
 
-  // @todo: px-fallbacks for rem values
-  @if $font-unit == "rem" and $px-fallback == true {
-    @include rem-fallback($property, $values);
-  }
-  @else {
+  @if $px-fallback == true {
+    @include rem($property, $values);
+  } @else {
     #{$property}: $values;
   }
 }

@@ -16,10 +16,11 @@
 
 // // Functions
 @import "functions/absolute-unit";
-@import "functions/strip-unit";
 @import "functions/convert-unit";
+@import "functions/leading";
 @import "functions/min-lines-for";
 @import "functions/relative-unit";
+@import "functions/strip-unit";
 
 // // Variables
 @import "breakpoints";
@@ -31,20 +32,20 @@
 @import "main";
 
 // // Mixins
-// @import "mixins/debug";
-// @import "mixins/center-block";
-// @import "mixins/font-feature-settings";
-// @import "mixins/font-size";
+@import "mixins/debug";
+@import "mixins/font-feature-settings";
 @import "mixins/font-smoothing";
-// @import "mixins/headings";
-// @import "mixins/hyphens";
-// @import "mixins/img-responsive";
-// @import "mixins/leading";
-// @import "mixins/leading-borders";
-// @import "mixins/placeholder";
-// @import "mixins/rem-fallback";
-// @import "mixins/tab-focus";
+@import "mixins/headings";
+@import "mixins/hyphens";
+@import "mixins/img-responsive";
+@import "mixins/placeholder";
+@import "mixins/tab-focus";
+@import "mixins/text-hide";
+@import "mixins/text-overflow";
+@import "mixins/visual-baseline";
+@import "mixins/leading";
+// @import "mixins/center-block";
+// @import "mixins/font-size";
+@import "mixins/leading-borders";
+@import "mixins/rem";
 // @import "mixins/text-emphasis-variant";
-// @import "mixins/text-hide";
-// @import "mixins/text-overflow";
-// @import "mixins/visual-baseline";

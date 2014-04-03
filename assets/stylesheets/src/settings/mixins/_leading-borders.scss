@@ -8,7 +8,7 @@
   // Get the border width value into your font unit of choice
   $border-width: if(unit($width) == "px", px-to-font-unit($width), $width);
 
-  @include rem-fallback(border-width, $border-width);
+  @include rem(border-width, $border-width);
   @include leading(padding, $lines, $font-size-base, $width);
   border-style: solid;
 }
@@ -17,7 +17,7 @@
   // Get the border width value into your font unit of choice
   $border-width: if(unit($width) == "px", px-to-font-unit($width), $width);
 
-  @include rem-fallback(border-#{$side}-width, $border-width);
+  @include rem(border-#{$side}-width, $border-width);
   @include leading(padding-#{$side}, $lines, $font-size-base, $width);
   border-#{$side}-style: solid;
 }
