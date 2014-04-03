@@ -1,0 +1,20 @@
+// ============================================================================
+// Leading
+// ============================================================================
+
+// Calculate leading to create a consistent vertical rhythm.
+// Returns value in rems.
+
+@function leading($lines: 1, $font-size: $font-size-base, $offset: 0) {
+  // Since we might be dealing with different units here (the offset might be
+  // in px, for instance), we need to make sure the calculations are all made
+  // from the same value.
+  $font-size-px: convert-unit($font-size, px);
+  $font-size-base-px: convert-unit($font-size-base, px);
+  $leading-px: convert-unit($leading, px);
+  $offset-px: convert-unit($offset, px);
+
+  $new-leading-px: $font-size-base-px * ($lines * $leading-px - $offset-px) / $font-size-px;
+
+  @return convert-unit($new-leading-px, rem);
+}

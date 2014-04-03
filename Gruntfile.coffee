@@ -10,7 +10,7 @@ module.exports = (grunt) ->
     sass:
       dist:
         files:
-          'assets/stylesheets/styles.min.css': 'assets/stylesheets/source/styles.scss'
+          'assets/stylesheets/styles.min.css': 'assets/stylesheets/src/styles.scss'
         options:
           style: 'compressed'
           quiet: true
@@ -18,7 +18,7 @@ module.exports = (grunt) ->
     watch:
       sass:
         files: [
-          'assets/stylesheets/source/**/*.scss'
+          'assets/stylesheets/src/**/*.scss'
         ]
         tasks: ['sass']
         options:

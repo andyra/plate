@@ -1,0 +1,76 @@
+// ============================================================================
+// Convert Unit
+// ============================================================================
+
+// Convert a unit to and from px, em, rem, and %.
+// convert-unit(12px, em)
+
+@function convert-unit($val, $to-unit, $base: $magic-number) {
+  $base: strip-unit($base);
+
+  @if unit($val) != $to-unit {
+
+    // px => whatever
+    @if unit($val) == "px" {
+      $rel-val: strip-unit($val) / $base;
+
+      @if $to-unit == "em" {
+        @return $rel-val * 1em;
+      }
+      @elseif $to-unit == "rem" {
+        @return $rel-val * 1rem;
+      }
+      @elseif $to-unit == "%" or $to-unit == "percent" {
+        @return $rel-val * 100%;
+      }
+      @else {
+        @warn "$to-unit must be px, em, rem, or %";
+      }
+    }
+
+    // em, rem => whatever
+    @if unit($val) == "em" or unit($val) == "rem" {
+      $abs-val: strip-unit($val) * $base;
+      $rel-val: strip-unit($val);
+
+      @if $to-unit == "px" {
+        @return $abs-val * 1px;
+      }
+      @elseif $to-unit == "em" {
+        @return $rel-val * 1em;
+      }
+      @elseif $to-unit == "rem" {
+        @return $rel-val * 1rem;
+      }
+      @elseif $to-unit == "%" or $to-unit == "percent" {
+        @return $rel-val * 100%;
+      }
+      @else {
+        @warn "$to-unit must be px, em, rem, or %";
+      }
+    }
+
+    // % => whatever
+    @if unit($val) == "%" {
+      // 130%
+      $abs-val: strip-unit($val) * $base / 100;
+      $rel-val: strip-unit($val) / 100;
+
+      @if $to-unit == "px" {
+        @return $abs-val * 1px;
+      }
+      @if $to-unit == "em" {
+        @return $rel-val * 1em;
+      }
+      @elseif $to-unit == "rem" {
+        @return $rel-val * 1rem;
+      }
+      @else {
+        @warn "$to-unit must be px, em, rem, or %";
+      }
+    }
+  }
+  @else {
+    @return $val;
+  }
+}

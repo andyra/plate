@@ -1,0 +1,46 @@
+// ============================================================================
+// Type Settings
+// ============================================================================
+
+// Magic numbers
+$magic-number:        16px !default;
+$magic-ratio:         1.5 !default;
+
+// Sizes
+$font-size-base:      1rem !default;
+$font-size-lg:        modular-scale($font-size-base,  1, $perfect-fourth) !default;
+$font-size-sm:        modular-scale($font-size-base, -1, $perfect-fourth) !default;
+
+$font-size-h1:        modular-scale($font-size-base,  5, $perfect-fourth) !default;
+$font-size-h2:        modular-scale($font-size-base,  4, $perfect-fourth) !default;
+$font-size-h3:        modular-scale($font-size-base,  3, $perfect-fourth) !default;
+$font-size-h4:        modular-scale($font-size-base,  2, $perfect-fourth) !default;
+$font-size-h5:        modular-scale($font-size-base,  1, $perfect-fourth) !default;
+$font-size-h6:        modular-scale($font-size-base,  0, $perfect-fourth) !default;
+
+// Line height
+$line-height:         $magic-ratio !default; // unitless value
+$leading:             $font-size-base * $line-height !default; // unit value
+$round-to-half-line:  true; // used for the vertical baseline grid
+
+// Families
+$sans:                $helvetica !default;
+$serif:               $georgia !default;
+$mono:                $monospace !default;
+$font-family-base:    $sans !default;
+
+// Weights
+$font-weight-thin:    100 !default;
+$font-weight-light:   300 !default;
+$font-weight-normal:  400 !default;
+$font-weight-medium:  500 !default;
+$font-weight-bold:    700 !default;
+$font-weight-black:   900 !default;
+
+// Colors
+$text-color:          $gray-dark !default;
+$text-muted-color:    $gray-light !default;
+
+// Options
+$px-fallback:         false !default;
+$font-smoothing:      true !default;

@@ -29,13 +29,13 @@
 
 html {
   -webkit-tap-highlight-color: rgba(0,0,0,0); // disable mobile Safari tap highlight
-  font-size: root-size(14px);
+  font-size: convert-unit(14px, "%");
   min-height: 100%;
   overflow-y: scroll;
 
   // Base font size on small screens & up
   @include media($screen-sm) {
-    font-size: root-size($font-size-base);
+    font-size: convert-unit($font-size-base, "%");
   }
 }
 
@@ -43,9 +43,8 @@ body {
   @if $font-smoothing {
     @include font-smoothing();
   }
-  @include font-size($font-size-base);
+  // @include font-size($font-size-base);
   @include hyphens(auto);
-  @include outer-container;
   background-color: $body-bg;
   color: $text-color;
   font-family: $font-family-base;
