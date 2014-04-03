@@ -43,11 +43,12 @@ body {
   @if $font-smoothing {
     @include font-smoothing();
   }
-  @include font-size($font-size-base);
   @include hyphens(auto);
   background-color: $body-bg;
   color: $text-color;
+  line-height: $line-height;
   font-family: $font-family-base;
+  font-size: $font-size-base;
   font-style: normal;
   font-weight: $font-weight-normal;
 }
