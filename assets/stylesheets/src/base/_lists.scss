@@ -4,7 +4,7 @@
 
 // @todo: lists: http://j.eremy.net/align-lists-flush-left/
 
-// Unordered and ordered lists
+// Ordered and Unordered lists
 // ----------------------------------------------------------------------------
 
 ul, ol {
@@ -15,32 +15,62 @@ ul, ol {
   }
 }
 
-// Unstyled
+// Variations
 // ----------------------------------------------------------------------------
 
-// Unstyled keeps list items block level, just removes default browser padding
-// and list-style
-
-.list-unstyled {
+// Plain lists only remove default browser padding and list-style
+.list-plain {
   list-style: none;
   padding-left: 0;
 }
 
-// Inline
-// ----------------------------------------------------------------------------
-
-// Inline turns list items into inline-block
-
 .list-inline {
-  @extend .list-unstyled;
+  @extend .list-plain;
 
-  > li {
+  li {
     display: inline-block;
-    padding-left: 5px;
-    padding-right: 5px;
+  }
+}
 
-    &:first-child {
-      padding-left: 0;
+.list-inline-center {
+  @extend .list-inline;
+  text-align: center;
+}
+
+// Left align unordered lists
+// @source: http://j.eremy.net/align-lists-flush-left/
+.ul-pretty {
+  display: table;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+
+  li {
+    display: table-row;
+
+    &:before {
+      content: "•";
+      display: table-cell;
+      padding-right: 0.4em;
+    }
+  }
+}
+
+.ol-pretty {
+  display: table;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+
+  li {
+    counter-increment: table-ol;
+    display: table-row;
+
+    &:before {
+      content: counter(table-ol) ".";
+      display: table-cell;
+      padding-right: 0.4em;
+      text-align: right;
     }
   }
 }
@@ -64,15 +94,10 @@ dd {
   margin-left: 0; // Undo browser default
 }
 
-// Horizontal description lists
-// ----------------------------------------------------------------------------
-
-// Defaults to being stacked without any of the below styles applied until the
-// grid breakpoint is reached.
-
-$dl-offset-horizontal: 12em;
-
+// Aligned definition lists default to being stacked without any of the below
+// styles applied until the main grid breakpoint is reached.
 @include media($grid-break) {
+  $dl-offset-horizontal: 12em;
   .dl-horizontal {
     dt {
       @include text-overflow();
