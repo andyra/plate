@@ -1,0 +1,23 @@
+// ============================================================================
+// Emphasis
+// ============================================================================
+
+strong {
+  font-weight: $font-weight-bold;
+}
+
+em {
+  font-style: italic;
+}
+
+small {
+  font-size: 85%;
+}
+
+// Contextual colors
+.text-muted   { color: $text-muted-color; }
+.text-primary { color: $color-primary; }
+.text-success { color: $state-success-text; }
+.text-info    { color: $state-info-text; }
+.text-warning { color: $state-warning-text; }
+.text-danger  { color: $state-danger-text; }

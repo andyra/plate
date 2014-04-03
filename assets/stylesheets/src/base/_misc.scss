@@ -1,0 +1,36 @@
+// ============================================================================
+// Misc Typography
+// ============================================================================
+
+// @todo: http://csswizardry.com/2011/01/html5-and-text-level-semantics/#small-el
+
+// Addresses
+address {
+  @include margin-bottom(1);
+  font-style: normal;
+  line-height: $line-height;
+}
+
+// Horizontal rules
+hr {
+  @include margin(1 0);
+  background-color: $text-color;
+  border-top: $border-size-base solid $border-color-base;
+  border: 0;
+  display: block;
+  height: $border-size-base;
+  padding: 0;
+}
+
+// Abbreviations and acronyms
+abbr,
+.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+
+  &[title]:hover,
+  &[data-original-title]:hover {
+    cursor: help;
+    border-bottom: 1px dotted $link-color;
+  }
+}

@@ -1,0 +1,21 @@
+// ============================================================================
+// Links
+// ============================================================================
+
+$link-color:        $color-primary;
+$link-hover-color:  darken($link-color, 15%);
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    @include tab-focus();
+  }
+}
