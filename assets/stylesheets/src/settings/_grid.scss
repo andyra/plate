@@ -6,7 +6,7 @@
 // If $column is set to a relative value, the grid will be fluid.
 // @source: http://neat.bourbon.io/docs/#variables
 
-$max-width:                 em(960, $font-size-base);
+$max-width:                 convert-unit(960px, em);
 $grid-columns:              12;
 $column:                    golden-ratio(1%, 3);
 $gutter:                    golden-ratio(1%, 1);
@@ -14,7 +14,3 @@ $gutter:                    golden-ratio(1%, 1);
 // Grid options
 $default-layout-direction:  LTR;
 $include-grid-classes:      false;
-
-// @todo:
-// $grid-style:                fluid; // static | fluid | flex
-// $column-style:              equal; // equal | ratio

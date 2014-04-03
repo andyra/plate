@@ -13,7 +13,7 @@
 
     // Add each listed feature to the standard and old Mozilla values
     @each $feature in $feature-list {
-      $standard: append($standard, "#{$feature}" "#{$val}", comma);
+      $standard: append($standard, "#{$feature}" $val, comma);
       $old-moz: append($old-moz, "#{$feature}=#{$val}", comma);
     }
 
