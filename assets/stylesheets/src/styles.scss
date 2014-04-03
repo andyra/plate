@@ -26,5 +26,4 @@
 h1 {
   @include font-size($font-size-h1);
   @include margin(1 0);
-  padding: $leading;
 }
