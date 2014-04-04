@@ -1,4 +1,4 @@
 Plate
 =====
 
-A lightweight, scaleable, OOCSS framework built with SASS
+A lightweight, scaleable, OOCSS framework built with SASS.
