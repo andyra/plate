@@ -6,12 +6,10 @@
 
 // Set box-sizing globally to handle padding and border widths
 // @source: http://www.paulirish.com/2012/box-sizing-border-box-ftw/
-@if $border-box-sizing {
-  *,
-  *:before,
-  *:after {
-    @include box-sizing(border-box);
-  }
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
 }
 
 // Text selection color
@@ -23,7 +21,7 @@
 }
 
 ::-moz-selection {
-  background: $select-color;
+  background: $color-primary;
   text-shadow: none;
 }
 

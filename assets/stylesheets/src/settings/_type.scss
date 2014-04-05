@@ -2,13 +2,14 @@
 // Type Settings
 // ============================================================================
 
- // @todo:- [Underlining](https://medium.com/p/7c03a9274f9)
-
-// Magic numbers
-$magic-number:        18px !default;
-$magic-ratio:         $golden !default;
+// Families
+$sans:                $helvetica !default;
+$serif:               $georgia !default;
+$mono:                $monospace !default;
+$font-family-base:    $sans !default;
 
 // Sizes
+$font-size-root:      18px !default;
 $font-size-base:      1rem !default;
 $font-size-lg:        modular-scale($font-size-base,  1, 1.25) !default;
 $font-size-sm:        modular-scale($font-size-base, -1, 1.25) !default;
@@ -21,28 +22,13 @@ $font-size-h5:        modular-scale($font-size-base,  1, 1.25) !default;
 $font-size-h6:        modular-scale($font-size-base,  0, 1.25) !default;
 
 // Line height
-$line-height:         $magic-ratio !default; // unitless value
-$leading:             $font-size-base * $line-height !default; // rem value
-
-// Families
-$sans:                $helvetica !default;
-$serif:               $georgia !default;
-$mono:                $monospace !default;
-$font-family-base:    $sans !default;
-
-// Weights
-$font-weight-thin:    100 !default;
-$font-weight-light:   300 !default;
-$font-weight-normal:  400 !default;
-$font-weight-medium:  500 !default;
-$font-weight-bold:    700 !default;
-$font-weight-black:   900 !default;
+$line-height-ratio:   1.6 !default;
+$leading:             $font-size-base * $line-height !default;
+$round-to-half-line:  true !default; // used for the vertical baseline grid
 
 // Colors
 $text-color:          $gray-dark !default;
-$text-muted-color:    $gray-light !default;
+$text-muted:          $gray-light !default;
 
-// Options
-$px-fallback:         true !default;
-$font-smoothing:      true !default;
-$round-to-half-line:  true !default; // used for the vertical baseline grid
+$link-color:          $color-primary !default;
+$link-hover-color:    darken($link-color, 15%) !default;
