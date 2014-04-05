@@ -8,26 +8,30 @@
 
 // Animation
 $animations:                true !default;
-$anim-timing-base:          .1s !default;
-$anim-easing-base:          ease-in-out !default;
+$timing-base:               .1s !default;
+$easing-base:               ease-in-out !default;
 
 // Background
-$background-base:           white !default;
+$body-bg:                   white !default;
 
 // Border-radius
-$border-radius-base:        3px !default;
-$border-radius-lg:          6px !default;
-$border-radius-sm:          2px !default;
+$border-radius-base:        2px !default;
+$border-radius-lg:          4px !default;
+$border-radius-sm:          1px !default;
 
 // Borders
 $border-color-base:         $gray-lighter;
-$border-size-base:          2px !default;
-$border-size-sm:            1px !default;
-$border-size-lg:            4px !default;
+$border-width-base:          2px !default;
+$border-width-sm:            1px !default;
+$border-width-lg:            4px !default;
 
 // Component colors
 $component-color-active:    white !default;
 $component-bg-active:       $color-primary !default;
+
+// Line heights
+$line-height-lg:            1.33 !default;
+$line-height-sm:            1.5 !default;
 
 // Padding
 $padding-horiz-base:       12px !default;

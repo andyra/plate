@@ -8,7 +8,7 @@
 // Inputs
 // Make inputs at least the height of their button counterpart (base line-
 // height + padding + border)
-$input-height:                  $leading + convert-unit(($padding-base-vertical * 2) + 2, rem) !default;
+$input-height:                  $leading + convert-unit(($padding-vert-base * 2) + 2, rem) !default;
 $input-bg:                      white !default;
 $input-bg-disabled:             $gray-lighter !default;
 $input-color:                   $gray !default;
@@ -32,14 +32,14 @@ legend {
   color: $text-muted-color;
   display: block;
   margin: 0;
-  padding: $padding-base-vertical 0;
+  padding: $padding-vert-base 0;
   width: 100%;
 }
 
 label {
   display: inline-block;
   font-weight: $font-weight-bold;
-  margin-bottom: $padding-base-vertical;
+  margin-bottom: $padding-vert-base;
 
   &[required]:after {
     content: "*";
@@ -62,7 +62,6 @@ label {
   @include box-shadow(inset 0 1px 3px rgba(black, .075));
   @include margin-bottom(.5);
   @include placeholder();
-  @include rem(height, $input-height);
   @include transition(border-color $easing-base $timing-base);
   background-color: $input-bg;
   background-image: none;
@@ -70,7 +69,8 @@ label {
   border: $input-border-size solid $input-border;
   color: $input-color;
   display: block;
-  padding: $padding-base-vertical $padding-base-horizontal;
+  height: u($input-height, rem);
+  padding: $padding-vert-base $padding-horiz-base;
 
   &:focus {
     border-color: $input-border-focus;
@@ -120,7 +120,7 @@ label {
 //   display: inline-block;
 //   padding-left: 20px;
 //   margin-bottom: 0;
-//   vertical-align: middle;
+//   vert-align: middle;
 //   font-weight: normal;
 //   cursor: pointer;
 // }
@@ -157,13 +157,13 @@ label {
   }
 }
 
-// Horizontal form
+// horiz form
 // Defaults to stacked version on smaller screens
-$form-horizontal-label-width: 12em;
+$form-horiz-label-width: 12em;
 
 @include media($grid-break) {
 
-  .form-horizontal {
+  .form-horiz {
     .form-control {
       display: inline-block;
       margin-bottom: 0;
@@ -177,12 +177,12 @@ $form-horizontal-label-width: 12em;
         line-height: $input-height;
         margin-right: 1em;
         vertical-align: middle;
-        width: $form-horizontal-label-width;
+        width: $form-horiz-label-width;
       }
     }
 
     .form-controls {
-      margin-left: $form-horizontal-label-width + 1em;
+      margin-left: $form-horiz-label-width + 1em;
       width: auto;
 
       label { padding-left: 0; }

@@ -2,12 +2,22 @@
 // Headings
 // ============================================================================
 
+// Variables
+// ----------------------------------------------------------------------------
+
+$heading-font-family:    inherit !default;
+$heading-font-weight:    $font-weight-bold !default;
+$heading-color:          inherit !default;
+
+// Base styles
+// ----------------------------------------------------------------------------
+
 h1, h2, h3, h4, h5, h6 {
   @include font-feature-settings(dlig liga lnum kern);
-  @include margin(1 0);
-  color: $text-color;
-  font-family: $font-family-base;
-  font-weight: $font-weight-bold;
+  color: $heading-color;
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  margin: $leading 0;
   text-rendering: optimizeLegibility;
 }
 

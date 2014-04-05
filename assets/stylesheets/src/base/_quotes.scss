@@ -7,7 +7,7 @@
 
 blockquote {
   @include font-size($font-size-lg);
-  border-left: $border-size-lg solid;
+  border-left: $border-width-lg solid;
   padding-left: 2rem;
   quotes: "\201C" "\201D";
 

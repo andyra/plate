@@ -16,7 +16,7 @@
 // Remove text-shadow in selection highlight: h5bp.com/i
 // These selection rule sets have to be separate.
 ::selection {
-  background: $select-color;
+  background: $color-primary;
   text-shadow: none;
 }
 
@@ -33,14 +33,12 @@ html {
 
   // Base font size on small screens & up
   @include media($screen-sm) {
-    font-size: convert-unit($magic-number, "%");
+    font-size: convert-unit($font-size-root, "%");
   }
 }
 
 body {
-  @if $font-smoothing {
-    @include font-smoothing();
-  }
+  @include font-smoothing();
   @include hyphens(auto);
   @include outer-container;
   background-color: $body-bg;

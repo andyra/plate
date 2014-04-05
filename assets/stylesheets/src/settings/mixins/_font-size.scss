@@ -11,10 +11,6 @@
 // @include font-size($font-size-h2, 3); (line-height will take up 3 units)
 
 @mixin font-size($font-size, $lines: min-lines-for($font-size)) {
-  // Provide a px fallback for rem values
-  @if $px-fallback {
-    font-size: convert-unit($font-size, px);
-  }
   font-size: $font-size;
   line-height: strip-unit(leading($lines, $font-size));
 }

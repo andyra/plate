@@ -15,10 +15,10 @@ address {
 hr {
   @include margin(1 0);
   background-color: $text-color;
-  border-top: $border-size-base solid $border-color-base;
+  border-top: $border-width-base solid $border-color-base;
   border: 0;
   display: block;
-  height: $border-size-base;
+  height: $border-width-base;
   padding: 0;
 }
 

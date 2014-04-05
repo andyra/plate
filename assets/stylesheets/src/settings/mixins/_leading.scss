@@ -16,11 +16,7 @@
     $values: append($values, $leading-val);
   }
 
-  @if $px-fallback == true {
-    @include rem($property, $values);
-  } @else {
-    #{$property}: $values;
-  }
+  #{$property}: $values;
 }
 
 // Aliases for beter SASS readability
