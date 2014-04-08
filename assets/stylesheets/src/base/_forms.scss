@@ -6,13 +6,14 @@
 // ----------------------------------------------------------------------------
 
 // Inputs
-// Make inputs at least the height of their button counterpart (base line-
-// height + padding + border)
+// Make inputs at least the height of their button counterpart
 $input-height:                  $leading + u(($padding-vert-base * 2) + 2, rem) !default;
 $input-bg:                      white !default;
 $input-bg-disabled:             $gray-lighter !default;
+
 $input-color:                   $gray !default;
 $input-color-placeholder:       $gray-light !default;
+
 $input-border:                  $border-color-base !default;
 $input-border-radius:           $border-radius-base !default;
 $input-border-size:             1px !default;
@@ -60,7 +61,6 @@ label {
 
 .form-control {
   @include box-shadow(inset 0 1px 3px rgba(black, .075));
-  @include margin-bottom(.5);
   @include placeholder();
   @include transition(border-color $easing-base $timing-base);
   background-color: $input-bg;
@@ -70,6 +70,7 @@ label {
   color: $input-color;
   display: block;
   height: u($input-height, rem);
+  margin: 0;
   padding: $padding-vert-base $padding-horiz-base;
 
   &:focus {
@@ -87,64 +88,52 @@ label {
   }
 }
 
-// Checkboxes and radios
+// Radios and checkboxes
+// ----------------------------------------------------------------------------
+
+// Base
 .radio,
 .checkbox {
-  display: block;
-  margin: 10px 0;
-  min-height: $leading; // clear the floating input if there is no label text
+  cursor: pointer;
+  font-weight: normal;
+  margin: 0;
+  vertical-align: middle;
 
-  label {
-    cursor: pointer;
-    display: inline;
-    font-weight: normal;
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin: 0 .5em 0 0; // add some space between input and label
   }
 }
 
-// .radio input[type="radio"],
-// .radio-inline input[type="radio"],
-// .checkbox input[type="checkbox"],
-// .checkbox-inline input[type="checkbox"] {
-//   float: left;
-//   margin-left: -20px;
-// }
+// Stacked
+.radio-stacked,
+.checkbox-stacked {
+  display: block;
+}
 
-// .radio + .radio,
-// .checkbox + .checkbox {
-//   margin-top: -5px; // Move up sibling radios or checkboxes for tighter spacing
-// }
+// Inline
+.radio-inline,
+.checkbox-inline {
+  display: inline-block;
 
-// // Radios and checkboxes on same line
-// .radio-inline,
-// .checkbox-inline {
-//   display: inline-block;
-//   padding-left: 20px;
-//   margin-bottom: 0;
-//   vert-align: middle;
-//   font-weight: normal;
-//   cursor: pointer;
-// }
+  // Space out consecutive inline controls
+  + .radio-inline,
+  + .checkbox-inline {
+    margin-left: .5em;
+  }
+}
 
-// .radio-inline + .radio-inline,
-// .checkbox-inline + .checkbox-inline {
-//   margin-top: 0;
-//   margin-left: 10px; // space out consecutive inline controls
-// }
-
-// // Apply same disabled cursor tweak as for inputs
-// // Note: Neither radios nor checkboxes can be readonly.
-// input[type="radio"],
-// input[type="checkbox"],
-// .radio,
-// .radio-inline,
-// .checkbox,
-// .checkbox-inline {
-//   &[disabled],
-//   fieldset[disabled] & {
-//     cursor: not-allowed;
-//   }
-// }
-
+// Apply same disabled cursor tweak as for inputs
+// Note: Neither radios nor checkboxes can be readonly.
+.radio,
+.checkbox ,
+input[type="radio"],
+input[type="checkbox"], {
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
+}
 
 // Layouts
 // ----------------------------------------------------------------------------
@@ -153,11 +142,10 @@ label {
 .form-inline {
   .form-control {
     display: inline-block;
-    // margin-bottom: 0;
   }
 }
 
-// horiz form
+// Horizontal form
 // Defaults to stacked version on smaller screens
 $form-horiz-label-width: 12em;
 
@@ -188,6 +176,11 @@ $form-horiz-label-width: 12em;
       label { padding-left: 0; }
     }
 
+  }
+
+  // Wrap around inputs for proper spacing
+  .form-group {
+    margin-bottom: $leading;
   }
 
   // Grouped inputs

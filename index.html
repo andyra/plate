@@ -13,66 +13,71 @@
   </head>
   <body>
 
-    <section class="buttons">
-      <a class="button button-default" href="#">Button</a>
-      <a class="button button-primary" href="#">Button</a>
-      <a class="button button-success" href="#">Button</a>
-      <a class="button button-info" href="#">Button</a>
-      <a class="button button-warning" href="#">Button</a>
-      <a class="button button-danger" href="#">Button</a>
-    </section>
-
-    <section class="buttons">
-      <a class="button button-default button-lg" href="#">Button</a>
-      <a class="button button-primary button-lg" href="#">Button</a>
-      <a class="button button-success button-lg" href="#">Button</a>
-      <a class="button button-info button-lg" href="#">Button</a>
-      <a class="button button-warning button-lg" href="#">Button</a>
-      <a class="button button-danger button-lg" href="#">Button</a>
-    </section>
-
-    <section class="buttons">
-      <a class="button button-default button-sm" href="#">Button</a>
-      <a class="button button-primary button-sm" href="#">Button</a>
-      <a class="button button-success button-sm" href="#">Button</a>
-      <a class="button button-info button-sm" href="#">Button</a>
-      <a class="button button-warning button-sm" href="#">Button</a>
-      <a class="button button-danger button-sm" href="#">Button</a>
-    </section>
-
-    <section class="buttons">
-      <a class="button button-default button-block" href="#">Button</a>
-      <a class="button button-primary button-block" href="#">Button</a>
-      <a class="button button-success button-block" href="#">Button</a>
-      <a class="button button-info button-block" href="#">Button</a>
-      <a class="button button-warning button-block" href="#">Button</a>
-      <a class="button button-danger button-block" href="#">Button</a>
-    </section>
-
     <h1>Layouts</h1>
 
     <h3>Default stacked Form</h3>
 
-    <form class="form-stacked">
+    <form>
       <fieldset>
         <legend>A Stacked Form</legend>
 
-        <label for="email">Email</label>
-        <input class="form-control" id="email" type="email" placeholder="Email">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input class="form-control" id="email" type="email" placeholder="Email">
+        </div>
 
-        <label for="password">Password</label>
-        <input class="form-control" id="password" type="password" placeholder="Password">
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input class="form-control" id="password" type="password" placeholder="Password">
+        </div>
 
-        <label for="state">State</label>
-        <select class="form-control" id="state">
-          <option>AL</option>
-          <option>CA</option>
-          <option>IL</option>
-        </select>
+        <div class="form-group">
+          <label for="state">State</label>
+          <select class="form-control" id="state">
+            <option>AL</option>
+            <option>CA</option>
+            <option>IL</option>
+          </select>
+        </div>
 
-        <label for="remember" class="checkbox">
-          <input id="remember" type="checkbox"> Remember me
-        </label>
+        <div class="form-group">
+          <label class="checkbox">
+            <input type="checkbox" value="">
+            Option one is this and that&mdash;be sure to include why it's great
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label class="radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Option one is this and that&mdash;be sure to include why it's great
+          </label>
+          <label class="radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Option two can be something else and selecting it will deselect option one
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label for="remember" class="checkbox">
+            <input id="remember" type="checkbox"> Remember me
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label class="radio radio-inline">
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            One
+          </label>
+          <label class="radio radio-inline">
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Two
+          </label>
+          <label class="radio radio-inline">
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Three
+          </label>
+        </div>
 
         <button type="submit" class="button button-primary">Sign in</button>
       </fieldset>
