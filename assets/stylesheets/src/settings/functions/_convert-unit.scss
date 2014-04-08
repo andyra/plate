@@ -3,9 +3,9 @@
 // ============================================================================
 
 // Convert a unit to and from px, em, rem, and %.
-// convert-unit(12px, em)
+// u(12px, em)
 
-@function convert-unit($val, $to-unit, $base: $font-size-root) {
+@function u($val, $to-unit, $base: $font-size-root) {
   $base: strip-unit($base);
 
   // px => whatever
@@ -86,8 +86,4 @@
   }
 
   @return null;
-}
-
-@function u($val, $to-unit, $base: $font-size-root) {
-  @return convert-unit($val, $to-unit, $base: $font-size-root);
 }

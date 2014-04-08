@@ -9,10 +9,10 @@
   // Since we might be dealing with different units here (the offset might be
   // in px, for instance), we need to make sure the calculations are all made
   // from the same value.
-  $leading-val: convert-unit($leading, rem);
-  $font-size: convert-unit($font-size, rem);
-  $font-size-base: convert-unit($font-size-base, rem);
-  $offset: convert-unit($offset, rem);
+  $leading-val: u($leading, rem);
+  $font-size: u($font-size, rem);
+  $font-size-base: u($font-size-base, rem);
+  $offset: u($offset, rem);
 
   // Calculate the leading – the offset
   $leading-val: $font-size-base * ($lines * $leading-val - $offset) / $font-size;

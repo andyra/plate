@@ -8,7 +8,7 @@
 // Inputs
 // Make inputs at least the height of their button counterpart (base line-
 // height + padding + border)
-$input-height:                  $leading + convert-unit(($padding-vert-base * 2) + 2, rem) !default;
+$input-height:                  $leading + u(($padding-vert-base * 2) + 2, rem) !default;
 $input-bg:                      white !default;
 $input-bg-disabled:             $gray-lighter !default;
 $input-color:                   $gray !default;

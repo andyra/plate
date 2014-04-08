@@ -7,7 +7,7 @@
 
 @if $visual-baseline == true {
   // Convert the rem height to a unitless px value (i.e. 24).
-  $height: strip-unit(convert-unit($leading, px));
+  $height: strip-unit(u($leading, px));
 
   // Get the RGB values of the color variable
   $r: red($visual-baseline-color);
