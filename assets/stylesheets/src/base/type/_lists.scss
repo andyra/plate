@@ -97,7 +97,7 @@ dd {
 // Aligned definition lists default to being stacked without any of the below
 // styles applied until the main grid breakpoint is reached.
 @include media($grid-break) {
-  $dl-offset-horizontal: 12em;
+
   .dl-horizontal {
     dt {
       @include text-overflow();
@@ -112,4 +112,5 @@ dd {
       margin-left: $dl-offset-horizontal;
     }
   }
+
 }

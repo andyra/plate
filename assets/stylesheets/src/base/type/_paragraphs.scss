@@ -8,15 +8,17 @@ p {
   @include margin(0 0 1);
   word-break: break-all;
   word-break: break-word; // Non standard for webkit
+
+  // Indent subsequent paragraphs
+  @if $indented-paragraphs {
+    + p {
+      @include margin-top(-1);
+      text-indent: 2em;
+    }
+  }
 }
 
-// Larger text for emphasis paragraphs
+// Larger text for leading paragraphs
 .lead {
   @include font-size($font-size-lg);
-}
-
-// Indent subsequent paragraphs
-.indent + p {
-  @include margin-top(-1);
-  text-indent: 2em;
 }
