@@ -16,8 +16,18 @@
 @import "normalize";
 @import "main";
 
-// Base styles
-@import "type/type";
-@import "buttons/buttons";
-@import "forms/forms";
-@import "tables/tables";
+// Type
+@import "code";
+@import "emphasis";
+@import "fancies";
+@import "headings";
+@import "links";
+@import "lists";
+@import "misc";
+@import "paragraphs";
+@import "quotes";
+
+// Misc
+@import "buttons";
+@import "forms";
+@import "tables";
