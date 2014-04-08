@@ -22,3 +22,7 @@ p {
 .lead {
   @include font-size($font-size-lg);
 }
+
+.text-inline {
+  display: inline-block;
+}
