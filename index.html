@@ -17,124 +17,141 @@
 
     <h3>Default stacked Form</h3>
 
-    <form>
-      <fieldset>
-        <legend>A Stacked Form</legend>
+    <form class="form form-stacked">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input class="control" type="email" placeholder="Email">
+      </div>
 
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input class="form-control" id="email" type="email" placeholder="Email">
-        </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input class="control" type="password" placeholder="Password">
+      </div>
 
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input class="form-control" id="password" type="password" placeholder="Password">
-        </div>
+      <div class="form-group">
+        <label for="state">State</label>
+        <select class="control" >
+          <option>AL</option>
+          <option>CA</option>
+          <option>IL</option>
+        </select>
+      </div>
 
-        <div class="form-group">
-          <label for="state">State</label>
-          <select class="form-control" id="state">
-            <option>AL</option>
-            <option>CA</option>
-            <option>IL</option>
-          </select>
-        </div>
+      <div class="form-group">
+        <label class="checkbox">
+          <input type="checkbox" value="">
+          Option one is this and that&mdash;be sure to include why it's great
+        </label>
+      </div>
 
-        <div class="form-group">
-          <label class="checkbox">
-            <input type="checkbox" value="">
-            Option one is this and that&mdash;be sure to include why it's great
-          </label>
-        </div>
+      <div class="form-group">
+        <label>This weekend:</label>
+        <label class="radio">
+          <input type="radio" name="optionsRadios" value="option1" checked>
+          Option one is this and that&mdash;be sure to include why it's great
+        </label>
+        <label class="radio">
+          <input type="radio" name="optionsRadios" value="option2">
+          Option two can be something else and selecting it will deselect option one
+        </label>
+      </div>
 
-        <div class="form-group">
-          <label class="radio">
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-            Option one is this and that&mdash;be sure to include why it's great
-          </label>
-          <label class="radio">
-            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-            Option two can be something else and selecting it will deselect option one
-          </label>
-        </div>
+      <div class="form-group">
+        <label for="remember1" class="checkbox">
+          <input id="remember1" type="checkbox"> Remember me
+        </label>
+        <p class="form-help">Example block-level help text here.</p>
+      </div>
 
-        <div class="form-group">
-          <label for="remember" class="checkbox">
-            <input id="remember" type="checkbox"> Remember me
-          </label>
-        </div>
+      <div class="form-group">
+        <label class="radio radio-inline">
+          <input type="radio" name="optionsRadios" value="option1" checked>
+          One
+        </label>
+        <label class="radio radio-inline">
+          <input type="radio" name="optionsRadios" value="option1" checked>
+          Two
+        </label>
+        <label class="radio radio-inline">
+          <input type="radio" name="optionsRadios" value="option1" checked>
+          Three
+        </label>
+      </div>
 
-        <div class="form-group">
-          <label class="radio radio-inline">
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-            One
-          </label>
-          <label class="radio radio-inline">
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-            Two
-          </label>
-          <label class="radio radio-inline">
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-            Three
-          </label>
-        </div>
-
-        <button type="submit" class="button button-primary">Sign in</button>
-      </fieldset>
+      <button type="submit" class="button button-primary">Sign in</button>
     </form>
 
     <h3>Inline Form</h3>
 
-    <form class="form-inline">
-      <fieldset>
-        <legend>A compact inline form</legend>
-        Hello, my name is
-        <input class="form-control" type="text" placeholder="Name">
-        and my email address is
-        <input class="form-control" type="email" placeholder="Email">
-        <input class="form-control" type="password" placeholder="Password">
-        <label for="remember">
-          <input id="remember" type="checkbox"> Remember me
-        </label>
-        <button type="submit" class="button button-primary">Sign in</button>
-      </fieldset>
+    <form class="form form-inline">
+      <legend>A compact inline form</legend>
+      Hello, my name is
+      <input class="control" type="text" placeholder="Name">
+      <input class="control" type="email" placeholder="Email">
+      <label class="checkbox checkbox-inline" for="remember2">
+        <input id="remember2" type="checkbox"> Remember me
+      </label>
+      <button type="submit" class="button button-primary">Sign in</button>
     </form>
 
     <h3>Horizontal Form</h3>
 
     <form class="form form-horizontal">
-      <fieldset>
-        <div class="form-group">
-          <label for="name">Username</label>
-          <input class="form-control" id="name" type="text" placeholder="Username">
-        </div>
+      <div class="form-group">
+        <label for="name">Username</label>
+        <input class="control" type="text" placeholder="Username">
+      </div>
 
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input class="form-control" id="password" type="password" placeholder="Password">
-        </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input class="control" type="password" placeholder="Password">
+      </div>
 
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input class="form-control" id="email" type="email" placeholder="Email Address">
-        </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input class="control" type="email" placeholder="Email Address">
+      </div>
 
-        <div class="form-group">
-          <label for="foo">Supercalifragilistic Label</label>
-          <input class="form-control" id="foo" type="text" placeholder="Enter something here...">
-        </div>
+      <div class="form-group">
+        <label for="foo">Supercalifragilistic Label</label>
+        <input class="control" type="text" placeholder="Enter something here...">
+      </div>
 
-        <div class="form-controls">
-          <label for="cb" class="checkbox">
-            <input id="cb" type="checkbox"> I've read the T's and C's
-          </label>
+      <div class="form-group form-controls">
+        <label for="cb" class="checkbox">
+          <input id="cb" type="checkbox"> I've read the T's and C's
+        </label>
+      </div>
 
-          <button type="submit" class="button button-primary">Submit</button>
-        </div>
-
-      </fieldset>
+      <div class="form-group form-controls">
+        <button type="submit" class="button button-primary">Submit</button>
+      </div>
     </form>
-    <h3>Input Groups</h3>
+
+    <h3>Grouped Form</h3>
+
+    <form class="form form-grouped">
+      <div class="form-group">
+        <input class="control" type="text" placeholder="Username">
+        <input class="control" type="password" placeholder="Password">
+        <input class="control" type="email" placeholder="Email Address">
+      </div>
+
+      <div class="form-group">
+        <input class="control" type="text" placeholder="Username">
+        <input class="control" type="password" placeholder="Password">
+      </div>
+
+      <div class="form-group">
+        <label for="cb" class="checkbox">
+          <input id="cb" type="checkbox"> I've read the T's and C's
+        </label>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="button button-primary">Submit</button>
+      </div>
+    </form>
 
   </body>
 </html>

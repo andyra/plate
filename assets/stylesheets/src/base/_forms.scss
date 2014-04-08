@@ -14,18 +14,22 @@ $input-bg-disabled:             $gray-lighter !default;
 $input-color:                   $gray !default;
 $input-color-placeholder:       $gray-light !default;
 
-$input-border:                  $border-color-base !default;
-$input-border-radius:           $border-radius-base !default;
+$input-border-color:            lighten($gray-light, 25%) !default;
+$input-border-radius:           $border-radius-lg !default;
 $input-border-size:             1px !default;
 $input-border-focus:            $color-primary !default;
+
+$input-box-shadow:              inset 0 1px 3px rgba(black, .075);
+
+$form-horiz-label-width:        12em;
 
 // Form elements
 // ----------------------------------------------------------------------------
 
 fieldset {
-  @include padding(1 0);
-  margin: 0;
   border: 0;
+  margin: 0;
+  padding: ($leading / 2) 0;
 }
 
 legend {
@@ -51,6 +55,10 @@ label {
   }
 }
 
+.form-group {
+  margin-bottom: $leading / 2;
+}
+
 // Controls
 // ----------------------------------------------------------------------------
 
@@ -59,14 +67,14 @@ label {
 // password, datetime, datetime-local, date, month, time, week, number, email,
 // url, search, tel, color)
 
-.form-control {
-  @include box-shadow(inset 0 1px 3px rgba(black, .075));
+.control {
   @include placeholder();
   @include transition(border-color $easing-base $timing-base);
   background-color: $input-bg;
   background-image: none;
   border-radius: $input-border-radius;
-  border: $input-border-size solid $input-border;
+  border: $input-border-size solid $input-border-color;
+  box-shadow: $input-box-shadow;
   color: $input-color;
   display: block;
   height: u($input-height, rem);
@@ -91,27 +99,20 @@ label {
 // Radios and checkboxes
 // ----------------------------------------------------------------------------
 
-// Base
 .radio,
 .checkbox {
   cursor: pointer;
+  display: block;
   font-weight: normal;
   margin: 0;
   vertical-align: middle;
 
   input[type="radio"],
   input[type="checkbox"] {
-    margin: 0 .5em 0 0; // add some space between input and label
+    margin: 0 .35em 0 0; // add some space between input and label
   }
 }
 
-// Stacked
-.radio-stacked,
-.checkbox-stacked {
-  display: block;
-}
-
-// Inline
 .radio-inline,
 .checkbox-inline {
   display: inline-block;
@@ -126,7 +127,7 @@ label {
 // Apply same disabled cursor tweak as for inputs
 // Note: Neither radios nor checkboxes can be readonly.
 .radio,
-.checkbox ,
+.checkbox,
 input[type="radio"],
 input[type="checkbox"], {
   &[disabled],
@@ -138,117 +139,77 @@ input[type="checkbox"], {
 // Layouts
 // ----------------------------------------------------------------------------
 
-// Inline form
 .form-inline {
-  .form-control {
+  .control {
     display: inline-block;
   }
 }
 
 // Horizontal form
 // Defaults to stacked version on smaller screens
-$form-horiz-label-width: 12em;
-
-@include media($grid-break) {
-
-  .form-horiz {
-    .form-control {
+.form-horizontal {
+  @include media($grid-break) {
+    .control {
       display: inline-block;
       margin-bottom: 0;
     }
 
-    .form-group {
-      @include margin-bottom(.5);
-
-      label {
-        float: left;
-        line-height: $input-height;
-        margin-right: 1em;
-        vertical-align: middle;
-        width: $form-horiz-label-width;
-      }
+    label {
+      float: left;
+      line-height: $input-height;
+      margin-right: 1em;
+      vertical-align: middle;
+      width: $form-horiz-label-width;
     }
 
     .form-controls {
       margin-left: $form-horiz-label-width + 1em;
-      width: auto;
 
-      label { padding-left: 0; }
+      label {
+        display: block;
+        float: none;
+        width: auto;
+      }
+    }
+  }
+}
+
+.form-grouped {
+  .control {
+    border-radius: 0;
+    display: block;
+
+    &:first-child {
+      border-radius: $input-border-radius $input-border-radius 0 0;
+      top: 1px;
     }
 
+    &:last-child {
+      border-radius: 0 0 $input-border-radius $input-border-radius;
+    }
   }
-
-  // Wrap around inputs for proper spacing
-  .form-group {
-    margin-bottom: $leading;
-  }
-
-  // Grouped inputs
-  // @source: http://purecss.io/forms/#grouped-inputs
-  .input-group {
-
-  }
-
 }
 
 // Help text
 // ----------------------------------------------------------------------------
 
 .form-help {
-
+  color: $gray-light;
 }
 
-.form-help-inline { }
-.form-help-block { }
-.form-message { }
-.form-tip { }
+.form-help-inline {
+  @extend .form-help;
+  display: inline;
+}
 
 // Validation
 // ----------------------------------------------------------------------------
 
+// Sizing
+// ----------------------------------------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Sizing
-// // ----------------------------------------------------------------------------
-
-// // States
-// // ----------------------------------------------------------------------------
-
-// // Append & Prepend
-// // ----------------------------------------------------------------------------
+// States
+// ----------------------------------------------------------------------------
 
 // Normalize specific inputs
 // ----------------------------------------------------------------------------
@@ -272,8 +233,11 @@ input[type="search"] {
 // File
 // Set the height of file controls to match text inputs
 input[type="file"] {
-  @include tab-focus();
   display: block;
+
+  &:focus {
+    @include tab-focus();
+  }
 }
 
 // Range
