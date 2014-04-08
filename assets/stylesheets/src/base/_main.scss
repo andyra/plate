@@ -4,27 +4,6 @@
 
 // Main is the base HTML structure all web pages will have.
 
-// Set box-sizing globally to handle padding and border widths
-// @source: http://www.paulirish.com/2012/box-sizing-border-box-ftw/
-*,
-*:before,
-*:after {
-  @include box-sizing(border-box);
-}
-
-// Text selection color
-// Remove text-shadow in selection highlight: h5bp.com/i
-// These selection rule sets have to be separate.
-::selection {
-  background: $color-primary;
-  text-shadow: none;
-}
-
-::-moz-selection {
-  background: $color-primary;
-  text-shadow: none;
-}
-
 html {
   -webkit-tap-highlight-color: rgba(0,0,0,0); // disable mobile Safari tap highlight
   font-size: convert-unit(14px, "%");
@@ -48,4 +27,25 @@ body {
   font-size: $font-size-base;
   font-style: normal;
   font-weight: $font-weight-normal;
+}
+
+// Set box-sizing globally to handle padding and border widths
+// @source: http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+// Text selection color
+// Remove text-shadow in selection highlight: h5bp.com/i
+// These selection rule sets have to be separate.
+::selection {
+  background: $color-primary;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: $color-primary;
+  text-shadow: none;
 }
