@@ -19,7 +19,6 @@ html {
 body {
   @include font-smoothing();
   @include hyphens(auto);
-  @include outer-container;
   background-color: $body-bg;
   color: $text-color;
   line-height: $line-height;

@@ -1,0 +1,68 @@
+// ============================================================================
+// Documentation Styles
+// ============================================================================
+
+@import "plate";
+
+// Docs variables
+// ----------------------------------------------------------------------------
+
+$docs-active-border-width:   4px;
+
+// Main
+// ----------------------------------------------------------------------------
+
+main {
+  @include outer-container;
+}
+
+// Header
+// ----------------------------------------------------------------------------
+
+.docs-header {
+  background: $gray-dark;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: u(200px, rem);
+}
+
+.docs-brand {
+  @extend %small-caps;
+  border-bottom: 2px solid lighten($gray-dark, 15%);
+  display: block;
+  font-size: $font-size-h3;
+  padding: .5rem 1rem;
+  color: white;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.docs-nav-main {
+  padding: 0;
+
+  a {
+    border-left: $docs-active-border-width solid transparent;
+    color: $gray;
+    padding: 0 1rem;
+
+    display: block;
+
+    &:hover {
+      border-left-color: $link-color;
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  ul {
+    margin-left: $docs-active-border-width;
+    padding-left: 1rem;
+  }
+}
+
+// Content
+// ----------------------------------------------------------------------------

@@ -9,8 +9,10 @@ module.exports = (grunt) ->
           message: "SASS finished compiling!"
     sass:
       dist:
-        files:
+        files: [
           'assets/stylesheets/styles.min.css': 'assets/stylesheets/src/styles.scss'
+          'docs/source/assets/stylesheets/docs.min.css': 'docs/source/assets/stylesheets/src/docs.scss'
+        ]
         options:
           style: 'compressed'
           quiet: true
@@ -19,6 +21,7 @@ module.exports = (grunt) ->
       sass:
         files: [
           'assets/stylesheets/src/**/*.scss'
+          'docs/source/assets/stylesheets/src/**/*.scss'
         ]
         tasks: ['sass']
         options:
