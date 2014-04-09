@@ -15,7 +15,7 @@ $input-color:                   $gray !default;
 $input-color-placeholder:       $gray-light !default;
 
 $input-border-color:            lighten($gray-light, 25%) !default;
-$input-border-radius:           $border-radius-lg !default;
+$input-border-radius:           0 !default;
 $input-border-size:             1px !default;
 $input-border-focus:            $color-primary !default;
 
