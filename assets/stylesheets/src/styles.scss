@@ -17,22 +17,3 @@
 @import "settings/settings";
 @import "base/base";
 @import "components/components";
-
-.row {
-  @include container;
-}
-
-.grid {
-  background-color: rgba(yellow, .5);
-  line-height: $leading * 2;
-  text-align: center;
-  margin-bottom: $leading / 2;
-}
-
-.grid-one {
-  @include columns(1);
-
-  @include breakpoint(max-width $screen-md) {
-    @include columns(6);
-  }
-}
