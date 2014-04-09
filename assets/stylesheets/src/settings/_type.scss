@@ -21,6 +21,15 @@ $font-size-h4:          modular-scale($font-size-base,  2, 1.25) !default;
 $font-size-h5:          modular-scale($font-size-base,  1, 1.25) !default;
 $font-size-h6:          modular-scale($font-size-base,  0, 1.25) !default;
 
+// Seven abstracted sizes
+$font-size-huge:        60px !default;
+$font-size-larger:      42px !default;
+$font-size-large:       32px !default;
+$font-size-medium:      21px !default;
+$font-size-regular:     $font-size-base !default;
+$font-size-small:       15px !default;
+$font-size-smaller:     13px !default;
+
 // Line height
 $line-height:           1.6 !default;
 $leading:               $font-size-base * $line-height !default;
