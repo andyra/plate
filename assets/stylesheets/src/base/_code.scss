@@ -8,6 +8,7 @@ kbd,
 pre,
 samp {
   font-family: $mono;
+  font-size: 90%;
 }
 
 // Inline code
@@ -15,7 +16,6 @@ code {
   background-color: #f9f2f4;
   border-radius: $border-radius-base;
   color: #c7254e;
-  font-size: 90%;
   padding: 2px 4px;
   white-space: nowrap;
 }
@@ -23,7 +23,6 @@ code {
 // User input typically entered via keyboard
 kbd {
   padding: 2px 4px;
-  font-size: 90%;
   color: white;
   background-color: $gray;
   border-radius: $border-radius-sm;
@@ -35,7 +34,6 @@ pre {
   display: block;
   padding: (($leading - 1) / 2);
   margin: 0 0 ($leading / 2);
-  font-size: ($font-size-base - 1); // 14px to 13px
   line-height: $line-height;
   word-break: break-all;
   word-wrap: break-word;

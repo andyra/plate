@@ -101,7 +101,7 @@ dd {
 
 // Aligned definition lists default to being stacked without any of the below
 // styles applied until the main grid breakpoint is reached.
-@include media($grid-break) {
+@include breakpoint($grid-break) {
 
   .dl-horizontal {
     dt {

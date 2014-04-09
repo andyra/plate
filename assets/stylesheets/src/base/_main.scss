@@ -11,7 +11,7 @@ html {
   overflow-y: scroll;
 
   // Base font size on small screens & up
-  @include media($screen-sm) {
+  @include breakpoint($screen-sm) {
     font-size: u($font-size-root, "%");
   }
 }
@@ -30,11 +30,11 @@ body {
 
 // Set box-sizing globally to handle padding and border widths
 // @source: http://www.paulirish.com/2012/box-sizing-border-box-ftw/
-*,
-*:before,
-*:after {
-  @include box-sizing(border-box);
-}
+// *,
+// *:before,
+// *:after {
+//   @include box-sizing(border-box);
+// }
 
 // Text selection color
 // Remove text-shadow in selection highlight: h5bp.com/i

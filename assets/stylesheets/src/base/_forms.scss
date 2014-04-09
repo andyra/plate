@@ -176,7 +176,7 @@ input[type="checkbox"], {
 // Horizontal form
 // Defaults to stacked version on smaller screens
 .form-horizontal {
-  @include media($grid-break) {
+  @include breakpoint($grid-break) {
     .control {
       display: inline-block;
       margin-bottom: 0;

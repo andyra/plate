@@ -2,35 +2,51 @@
 // Documentation Styles
 // ============================================================================
 
+$docs-gray-dark:         #232830;
+$docs-gray:              #65737E;
+$docs-gray-light:        lighten(#000, 60%);
+$docs-gray-lighter:      #EFF1F5;
+$docs-gray-lightest:     lighten(#EFF1F5, 3%);
+
+// $font-size-root:    20px;
+// $font-family-base:  "franklin-gothic-urw";
+
 @import "plate";
 
 // Docs variables
 // ----------------------------------------------------------------------------
 
-$docs-active-border-width:   4px;
+$docs-header-width:          u(200px, rem);
+$docs-active-border-width:    4px;
 
 // Main
 // ----------------------------------------------------------------------------
 
-main {
-  @include outer-container;
+html {
+  font-size: u(20px, "%");
+}
+
+body {
+  background: $docs-gray-lightest;
+  font-family: "franklin-gothic-urw", $helvetica;
+  padding-right: 2rem;
 }
 
 // Header
 // ----------------------------------------------------------------------------
 
 .docs-header {
-  background: $gray-dark;
+  background: $docs-gray-dark;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  width: u(200px, rem);
+  width: $docs-header-width;
 }
 
 .docs-brand {
   @extend %small-caps;
-  border-bottom: 2px solid lighten($gray-dark, 15%);
+  border-bottom: 2px solid lighten($docs-gray-dark, 15%);
   display: block;
   font-size: $font-size-h3;
   padding: .5rem 1rem;
@@ -46,7 +62,7 @@ main {
 
   a {
     border-left: $docs-active-border-width solid transparent;
-    color: $gray;
+    color: $docs-gray;
     padding: 0 1rem;
 
     display: block;
@@ -61,6 +77,65 @@ main {
   ul {
     margin-left: $docs-active-border-width;
     padding-left: 1rem;
+  }
+}
+
+// Content
+// ----------------------------------------------------------------------------
+
+main {
+  margin-left: $docs-header-width + 2rem;
+  max-width: u(800px, rem);
+
+  > h1:first-child {
+    margin-top: 0;
+    font-size: $font-size-h3;
+    padding: .5rem;
+    border-bottom: 2px solid $docs-gray-light;
+  }
+
+  > p {
+    max-width: u(600px, rem);
+  }
+}
+
+.docs-example,
+.docs-markup {
+  position: relative;
+
+  &:before {
+    border-radius: 0 0 $border-radius-base $border-radius-base;
+    opacity: .35;
+    font-family: $font-family-base;
+    content: "";
+    position: absolute;
+    font-size: $font-size-sm;
+    right: 1rem;
+    top: 0;
+    color: white;
+    background: $docs-gray;
+    padding: $padding-vert-xs $padding-horiz-sm;
+  }
+}
+
+.docs-example {
+  background: white;
+  border-radius: $border-radius-base $border-radius-base 0 0;
+  border: 1px solid $docs-gray-lighter;
+  font-family: $font-family-base;
+  padding: $padding-vert-lg $padding-horiz-lg;
+
+  &:before {
+    content: "Example";
+  }
+}
+
+.docs-markup {
+  background: $docs-gray-lighter;
+  border-radius: 0 0 $border-radius-base $border-radius-base;
+
+  &:before {
+    content: "Markup";
   }
 }
 
