@@ -45,10 +45,9 @@ body {
 }
 
 .docs-brand {
-  @extend %small-caps;
   border-bottom: 2px solid lighten($docs-gray-dark, 15%);
   display: block;
-  font-size: $font-size-h3;
+  font-size: $font-size-lg;
   padding: .5rem 1rem;
   color: white;
 
@@ -89,7 +88,7 @@ main {
 
   > h1:first-child {
     margin-top: 0;
-    font-size: $font-size-h3;
+    font-size: $font-size-lg;
     padding: .5rem;
     border-bottom: 2px solid $docs-gray-light;
   }

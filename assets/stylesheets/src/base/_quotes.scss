@@ -6,7 +6,7 @@
 // @source: http://html5doctor.com/cite-and-blockquote-reloaded/
 
 blockquote {
-  @include font-size($font-size-lg);
+  @include font-size($font-size-md);
   border-left: $border-width-lg solid;
   padding-left: 2rem;
   quotes: "\201C" "\201D";

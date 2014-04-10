@@ -134,7 +134,7 @@ $button-link-disabled-color:       $gray-light !default;
 
 // line-height: ensure even-numbered height of button next to large input
 
-.button-lg { @include button-size($padding-vert-lg, $padding-horiz-lg, $font-size-lg, $line-height-lg, $border-radius-lg); }
+.button-lg { @include button-size($padding-vert-lg, $padding-horiz-lg, $font-size-md, $line-height-lg, $border-radius-lg); }
 .button-sm { @include button-size($padding-vert-sm, $padding-horiz-sm, $font-size-sm, $line-height-sm, $border-radius-sm); }
 .button-xs { @include button-size($padding-vert-xs, $padding-horiz-xs, $font-size-sm, $line-height-sm, $border-radius-sm); }
 
