@@ -76,7 +76,7 @@ label {
 
   &[required]:after {
     content: "*";
-    color: $color-danger-text;
+    color: $color-danger;
     display: inline-block;
     text-align: center;
     width: 1em;
@@ -239,15 +239,15 @@ input[type="checkbox"], {
 // ----------------------------------------------------------------------------
 
 .has-success {
-  @include form-control-validation($color-success-text, $color-success-text, $color-success-bg);
+  @include form-control-validation($color-success, $color-success, $color-success-bg);
 }
 
 .has-warning {
-  @include form-control-validation($color-warning-text, $color-warning-text, $color-warning-bg);
+  @include form-control-validation($color-warning, $color-warning, $color-warning-bg);
 }
 
 .has-error {
-  @include form-control-validation($color-danger-text, $color-danger-text, $color-danger-bg);
+  @include form-control-validation($color-danger, $color-danger, $color-danger-bg);
 }
 
 // Sizing

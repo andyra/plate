@@ -152,6 +152,7 @@ main {
 
 .docs-swatch {
   @include columns(2);
+  text-align: center;
 }
 
 .docs-color {
@@ -167,7 +168,6 @@ main {
   font-family: $mono;
   font-size: $font-size-xs;
   line-height: 3;
-  text-align: center;
 }
 
 .docs-color-black { background: $black; }
@@ -183,3 +183,44 @@ main {
 .docs-color-green         { background: $green; }
 .docs-color-blue          { background: $blue; }
 .docs-color-violet        { background: $violet; }
+
+.docs-pallete-states {
+  font-size: $font-size-base;
+  line-height: strip-unit(u(120px, rem));
+}
+
+.docs-color-default {
+  background: $color-default-bg;
+  color: $color-default;
+  border: 2px solid $color-default-border;
+}
+
+.docs-color-primary {
+  background: $color-primary-bg;
+  color: $color-primary;
+  border: 2px solid $color-primary-border;
+}
+
+.docs-color-success {
+  background: $color-success-bg;
+  color: $color-success;
+  border: 2px solid $color-success-border;
+}
+
+.docs-color-info {
+  background: $color-info-bg;
+  color: $color-info;
+  border: 2px solid $color-info-border;
+}
+
+.docs-color-warning {
+  background: $color-warning-bg;
+  color: $color-warning;
+  border: 2px solid $color-warning-border;
+}
+
+.docs-color-danger {
+  background: $color-danger-bg;
+  color: $color-danger;
+  border: 2px solid $color-danger-border;
+}
