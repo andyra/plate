@@ -189,28 +189,16 @@ main {
   line-height: strip-unit(u(120px, rem));
 }
 
-.docs-color-default {
-  background: $color-default-bg;
-  color: $color-default;
-  border: 2px solid $color-default-border;
-}
-
-.docs-color-primary {
-  background: $color-primary-bg;
-  color: $color-primary;
-  border: 2px solid $color-primary-border;
+.docs-color-info {
+  background: $color-info-bg;
+  color: $color-info;
+  border: 2px solid $color-info-border;
 }
 
 .docs-color-success {
   background: $color-success-bg;
   color: $color-success;
   border: 2px solid $color-success-border;
-}
-
-.docs-color-info {
-  background: $color-info-bg;
-  color: $color-info;
-  border: 2px solid $color-info-border;
 }
 
 .docs-color-warning {
