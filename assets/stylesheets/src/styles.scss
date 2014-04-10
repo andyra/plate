@@ -17,3 +17,7 @@
 @import "settings/settings";
 @import "base/base";
 @import "components/components";
+
+body {
+  @include container;
+}

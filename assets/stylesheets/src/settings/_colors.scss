@@ -2,20 +2,25 @@
 // Colors
 // ============================================================================
 
+// It's nice to use HSL in your CSS to make it easy to tweak the colors as you
+// work without using an external graphics editing program.
+// @tool: http://rgb.to/
+
 // Grays
-$gray-darker:           lighten(#000, 12%) !default;
-$gray-dark:             lighten(#000, 20%) !default;
-$gray:                  lighten(#000, 32%) !default;
-$gray-light:            lighten(#000, 60%) !default;
-$gray-lighter:          lighten(#000, 95%) !default;
+$black:                 hsl(0, 0%, 10%) !default;
+$gray-darker:           hsl(0, 0%, 20%) !default;
+$gray-dark:             hsl(0, 0%, 40%) !default;
+$gray:                  hsl(0, 0%, 70%) !default;
+$gray-light:            hsl(0, 0%, 90%) !default;
+$gray-lighter:          hsl(0, 0%, 95%) !default;
 
 // Colors
-$red:                   #DA3E34 !default;
-$orange:                #FA893A !default;
-$yellow:                #F7C442 !default;
-$green:                 #309E76 !default;
-$blue:                  #0089C8 !default;
-$violet:                #6867B9 !default;
+$red:                   hsl(  2, 67%, 54%) !default;
+$orange:                hsl( 23, 93%, 62%) !default;
+$yellow:                hsl( 42, 90%, 64%) !default;
+$green:                 hsl(158, 49%, 41%) !default;
+$blue:                  hsl(205, 83%, 42%) !default;
+$violet:                hsl(239, 35%, 56%) !default;
 
 // Abstractions
 $color-primary:         $blue !default;
@@ -24,6 +29,7 @@ $color-info:            $blue !default;
 $color-warning:         $orange !default;
 $color-danger:          $red !default;
 
+// State colors
 $state-success-text:    $color-success !default;
 $state-success-bg:      lighten($state-success-text, 20%) !default;
 $state-success-border:  darken($state-success-bg, 5%) !default;
