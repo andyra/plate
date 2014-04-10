@@ -17,7 +17,7 @@ small {
 // Contextual colors
 .text-muted   { color: $text-muted-color; }
 .text-primary { color: $color-primary; }
-.text-success { color: $state-success-text; }
-.text-info    { color: $state-info-text; }
-.text-warning { color: $state-warning-text; }
-.text-danger  { color: $state-danger-text; }
+.text-success { color: $color-success-text; }
+.text-info    { color: $color-info-text; }
+.text-warning { color: $color-warning-text; }
+.text-danger  { color: $color-danger-text; }

@@ -157,26 +157,29 @@ main {
 .docs-color {
   border-radius: $border-radius-base $border-radius-base 0 0;
   height: u(120px, rem);
-  background: tomato;
 }
 
 .docs-color-name {
   background: $gray-lighter;
+  border-radius: 0 0 $border-radius-base $border-radius-base;
+  border-top: 1px solid rgba(black, .05);
+  color: gray;
+  font-family: $mono;
   font-size: $font-size-xs;
   line-height: 3;
   text-align: center;
-  border-top: 1px solid rgba(black, .05);
-  font-family: $mono;
-  border-radius: 0 0 $border-radius-base $border-radius-base;
-  color: gray;
 }
 
 .docs-color-black { background: $black; }
-
 .docs-color-gray-darker   { background: $gray-darker; }
 .docs-color-gray-dark     { background: $gray-dark; }
 .docs-color-gray          { background: $gray; }
 .docs-color-gray-light    { background: $gray-light; }
 .docs-color-gray-lighter  { background: $gray-lighter; }
 
-.docs-color-red  { background: $state-success-bg; }
+.docs-color-red           { background: $red; }
+.docs-color-orange        { background: $orange; }
+.docs-color-yellow        { background: $yellow; }
+.docs-color-green         { background: $green; }
+.docs-color-blue          { background: $blue; }
+.docs-color-violet        { background: $violet; }

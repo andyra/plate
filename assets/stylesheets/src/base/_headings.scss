@@ -4,7 +4,7 @@
 
 h1, h2, h3, h4, h5, h6 {
   @include font-feature-settings(dlig liga lnum kern);
-  color: inherit;
+  color: $black;
   font-family: inherit;
   font-weight: $font-weight-bold;
   margin: $leading 0;
