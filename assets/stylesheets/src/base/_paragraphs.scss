@@ -2,6 +2,16 @@
 // Paragraphs
 // ============================================================================
 
+/*doc
+---
+parent: button
+name: buttonSkins
+title: Button Styles
+---
+
+Paragraphs are for content
+*/
+
 // OpenType ligatures and oldstyle figures enabled if available.
 p {
   @include font-feature-settings(kern onum liga);

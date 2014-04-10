@@ -2,37 +2,6 @@
 // Colors
 // ============================================================================
 
-/*doc
----
-title: Background Colors
-name: background
-category: Base
----
-
-We have a few background colors that can be used in various contexts. These
-are not for use as the entire page background but instead for specific
-components and modules on the page.
-
-<div class="line txtC">
-    <div class="col cols6 ">
-      <div class="docSwatch backgroundLowlight"></div>
-      <code>backgroundLowlight</code>
-    </div>
-    <div class="col cols6 ">
-      <div class="docSwatch backgroundHighlight"></div>
-      <code>backgroundHighlight</code>
-    </div>
-    <div class="col cols6 ">
-      <div class="docSwatch backgroundBasic"></div>
-      <code>backgroundBasic</code>
-    </div>
-    <div class="col cols6 lastCol">
-      <div class="docSwatch backgroundInverse"></div>
-      <code>backgroundInverse</code>
-    </div>
-</div>
-*/
-
 // Grays
 $gray-darker:           lighten(#000, 12%) !default;
 $gray-dark:             lighten(#000, 20%) !default;
