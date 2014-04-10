@@ -21,7 +21,7 @@ body {
   @include hyphens(auto);
   background-color: $body-bg;
   color: $text-color;
-  line-height: $line-height;
+  line-height: $line-height-base;
   font-family: $font-family-base;
   font-size: $font-size-base;
   font-style: normal;

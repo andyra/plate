@@ -1,9 +1,9 @@
 {
-  "name": "Proto",
+  "name": "Plate",
   "version": "0.0.1",
   "repository": {
     "type" : "git",
-    "url" : "http://github.com/andyra/proto.git"
+    "url" : "http://github.com/andyra/plate.git"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
