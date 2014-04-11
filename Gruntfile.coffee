@@ -2,6 +2,11 @@ module.exports = (grunt) ->
 
   # Project configuration
   grunt.initConfig
+    autoprefixer:
+      dist:
+        options:
+          browsers: ['last 3 versions', 'ie 8', 'ie 7']
+        src: 'assets/stylesheets/styles.min.css'
     notify:
       sass:
         options:
@@ -18,12 +23,12 @@ module.exports = (grunt) ->
           quiet: true
           sourceMap: false
     watch:
-      sass:
+      styles:
         files: [
           'assets/stylesheets/src/**/*.scss'
           'docs/source/assets/stylesheets/src/**/*.scss'
         ]
-        tasks: ['sass']
+        tasks: ['sass', 'autoprefixer']
         options:
           livereload: true
 
