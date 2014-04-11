@@ -2,37 +2,29 @@
 // Utility Classes
 // ============================================================================
 
-// Position
-// ----------------------------------------------------------------------------
+// These classes are useful when using JavaScript to manipulate the DOM.
+// Usually, this type of thing can be done more handily via includeing rules
+// in CSS without adding extra classes to your HTML.
 
-%clearfix,
 .clearfix {
   @include clearfix();
 }
 
-%pull-right,
 .pull-right {
   float: right !important;
 }
 
-%pull-left,
 .pull-left {
   float: left !important;
 }
 
-%affix,
 .affix {
   position: fixed;
 }
 
-// Visibility
-// ----------------------------------------------------------------------------
-
 // Hide from both screenreaders and browsers
 // @source: http://h5bp.com/u
-%hidden,
 .hidden,
-%hide,
 .hide {
   display: none !important;
   visibility: hidden !important;
@@ -40,7 +32,6 @@
 
 // Hide visually, but have it available for screenreaders
 // @source: h5bp.com/v
-%visually-hidden,
 .visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -53,12 +44,10 @@
 }
 
 // Hide visually and from screenreaders, but maintain layout
-%invisible,
 .invisible {
   visibility: hidden;
 }
 
-%show,
 .show {
   display: block !important;
 }

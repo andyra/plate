@@ -14,8 +14,8 @@ Paragraphs are for content
 
 // OpenType ligatures and oldstyle figures enabled if available.
 p {
-  @include font-feature-settings(kern onum liga);
   @include margin(0 0 1);
+  font-feature-settings: "kern", "onum", "liga";
   word-break: break-all;
   word-break: break-word; // Non standard for webkit
 
