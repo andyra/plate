@@ -5,7 +5,7 @@ module.exports = (grunt) ->
     autoprefixer:
       dist:
         options:
-          browsers: ['last 3 versions', 'ie 8', 'ie 7']
+          browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
         src: 'assets/stylesheets/styles.min.css'
     notify:
       sass:
