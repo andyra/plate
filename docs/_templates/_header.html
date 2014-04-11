@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %> | Plate</title>
+    <link rel="stylesheet" href="./your_stylesheet_here.css">
+    <script src="assets/javascripts/modernizr-2.6.2.min.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <a class="brand" href="/">Plate</a>
+      <ul class="nav nav-main">
+        <li><a href="index.html">Intro</a></li>
+      <% @categories.each do |category, file_name| %>
+        <li><a href="<%= file_name %>"><%= category %></a></li>
+      <% end %>
+      </ul>
+    </header>
+    <aside class="sidebar">
+      <ul class="nav nav-sidebar">
+      <% @blocks.each do |b| %>
+        <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
+      <% end %>
+      </ul>
+    </aside>
+    <main class="main">
