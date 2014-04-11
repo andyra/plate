@@ -6,19 +6,19 @@
 
 // Addresses
 address {
-  @include margin-bottom(1);
   font-style: normal;
   line-height: $line-height-base;
+  margin-bottom: $leading;
 }
 
 // Horizontal rules
 hr {
-  @include margin(1 0);
   background-color: $text-color;
   border-top: $border-width-base solid $border-color-base;
   border: 0;
   display: block;
   height: $border-width-base;
+  margin: $leading 0;
   padding: 0;
 }
 
