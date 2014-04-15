@@ -11,11 +11,10 @@ gulp.task 'styles', ->
   gulp.src 'assets/stylesheets/src/*.scss'
     .pipe gp.rubySass(style: 'expanded')
     .pipe gp.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')
-    .pipe gulp.dest('dist/styles')
-    .pipe gp.rename(suffix: '.min')
     .pipe gp.minifyCss()
+    .pipe gp.rename(suffix: '.min')
+    .pipe gulp.dest('assets/stylesheets')
     .pipe gp.livereload(server)
-    .pipe gulp.dest('dist/styles')
     .pipe gp.notify(message: 'Styles task complete')
 
 # Scripts
@@ -24,11 +23,10 @@ gulp.task 'scripts', ->
     .pipe gp.jshint('.jshintrc')
     .pipe gp.jshint.reporter('default')
     .pipe gp.concat('main.js')
-    .pipe gulp.dest('dist/scripts')
     .pipe gp.rename(suffix: '.min')
     .pipe gp.uglify()
+    .pipe gulp.dest('assets/javascripts')
     .pipe gp.livereload(server)
-    .pipe gulp.dest('dist/scripts')
     .pipe gp.notify(message: 'Scripts task complete')
 
 # Images
@@ -40,12 +38,12 @@ gulp.task 'images', ->
       interlaced: true
     )))
     .pipe gp.livereload(server)
-    .pipe gulp.dest('dist/images')
+    .pipe gulp.dest('assets/images')
     .pipe gp.notify(message: 'Images task complete')
 
 # Clean
 gulp.task 'clean', ->
-  gulp.src ['dist/styles', 'dist/scripts', 'dist/images'], read: false
+  gulp.src ['assets/styles', 'assets/scripts', 'assets/images'], read: false
   .pipe gp.clean()
 
 # Default task
