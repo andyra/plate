@@ -4,12 +4,11 @@
 
 /*doc
 ---
-parent: button
-name: buttonSkins
-title: Button Styles
+title: Paragraphs
+name: paragraphs
+parent: type
 ---
-
-Paragraphs are for content
+Paragraphs are for content; use them to logically separate ideas into blocks. To use an indented paragraph style instead of the default space separated style (common in web), set `$indented-paragraphs` to `true` in settings/type.scss.
 */
 
 // OpenType ligatures and oldstyle figures enabled if available.
@@ -27,6 +26,15 @@ p {
     }
   }
 }
+
+/*doc
+---
+title: Options
+name: paragraph-options
+parent: paragraphs
+---
+
+*/
 
 // Larger text for leading paragraphs
 .lead {
