@@ -1,3 +1,4 @@
+# To add the clean script back in, follow the instructions here:
 # http://markgoodyear.com/2014/01/getting-started-with-gulp/
 
 # Load plugins
@@ -40,16 +41,6 @@ gulp.task 'images', ->
     .pipe gp.livereload(server)
     .pipe gulp.dest('assets/images')
     .pipe gp.notify(message: 'Images task complete')
-
-# Clean
-# gulp.task 'clean', ->
-#   gulp.src ['assets/styles', 'assets/scripts', 'assets/images'], read: false
-#   .pipe gp.clean()
-
-# # Default task
-# gulp.task 'default', ['clean'], ->
-#   gulp.start 'styles', 'scripts', 'images'
-#   return
 
 # Watch on port 35729 for styles, scripts, and images
 gulp.task 'watch', ->
