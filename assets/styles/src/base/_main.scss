@@ -9,7 +9,7 @@
 *,
 *:before,
 *:after {
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 // Text selection color
