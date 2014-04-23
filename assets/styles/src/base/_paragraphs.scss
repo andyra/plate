@@ -2,15 +2,6 @@
 // Paragraphs
 // ============================================================================
 
-/*doc
----
-title: Paragraphs
-name: paragraphs
-parent: type
----
-Paragraphs are for content; use them to logically separate ideas into blocks. To use an indented paragraph style instead of the default space separated style (common in web), set `$indented-paragraphs` to `true` in settings/type.scss.
-*/
-
 // OpenType ligatures and oldstyle figures enabled if available.
 p {
   font-feature-settings: "kern", "onum", "liga";
