@@ -2,45 +2,56 @@
 # http://markgoodyear.com/2014/01/getting-started-with-gulp/
 
 # Load plugins
-gulp    = require 'gulp'
-gp      = do require 'gulp-load-plugins'  # Load all gulp plugins
-lr      = require 'tiny-lr'
-server  = lr()
+gulp          = require 'gulp'
+sass          = require 'gulp-ruby-sass'
+autoprefixer  = require 'gulp-autoprefixer'
+minifycss     = require 'gulp-minify-css'
+jshint        = require 'gulp-jshint'
+uglify        = require 'gulp-uglify'
+imagemin      = require 'gulp-imagemin'
+rename        = require 'gulp-rename'
+clean         = require 'gulp-clean'
+concat        = require 'gulp-concat'
+notify        = require 'gulp-notify'
+cache         = require 'gulp-cache'
+livereload    = require 'gulp-livereload'
+lr            = require 'tiny-lr'
+server        = lr()
 
 # Styles
 gulp.task 'styles', ->
   gulp.src 'assets/styles/src/*.scss'
-    .pipe gp.rubySass(style: 'expanded')
-    .pipe gp.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')
-    .pipe gp.minifyCss()
-    .pipe gp.rename(suffix: '.min')
+    .pipe rubySass(style: 'expanded')
+    .pipe autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')
+    .pipe minifyCss()
+    .pipe rename(suffix: '.min')
     .pipe gulp.dest('assets/styles')
-    .pipe gp.livereload(server)
-    .pipe gp.notify(message: 'Styles task complete')
+    .pipe livereload(server)
+    .pipe notify(message: 'Styles task complete')
 
 # Scripts
 gulp.task 'scripts', ->
   gulp.src 'assets/scripts/src/*.js'
-    .pipe gp.jshint('.jshintrc')
-    .pipe gp.jshint.reporter('default')
-    .pipe gp.concat('application.js')
-    .pipe gp.uglify()
-    .pipe gp.rename(suffix: '.min')
+    .pipe jshint('.jshintrc')
+    .pipe jshint.reporter('default')
+    .pipe concat('application.js')
+    .pipe uglify()
+    .pipe rename(suffix: '.min')
     .pipe gulp.dest('assets/scripts')
-    .pipe gp.livereload(server)
-    .pipe gp.notify(message: 'Scripts task complete')
+    .pipe livereload(server)
+    .pipe notify(message: 'Scripts task complete')
 
 # Images
 gulp.task 'images', ->
   gulp.src 'assets/images/**/*'
-    .pipe(gp.cache(gp.imagemin(
+    .pipe(cache(imagemin(
       optimizationLevel: 3
       progressive: true
       interlaced: true
     )))
-    .pipe gp.livereload(server)
+    .pipe livereload(server)
     .pipe gulp.dest('assets/images')
-    .pipe gp.notify(message: 'Images task complete')
+    .pipe notify(message: 'Images task complete')
 
 # Watch on port 35729 for styles, scripts, and images
 gulp.task 'watch', ->

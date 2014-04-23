@@ -41,11 +41,11 @@
 @import "bouncing-entrances/bounceInUp";
 
 // Bouncing exits
-@import "bouncing-exits/bounceDown";
-@import "bouncing-exits/bounceDownDown";
-@import "bouncing-exits/bounceDownLeft";
-@import "bouncing-exits/bounceDownRight";
-@import "bouncing-exits/bounceDownUp";
+@import "bouncing-exits/bounceOut";
+@import "bouncing-exits/bounceOutDown";
+@import "bouncing-exits/bounceOutLeft";
+@import "bouncing-exits/bounceOutRight";
+@import "bouncing-exits/bounceOutUp";
 
 // Fading entrances
 @import "fading-entrances/fadeIn";
@@ -71,8 +71,8 @@
 
 // Flippers
 @import "flippers/flip";
-@import "flippers/flipX";
-@import "flippers/flipY";
+@import "flippers/flipInX";
+@import "flippers/flipInY";
 @import "flippers/flipOutX";
 @import "flippers/flipOutY";
 
