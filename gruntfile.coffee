@@ -2,16 +2,19 @@ module.exports = (grunt) ->
 
   # Project configuration
   grunt.initConfig
+
     autoprefixer:
       dist:
         options:
           browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
         src: 'assets/stylesheets/styles.min.css'
+
     notify:
       sass:
         options:
           title: "Task Complete"
           message: "SASS finished compiling!"
+
     sass:
       dist:
         files: [
@@ -22,6 +25,7 @@ module.exports = (grunt) ->
           style: 'compressed'
           quiet: true
           sourceMap: false
+
     watch:
       styles:
         files: [
