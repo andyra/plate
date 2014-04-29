@@ -7,7 +7,7 @@ module.exports = (grunt) ->
       dist:
         options:
           browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
-        src: 'assets/stylesheets/styles.min.css'
+        src: 'assets/stylesheets/application.min.css'
 
     notify:
       sass:
@@ -17,10 +17,7 @@ module.exports = (grunt) ->
 
     sass:
       dist:
-        files: [
-          'assets/stylesheets/styles.min.css': 'assets/stylesheets/src/styles.scss'
-          'docs/source/assets/stylesheets/docs.min.css': 'docs/source/assets/stylesheets/src/docs.scss'
-        ]
+        files: ['assets/stylesheets/application.min.css': 'assets/stylesheets/source/application.scss']
         options:
           style: 'compressed'
           quiet: true
@@ -28,10 +25,7 @@ module.exports = (grunt) ->
 
     watch:
       styles:
-        files: [
-          'assets/stylesheets/src/**/*.scss'
-          'docs/source/assets/stylesheets/src/**/*.scss'
-        ]
+        files: ['assets/stylesheets/source/**/*.scss']
         tasks: ['sass', 'autoprefixer']
         options:
           livereload: true

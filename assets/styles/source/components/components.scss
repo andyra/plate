@@ -1,0 +1,69 @@
+// ============================================================================
+// Components
+// ============================================================================
+
+// A component is a discrete, reuseable pattern that can be used throughout a
+// project without breaking. In general, avoid element selectors and IDs in
+// favor of classes.
+//
+// This is a manifest file used to import stylesheet partials. To add new
+// styles, create a new `.scss` file and import it below. All partials
+// should begin with an underscore.
+
+// Base
+@import "normalize";
+@import "helpers";
+@import "base";
+
+// Type
+// @import "headings";
+// @import "paragraphs";
+// @import "links";
+// @import "lists";
+// @import "blockquotes";
+// @import "code";
+// @import "inline-elements";
+// @import "fancies";
+// @import "misc";
+
+// Buttons
+// @import "buttons";
+// @import "button-groups";
+// @import "button-dropdowns";
+
+// Forms
+// @import "forms";
+// @import "input-groups";
+
+// Tables
+// @import "tables";
+
+// Media
+// @import "images";
+// @import "thumbnails";
+// @import "video";
+// @import "audio";
+// @import "slideshow";
+
+// Navigation
+// @import "tabs";
+// @import "pills";
+// @import "breadcrumbs";
+// @import "pagination";
+
+// Content
+// @import "panels";
+// @import "media";
+
+// Callouts
+// @import "tooltips";
+// @import "popovers";
+// @import "alerts";
+
+// Progress indicators
+// @import "spinners";
+// @import "progress-bars";
+
+// Labels
+// @import "labels";
+// @import "badges";
