@@ -7,7 +7,7 @@ module.exports = (grunt) ->
       dist:
         options:
           browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
-        src: 'assets/styles/admin.min.css'
+        src: 'assets/stylesheets/admin.min.css'
 
     notify:
       sass:
@@ -17,7 +17,7 @@ module.exports = (grunt) ->
 
     sass:
       dist:
-        files: ['assets/styles/admin.min.css': 'assets/styles/source/admin.scss']
+        files: ['assets/stylesheets/admin.min.css': 'assets/stylesheets/source/admin.scss']
         options:
           style: 'compressed'
           quiet: true
@@ -25,7 +25,7 @@ module.exports = (grunt) ->
 
     watch:
       styles:
-        files: ['assets/styles/source/**/*.scss']
+        files: ['assets/stylesheets/source/**/*.scss']
         tasks: ['sass', 'autoprefixer']
         options:
           livereload: true
