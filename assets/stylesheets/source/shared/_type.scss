@@ -1,0 +1,423 @@
+// ============================================================================
+// Typography
+// ============================================================================
+
+// Headings
+// ----------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  color: $black;
+  font-family: inherit;
+  font-feature-settings: "dlig", "liga", "lnum", "kern";
+  font-weight: $font-weight-bold;
+  margin: $leading 0;
+  text-rendering: optimizeLegibility;
+}
+
+h1 { @include font-size($font-size-xxl); }
+h2 { @include font-size($font-size-xl); }
+h3 { @include font-size($font-size-lg); }
+h4 { @include font-size($font-size-md); }
+h5 { @include font-size($font-size-base); }
+h6 { @include font-size($font-size-sm); }
+
+// Paragraphs
+// ----------------------------------------------------------------------------
+
+p {
+  font-feature-settings: "kern", "onum", "liga";
+  margin-bottom: $leading;
+  word-break: break-all;
+  word-break: break-word; // Non standard for webkit
+}
+
+@if $indented-paragraphs {
+  p + p {
+    margin-top: $leading * -1;
+    text-indent: 2em;
+  }
+}
+
+.lead {
+  @include font-size($font-size-md);
+}
+
+// Links
+// ----------------------------------------------------------------------------
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    @include tab-focus();
+  }
+}
+
+// Lists
+// ----------------------------------------------------------------------------
+
+// Variables
+$dl-offset-horizontal:      12em;
+
+// Ordered and Unordered lists
+ul, ol {
+  margin: 0 0 $leading;
+
+  ul, ol {
+    margin-bottom: 0;
+  }
+}
+
+// Plain lists only remove default browser padding and list-style
+.list-plain {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list-inline {
+  @extend .list-plain;
+
+  li {
+    display: inline-block;
+  }
+}
+
+.list-inline-center {
+  @extend .list-inline;
+  text-align: center;
+}
+
+// Left align unordered lists
+// @source: http://j.eremy.net/align-lists-flush-left/
+.ul-pretty {
+  display: table;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+
+  li {
+    display: table-row;
+
+    &:before {
+      content: "•";
+      display: table-cell;
+      padding-right: 0.4em;
+    }
+  }
+}
+
+.ol-pretty {
+  display: table;
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+
+  li {
+    counter-increment: table-ol;
+    display: table-row;
+
+    &:before {
+      content: counter(table-ol) ".";
+      display: table-cell;
+      padding-right: 0.4em;
+      text-align: right;
+    }
+  }
+}
+
+// Definition Lists
+dl {
+  margin: 0 0 $leading;
+}
+
+dt, dd {
+  line-height: $line-height-base;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 0; // Undo browser default
+}
+
+// Aligned definition lists default to being stacked without any of the below
+// styles applied until the main grid breakpoint is reached.
+.dl-horizontal {
+  @include media($grid-break) {
+    dt {
+      @include text-overflow();
+      clear: left;
+      float: left;
+      text-align: right;
+      width: $dl-offset-horizontal - 1em;
+    }
+
+    dd {
+      @include clearfix(); // Clear the floated `dt` if an empty `dd` is present
+      margin-left: $dl-offset-horizontal;
+    }
+  }
+}
+
+// Blockquotes
+// ----------------------------------------------------------------------------
+
+// A good resource on when/how to use <blockquote> and <cite>:
+// @source: http://html5doctor.com/cite-and-blockquote-reloaded/
+
+blockquote {
+  @include font-size($font-size-md);
+  border-left: $border-width-lg solid;
+  padding-left: 2rem;
+  quotes: "\201C" "\201D";
+
+  // Remove margin on last <p>
+  p:last-of-type { margin-bottom: 0; }
+}
+
+// Inline elements
+// ----------------------------------------------------------------------------
+
+strong {
+  font-weight: $font-weight-bold;
+}
+
+em {
+  font-style: italic;
+}
+
+small {
+  font-size: 85%;
+}
+
+// Inline quotes
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+
+  &:before { content: open-quote; }
+  &:after  { content: close-quote; }
+}
+
+// Citations
+cite {
+  @include font-size($font-size-base);
+  font-style: normal;
+  display: block;
+  text-indent: 0;
+
+  &:before {
+    content: "\2014 \00A0"; // mdash + nbsp
+  }
+}
+
+// Abbreviations
+abbr {
+  font-size: 90%;
+  text-transform: uppercase;
+
+  &[title]:hover,
+  &[data-original-title]:hover {
+    cursor: help;
+    border-bottom: 1px dotted $link-color;
+  }
+}
+
+// Contextual colors
+.text-muted   { color: $text-muted-color; }
+.text-primary { color: $color-primary; }
+.text-success { color: $color-success; }
+.text-info    { color: $color-info; }
+.text-warning { color: $color-warning; }
+.text-danger  { color: $color-danger; }
+
+// Code
+// ----------------------------------------------------------------------------
+
+// Inline and block code styles
+code, kbd, pre, samp {
+  font-family: $mono;
+  font-size: 90%;
+}
+
+// Inline code
+code {
+  background-color: #f9f2f4;
+  border-radius: $border-radius-base;
+  color: #c7254e;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+
+// User input typically entered via keyboard
+kbd {
+  padding: 2px 4px;
+  color: white;
+  background-color: $gray;
+  border-radius: $border-radius-sm;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+// Blocks of code
+pre {
+  display: block;
+  padding: (($leading - 1) / 2);
+  margin: 0 0 ($leading / 2);
+  line-height: $line-height-base;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: $gray-dark;
+  background-color: $gray-lighter;
+  border: 1px solid darken($gray-lighter, 10%);
+  border-radius: $border-radius-base;
+
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
+
+// Enable scrollable blocks of code
+.pre-scrollable {
+  max-height: u(340px, em);
+  overflow-y: scroll;
+}
+
+// Misc
+// ----------------------------------------------------------------------------
+
+// Addresses
+address {
+  font-style: normal;
+  line-height: $line-height-base;
+  margin-bottom: $leading;
+}
+
+// Horizontal rules
+hr {
+  background-color: $text-color;
+  border-top: $border-width-base solid $border-color-base;
+  border: 0;
+  display: block;
+  height: $border-width-base;
+  margin: $leading 0;
+  padding: 0;
+}
+
+// Fancies
+// ----------------------------------------------------------------------------
+
+// Fancy bits and bobs for your type
+// https://www.typotheque.com/articles/opentype_features_in_web_browsers_-_tests
+
+// The OpenType feature tag value is always a string of 4 ASCII characters. If
+// it has more or less characters, the whole property is invalid. The value is
+// an positive integer. The two keywords on and off are synonyms for 1 and 0
+// respectively. If no value is set, the default is 1. For non-Boolean
+// OpenType features (e.g. stylistic alternates), the value implies a
+// particular glyph to be selected; for Boolean values, it is a switch.
+// @source: https://developer.mozilla.org/en-US/docs/Web/CSS/font-feature-settings
+
+// Enable automatic fractions
+%fractions {
+  font-feature-settings: "frac";
+}
+
+// Consistent height numbers
+%lining-numerals {
+  font-feature-settings: "lnum", "kern";
+}
+
+// Ascending and descending numbers
+%oldstyle-numerals {
+  font-feature-settings: "onum", "kern";
+}
+
+// Enable tabular (monospaced) figures
+%tabular {
+  font-feature-settings: "tnum";
+}
+
+// Small caps using alternate glyphs
+%small-caps {
+  font-feature-settings: "smcp", "kern";
+  letter-spacing: $caps-spacing;
+}
+
+// Convert both upper and lowercase to small caps (affects punctuation also)
+%small-caps-all {
+  font-feature-settings: "c2sc", "smcp";
+  letter-spacing: $caps-spacing;
+}
+
+// All uppercase letters
+%upper {
+  letter-spacing: $caps-spacing;
+  text-transform: uppercase;
+}
+
+// Make the first letter of a paragraph grand
+.drop-cap:first-letter {
+  color: inherit;
+  float: left;
+  font-family: $font-family-base;
+  font-size: 3em;
+  font-weight: $font-weight-bold;
+  line-height: 1;
+  margin: 0 .125em 0 0;
+  padding: 0;
+  text-indent: 0;
+}
+
+// Combats our sibling paragraphs syling and indentation
+// as not to ruin our beautiful drop caps.
+p + .drop-cap {
+  margin-top: 0;
+  text-indent: 0;
+}
+
+// Enable historical forms
+%historical {
+  font-feature-settings: "hist";
+}
+
+%hyphens {
+  hyphens: none;
+}
+
+// Enable ligatures
+%ligatures {
+  font-feature-settings: "liga";
+}
+
+// Disable common ligatures, usually on by default
+%no-ligatures {
+  font-feature-settings: "liga" off;
+}
+
+// Use the second available swash character
+%swash {
+  font-feature-settings: "swsh";
+}
+
+// Disable hyphens on certain elements
+// @source: http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+abbr, acronym, blockquote,
+code, dir, kbd,
+listing, plaintext, q,
+samp, tt, var, xmp {
+  hyphens: none;
+}

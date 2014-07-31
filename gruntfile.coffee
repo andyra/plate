@@ -7,7 +7,7 @@ module.exports = (grunt) ->
       dist:
         options:
           browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
-        src: 'assets/stylesheets/admin.min.css'
+        src: 'assets/stylesheets/application.min.css'
 
     notify:
       sass:
@@ -17,7 +17,7 @@ module.exports = (grunt) ->
 
     sass:
       dist:
-        files: ['assets/stylesheets/admin.min.css': 'assets/stylesheets/source/admin.scss']
+        files: ['assets/stylesheets/application.min.css': 'assets/stylesheets/source/application.scss']
         options:
           style: 'compressed'
           quiet: true

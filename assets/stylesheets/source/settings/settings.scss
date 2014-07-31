@@ -2,20 +2,14 @@
 // Settings
 // ============================================================================
 
-// Import global variables, functions, and mixins here. Anything that lives on
-// this level should be generic and applicable scross the entire project.
-// Component-specific mixins or variables should live at the component level.
-//
-// This is a manifest file used to import stylesheet partials. To add new
-// styles, create a new `.scss` file and import it below. All partials
-// should begin with an underscore.
+// Global variables
+@import "global";
 
 // Libraries
 @import "lib/bourbon/bourbon";
 @import "lib/neat/neat";
 
 // Functions
-@import "functions/functions";
 @import "functions/convert-unit";
 @import "functions/leading";
 @import "functions/min-lines-for";
