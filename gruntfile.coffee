@@ -50,7 +50,7 @@ module.exports = (grunt) ->
 
     sass:
       dist:
-        files: ['assets/stylesheets/application.min.css': 'assets/stylesheets/source/application.scss']
+        files: ['assets/stylesheets/application.min.css': 'assets/stylesheets/src/application.scss']
         options:
           style: 'compressed'
           quiet: true
