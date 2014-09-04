@@ -3,10 +3,10 @@
 // ============================================================================
 
 // Families
-$sans:                  $helvetica !default;
-$serif:                 $georgia !default;
-$mono:                  $monospace !default;
-$font-family-base:      $sans !default;
+$font-family-sans:      $helvetica !default;
+$font-family-serif:     $georgia !default;
+$font-family-mono:      $monospace !default;
+$font-family-base:      $font-family-sans !default;
 
 // Sizes
 $font-size-base:        1rem !default;
