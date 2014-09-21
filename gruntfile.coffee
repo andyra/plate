@@ -55,6 +55,7 @@ module.exports = (grunt) ->
           style: 'compressed'
           quiet: true
           sourceMap: false
+          includePaths: require('node-neat').includePaths
 
     watch:
       options:

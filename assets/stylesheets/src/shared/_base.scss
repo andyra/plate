@@ -20,7 +20,7 @@ html {
   overflow-y: scroll;
 
   // Base font size on small screens & up
-  @include breakpoint($screen-sm) {
+  @include media($screen-sm) {
     font-size: u($font-size-root, "%");
   }
 }
