@@ -67,20 +67,24 @@ module.exports = (grunt) ->
         files: ['assets/javascripts/src/*.js']
         tasks: ['jshint', 'concat', 'uglify']
 
-    webfont:
-      icons:
-        src: 'assets/fonts/src/*.svg'
-        dest: 'assets/fonts/icons'
-        destCss: 'assets/stylesheets/src/shared'
-        options:
-          font: 'icons'
-          hashes: true
-          htmlDemo: false
-          templateOptions:
-            baseClass: 'icon',
-            classPrefix: 'icon-',
-          stylesheet: 'scss'
-          relativeFontPath: '../fonts/icons'
+    svgmin:
+      options:
+        plugins: [
+          { removeViewBox: false }
+          { removeUselessStrokeAndFill: true }
+          { cleanupIDs: false }
+        ]
+      dist:
+        files:
+          'assets/images/sprite.min.svg' : 'assets/images/sprite.svg'
+
+    svgstore:
+      options:
+        formatting:
+          indent_size: 2
+      default:
+        files:
+          'assets/images/sprite.svg': 'assets/images/src/*.svg'
 
   # Load all Grunt tasks automatically
   require('load-grunt-tasks') grunt

@@ -2,8 +2,8 @@
   "name": "Plate",
   "version": "0.0.1",
   "repository": {
-    "type" : "git",
-    "url" : "http://github.com/andyra/plate.git"
+    "type": "git",
+    "url": "http://github.com/andyra/plate.git"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
@@ -16,6 +16,8 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-notify": "~0.2.17",
     "grunt-sass": "^0.14.1",
+    "grunt-svgmin": "^1.0.0",
+    "grunt-svgstore": "^0.3.6",
     "grunt-webfont": "^0.4.7",
     "load-grunt-tasks": "0.3.0",
     "node-bourbon": "~1.2.3",
