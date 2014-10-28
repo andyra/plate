@@ -93,6 +93,6 @@ module.exports = (grunt) ->
   grunt.registerTask 'default', ['jshint', 'concat', 'uglify', 'sass', 'autoprefixer']
   grunt.registerTask 'scripts', ['jshint', 'concat', 'uglify']
   grunt.registerTask 'styles', ['sass', 'autoprefixer']
-  grunt.registerTask 'icons', ['webfont']
+  grunt.registerTask 'svg', ['svgstore', 'svgmin']
 
   return
