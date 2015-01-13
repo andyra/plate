@@ -76,27 +76,27 @@ ul, ol {
 }
 
 // Plain lists only remove default browser padding and list-style
-.list-plain {
+.list--plain {
   list-style: none;
   padding-left: 0;
 }
 
-.list-inline {
-  @extend .list-plain;
+.list--inline {
+  @extend .list--plain;
 
   li {
     display: inline-block;
   }
 }
 
-.list-inline-center {
+.list--inline-center {
   @extend .list-inline;
   text-align: center;
 }
 
 // Left align unordered lists
 // @source: http://j.eremy.net/align-lists-flush-left/
-.ul-pretty {
+.ul--pretty {
   display: table;
   list-style: none;
   margin-left: 0;
@@ -113,7 +113,7 @@ ul, ol {
   }
 }
 
-.ol-pretty {
+.ol--pretty {
   display: table;
   list-style: none;
   margin-left: 0;
@@ -151,7 +151,7 @@ dd {
 
 // Aligned definition lists default to being stacked without any of the below
 // styles applied until the main grid breakpoint is reached.
-.dl-horizontal {
+.dl--horizontal {
   @include media($grid-break) {
     dt {
       @include text-overflow();
