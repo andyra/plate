@@ -14,10 +14,23 @@ uglify  = require 'gulp-uglify'
 sass    = require 'gulp-sass'
 refresh = require 'gulp-livereload'
 
+# Live Reloading
+# --------------------------------------------------
+
 # Styles
 # --------------------------------------------------
+
 gulp.task 'styles', ->
   gulp.src('assets/stylesheets/src/application.scss')
     .pipe(sass(includePaths: ['styles'].concat(neat)))
     .pipe(concat 'application.css')
     .pipe(gulp.dest 'assets/stylesheets')
+
+# Scripts
+# --------------------------------------------------
+
+# Images
+# --------------------------------------------------
+
+# Fonts
+# --------------------------------------------------
