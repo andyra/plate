@@ -1,0 +1,9 @@
+// ============================================================================
+// Global vars
+// ============================================================================
+
+// This file is for settings variables that must be imported before any others.
+// So far this just includes the root font size since the type settings page
+// uses some functions that use this value as a default.
+
+$font-size-root: 18px;

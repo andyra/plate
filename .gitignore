@@ -3,4 +3,4 @@
 .DS_Store
 node_modules
 .sass-cache/
-assets/css/main.min.css.map
+dist

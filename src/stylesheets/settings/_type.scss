@@ -1,0 +1,34 @@
+// ============================================================================
+// Type Settings
+// ============================================================================
+
+// Families
+$font-family-sans:      $helvetica;
+$font-family-serif:     $georgia;
+$font-family-mono:      $monospace;
+$font-family-base:      $font-family-sans;
+
+// Sizing with a modular scale
+// @source: http://modularscale.com/
+$font-size-root:        18px;
+$ratio:                 $major-third;
+
+$font-size-xxl:         modular-scale( 5, $font-size-root, $ratio);
+$font-size-xl:          modular-scale( 4, $font-size-root, $ratio);
+$font-size-lg:          modular-scale( 3, $font-size-root, $ratio);
+$font-size-md:          modular-scale( 2, $font-size-root, $ratio);
+$font-size-base:        modular-scale( 1, $font-size-root, $ratio);
+$font-size-sm:          modular-scale(-1, $font-size-root, $ratio);
+$font-size-xs:          modular-scale(-2, $font-size-root, $ratio);
+
+// Line height
+$line-height-base:      1.5;
+$spacing-unit:          $font-size-base * $line-height-base;
+
+// Weights
+$font-weight-thin:      100;
+$font-weight-light:     300;
+$font-weight-normal:    400;
+$font-weight-medium:    500;
+$font-weight-bold:      700;
+$font-weight-black:     900;

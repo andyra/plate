@@ -1,0 +1,44 @@
+// ============================================================================
+// Colors
+// ============================================================================
+
+// It's nice to use HSL in your CSS to make it easy to tweak the colors as you
+// work without using an external graphics editing program.
+// link: http://rgb.to/
+
+$gray-darkest:          hsl(  0, 22%,  15%);
+$gray-darker:           hsl(  0, 15%,  25%);
+$gray-dark:             hsl(  0,  8%,  45%);
+$gray:                  hsl(  0,  8%,  62%);
+$gray-light:            hsl(  0, 12%,  80%);
+$gray-lighter:          hsl(  0, 12%,  91%);
+$gray-lightest:         hsl(  0, 16%,  96%);
+
+$red:                   hsl( 10, 79%,  52%);
+$red-light:             hsl( 10, 67%,  90%);
+$red-lighter:           hsl( 10, 67%,  95%);
+
+$orange:                hsl( 20, 82%,  54%);
+$orange-light:          hsl( 20, 93%,  90%);
+$orange-lighter:        hsl( 20, 93%,  95%);
+
+$yellow:                hsl( 50, 78%,  54%);
+$yellow-light:          hsl( 50, 90%,  90%);
+$yellow-lighter:        hsl( 50, 90%,  95%);
+
+$green:                 hsl(125, 43%,  50%);
+$green-light:           hsl(125, 49%,  90%);
+$green-lighter:         hsl(125, 49%,  95%);
+
+$blue:                  hsl(204, 73%,  47%);
+$blue-light:            hsl(204, 83%,  90%);
+$blue-lighter:          hsl(204, 83%,  95%);
+
+$violet:                hsl(240, 41%,  56%);
+$violet-light:          hsl(240, 35%,  90%);
+$violet-lighter:        hsl(240, 35%,  95%);
+
+// Abstractions
+// ----------------------------------------------------------------------------
+
+$color-primary:         $blue;

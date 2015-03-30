@@ -1,0 +1,57 @@
+
+//  '||''|.  '||            .
+//   ||   ||  ||   ....   .||.    ....
+//   ||...|'  ||  '' .||   ||   .|...||
+//   ||       ||  .|' ||   ||   ||
+//  .||.     .||. '|..'|'  '|.'  '|...'
+
+// Title:      Plate
+// Version:    1.0.0
+// Author:     Andy Smith
+// Source:     http://github/com/andyra/plate
+
+// This is a manifest file used to import stylesheet partials. To add new
+// styles, create a new `.scss` file and import it below. All partials
+// should begin with an underscore.
+
+// Settings
+// ----------------------------------------------------------------------------
+
+// Libraries
+@import "bourbon";
+@import "neat";
+
+// Variables
+@import "settings/grid";
+@import "settings/breakpoints";
+@import "settings/colors";
+@import "settings/type";
+@import "settings/theme";
+
+// Functions
+@import "settings/functions/absolute-unit";
+@import "settings/functions/convert-unit";
+@import "settings/functions/relative-unit";
+@import "settings/functions/strip-unit";
+
+// Mixins
+@import "settings/mixins/font-smoothing";
+@import "settings/mixins/img-responsive";
+@import "settings/mixins/link-color";
+@import "settings/mixins/omega-reset";
+@import "settings/mixins/tab-focus";
+@import "settings/mixins/text-overflow";
+@import "settings/mixins/triangles";
+
+// Core
+// ----------------------------------------------------------------------------
+
+@import "core/normalize";
+@import "core/base";
+@import "core/fonts";
+@import "core/type";
+
+// Components
+// ----------------------------------------------------------------------------
+
+// @import Components here

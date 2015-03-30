@@ -1,0 +1,66 @@
+// ============================================================================
+// Global Styles
+// ============================================================================
+
+// Generic style values that can be reused across your entire project. If a
+// variable applies only to a specific component, it should be placed at the top
+// of the component's .scss file.
+
+// Animation
+$animations:                true;
+$timing-base:               0.1s;
+$easing-base:               ease-in-out;
+
+// Base
+$body-bg:                   white;
+$text-color:                $gray-dark;
+$text-muted-color:          $gray-light;
+
+$link-color:                $color-primary;
+$link-hover-color:          darken($link-color, 15%);
+
+// Border-radius
+$border-radius-base:        3px;
+$border-radius-lg:          6px;
+$border-radius-sm:          2px;
+
+// Borders
+$border-color-base:         $gray-lighter;
+$border-width-base:         2px;
+$border-width-sm:           1px;
+$border-width-lg:           4px;
+
+// Box shadow
+$box-shadow-base:           1px 1px 6px rgba(black, 0.15);
+
+// Color states
+$color-info:                $gray-dark;
+$color-info-border:         $gray-light;
+$color-info-bg:             $gray-lighter;
+
+$color-success:             $green;
+$color-success-border:      $green-light;
+$color-success-bg:          $green-lighter;
+
+$color-warning:             $orange;
+$color-warning-border:      $orange-light;
+$color-warning-bg:          $orange-lighter;
+
+$color-danger:              $red;
+$color-danger-border:       $red-light;
+$color-danger-bg:           $red-lighter;
+
+// Component colors
+$component-color-active:    white;
+$component-bg-active:       $color-primary;
+
+// Padding
+$padding-horiz-base:        12px;
+$padding-horiz-lg:          16px;
+$padding-horiz-sm:          10px;
+$padding-horiz-xs:          5px;
+
+$padding-vert-base:         6px;
+$padding-vert-lg:           10px;
+$padding-vert-sm:           5px;
+$padding-vert-xs:           1px;
