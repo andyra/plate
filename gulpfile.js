@@ -1,12 +1,18 @@
 var gulp          = require('gulp');
+var es            = require('event-stream');
+var gutil         = require('gulp-util');
+var sourcemaps    = require('gulp-sourcemaps');
+var addsrc        = require('gulp-add-src')
+var order         = require('gulp-order');
+var header        = require('gulp-header');
+var rename        = require('gulp-rename');
+var print         = require('gulp-print');
 
 var sass          = require('gulp-sass');
 var autoprefixer  = require('gulp-autoprefixer');
-var sourcemaps    = require('gulp-sourcemaps');
 var minifyCSS     = require('gulp-minify-css');
 
 var coffee        = require('gulp-coffee');
-var order         = require('gulp-order');
 var concat        = require('gulp-concat');
 var uglify        = require('gulp-uglify');
 var jshint        = require('gulp-jshint');
@@ -17,17 +23,12 @@ var imagemin      = require('gulp-imagemin');
 var pngquant      = require('imagemin-pngquant');
 
 var browserSync   = require('browser-sync');
-var header        = require('gulp-header');
-var rename        = require('gulp-rename');
-var print = require('gulp-print');
-var addsrc = require('gulp-add-src')
 
 var pkg           = require('./package.json');
 
-//  Setup
+// Config
 // ----------------------------------------------------------------------------
 
-// Banner
 var banner = [
   '/*!\n' +
   ' * <%= pkg.title %>\n' +
@@ -39,12 +40,30 @@ var banner = [
   '\n'
 ].join('');
 
+var paths = {
+  images: {
+    src: 'src/images/',
+    dest: 'dist/images/'
+  },
+  scripts: {
+    src: 'src/javascripts/',
+    dest: 'dist/javascripts/'
+  },
+  styles: {
+    src: 'src/stylesheets/',
+    dest: 'dist/stylesheets/'
+  },
+  sprite: {
+    src: 'src/images/sprite/'
+  }
+};
+
 //  Tasks
 // ----------------------------------------------------------------------------
 
 // Stylesheets
 gulp.task('styles', function() {
-  gulp.src('src/stylesheets/plate.scss')
+  gulp.src(paths.styles.src + 'plate.scss')
     .pipe(sourcemaps.init())
       .pipe(sass({
         errLogToConsole: true,
@@ -55,19 +74,21 @@ gulp.task('styles', function() {
     .pipe(rename({ suffix: '.min' }))
     .pipe(header(banner, { pkg : pkg }))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('dist/stylesheets'))
-    .pipe(browserSync.reload({ stream: true }));
+    .pipe(gulp.dest(paths.styles.dest))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 });
 
 // JavaScripts
 gulp.task('scripts',function(){
-  gulp.src('src/javascripts/**/*.coffee')
+  gulp.src(paths.scripts.src + '**/*.coffee')
     .pipe(coffee())
-    .pipe(addsrc('src/javascripts/**/*.js'))
+    .pipe(addsrc(paths.scripts.src + '**/*.js'))
     .pipe(order([
-      'src/javascripts/vendor/*.js',
-      'src/javascripts/shared/*.js',
-      'src/javascripts/pages/*.js'
+      paths.scripts.src + 'vendor/*.js',
+      paths.scripts.src + 'shared/*.js',
+      paths.scripts.src + 'pages/*.js'
     ], {base: '.'}))
     .pipe(jshint('.jshintrc')) // lint them
     .pipe(jshint.reporter('default'))
@@ -75,20 +96,23 @@ gulp.task('scripts',function(){
     .pipe(uglify())
     .pipe(header(banner, { pkg : pkg }))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('dist/javascripts'))
-    .pipe(browserSync.reload({stream:true, once: true}));
+    .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(browserSync.reload({
+      stream:true,
+      once: true
+    }));
 });
 
 // SVG Sprite
 gulp.task('sprite', function () {
-  gulp.src('src/images/sprite/**/*.svg')
+  gulp.src(paths.images.src + 'sprite/**/*.svg')
     .pipe(svgstore())
-    .pipe(gulp.dest('src/images'));
+    .pipe(gulp.dest(paths.images.src));
 });
 
 // Images
 gulp.task('images', function () {
-  return gulp.src('src/images/*.{png,jpg,jpeg,gif,svg}')
+  return gulp.src(paths.images.src + '*.{png,jpg,jpeg,gif,svg}')
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [{
@@ -96,7 +120,7 @@ gulp.task('images', function () {
       }],
       use: [pngquant()]
     }))
-    .pipe(gulp.dest('dist/images'));
+    .pipe(gulp.dest(paths.images.dest));
 });
 
 // Server, Watch, Browser

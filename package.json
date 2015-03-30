@@ -12,6 +12,7 @@
   "devDependencies": {
     "browser-sync": "^2.4.0",
     "cheerio": "^0.19.0",
+    "event-stream": "^3.3.0",
     "gulp": "^3.8.11",
     "gulp-add-src": "^0.2.0",
     "gulp-autoprefixer": "^2.1.0",
@@ -29,6 +30,7 @@
     "gulp-svgmin": "^1.1.1",
     "gulp-svgstore": "^5.0.0",
     "gulp-uglify": "^1.1.0",
+    "gulp-util": "^3.0.4",
     "imagemin-pngquant": "^4.0.0",
     "node-bourbon": "^4.2.1-beta1",
     "node-neat": "^1.7.1-beta1"
