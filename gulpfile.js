@@ -116,24 +116,25 @@ gulp.task('images', function () {
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [{
-        removeViewBox: false
+        removeViewBox: false,
+        removeUselessStrokeAndFill: true,
+        cleanupIDs: false
       }],
       use: [pngquant()]
     }))
     .pipe(gulp.dest(paths.images.dest));
 });
 
-// Server, Watch, Browser
-gulp.task('browser-sync', function() {
-  browserSync.init(null, {
+// Static server + watching
+gulp.task('serve', ['styles'], ['scripts'], function() {
+  browserSync({
     server: {
-      baseDir: "app"
+      baseDir: "./"
     }
   });
-});
 
-gulp.task('bs-reload', function () {
-    browserSync.reload();
+  gulp.watch(paths.styles.src + '**/*.scss', ['styles']);
+  gulp.watch(paths.scripts.src + '**/*.{js, coffee}', ['scripts']);
 });
 
 // Default
